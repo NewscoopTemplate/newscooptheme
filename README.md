@@ -18,8 +18,11 @@ _js > Generic Javascript files, included Bootstrap JS
 
 _misc > fonts > Fonts used by Bootstrap
 
+dummy > Dummy pages. This pages contain a dummy objects for the template. This can be
+					 an example of how template must be
+
 Install
-======
+=======
 To install this theme you must copy to the proper directory on your Newscoop instalation.
 
 This work with Apache2 License
