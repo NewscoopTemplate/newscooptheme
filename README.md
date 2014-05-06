@@ -1,0 +1,4 @@
+newscooptheme
+=============
+
+Newscoop Theme
