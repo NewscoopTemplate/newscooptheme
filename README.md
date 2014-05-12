@@ -18,6 +18,12 @@ _js > Generic Javascript files, included Bootstrap JS
 
 _misc > fonts > Fonts used by Bootstrap
 
+_tpl > Template files
+
+front.tpl > Front template file
+header.tpl > Header template file (common)
+nav.tpl > Navigation template file (common)
+
 dummy > Dummy pages. This pages contain a dummy objects for the template. This can be
 					 an example of how template must be
 
