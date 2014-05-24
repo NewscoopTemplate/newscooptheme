@@ -21,7 +21,9 @@ _misc > fonts > Fonts used by Bootstrap
 _tpl > Template files
 
 front.tpl > Front template file
+
 header.tpl > Header template file (common)
+
 nav.tpl > Navigation template file (common)
 
 dummy > Dummy pages. This pages contain a dummy objects for the template. This can be
@@ -29,7 +31,9 @@ dummy > Dummy pages. This pages contain a dummy objects for the template. This c
 
 Install
 =======
-To install this theme you must copy to the proper directory on your Newscoop instalation.
+To install this theme you must copy to the proper directory on your Newscoop instalation on directory $Newscoop_Instalation/themes/unassigned
+
+After it, open your site template admin and apply them into your publication.
 
 This work with Apache2 License
 http://www.apache.org/licenses/LICENSE-2.0.html
