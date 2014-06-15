@@ -1,6 +1,6 @@
 {{ $contador=0 }}
 {{ $categorias=array() }}
-{{ list_articles }}
+{{ list_articles constraints="type is prueba" }}
 {{$categorias[$contador]={{ $gimme->article->subseccion }} }}
 {{$contador=$contador+1}}
 {{ /list_articles }}
