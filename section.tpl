@@ -1,6 +1,5 @@
 <html>
 <head>
-<title>Secciones</title>
 <style>
 html {
   font: 12px Arial;
