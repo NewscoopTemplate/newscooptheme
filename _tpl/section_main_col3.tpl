@@ -1,3 +1,6 @@
+<!--
+	Esto hay que cambiarlo con lo nuevo
+-->
 {{ $contador=0 }}
 {{ $categorias=array() }}
 {{ list_articles constraints="type is prueba" }}
