@@ -15,6 +15,19 @@
 <div class="col-md-6">
 	<div class="con_recorrido">
 		{{ list_articles constraints="con_recorrido is on" }} 
+		{{ list_articles contraints="portada_col_1" }}
+		
+		{{ if $gimmie -> article -> con_recorrido is on }}
+			<div class="con_recorrido">
+			</div>
+		{{ /if }}
+		
+		{{ if $gimmie -> article -> sin_recorrido is on }}
+			<div class="con_recorrido">
+			</div>
+		{{ /if }}
+
+		
 	    <p><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  width="200" heigth="400" />
 	    {{ $gimme->article->subseccion }}
 		<a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
