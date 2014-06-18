@@ -13,7 +13,12 @@ li.seccion {
 </head>
 <body>
 <div class="content">
+	<div class="row">
 	{{ include file='header.tpl' }}
+	</div>
+	<div class="row">
+	{{ include file='nav.tpl' }}
+	</div>
 	<div class="row">
 		{{ include file='_tpl/front_main_col1.tpl' }}
 		{{ include file='_tpl/front_main_col2.tpl' }}
