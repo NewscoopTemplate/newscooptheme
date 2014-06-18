@@ -1,12 +1,18 @@
-.con_recorrido{
-	border: 2px solid black;
+.BARRIOS {
+	color: #930DA1;
 }
-
-.sin_recorrido_foto{
-	background-color: #D9D9D9;
+.CULTURAS {
+	color: #42BF59;
 }
-
-.sin_recorrido_foto_col2{
+.COLECTIVOS {
+p 	color: #5D91F0;	
 }
-.sin_recorrido_col2{
+.REALIDADES {
+	color: #EBAB2A;
+}
+.EDUCACION {
+	color: #C31019;
+}
+.PUEBLOS{
+	color: #825419;	
 }
