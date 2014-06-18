@@ -9,4 +9,8 @@
 		</li>
 	{{ /list_sections }}
 	</ul>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> FETCH_HEAD
