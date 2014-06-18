@@ -11,5 +11,5 @@
 {{ $categorias = array_unique($categorias) }}  
 {{ foreach from=$categorias item=categoria }}
 {{ $gimme -> article -> subseccion }}
- <li><a href="{{ uri options="article" }}" title="Ver noticias de subseccion {{$categoria}}">{{ $categoria }}</a></li>
+ <li><a href="{{ uri options="article" }}?subsecion=$categoria" title="Ver noticias de subseccion {{$categoria}}">{{ $categoria }}</a></li>
 {{ /foreach }}
