@@ -25,6 +25,12 @@
 	<div class="row">
 		{{ include file='nav.tpl' }}
 	</div>
+	<? $identificador_subsecion =  $_GET("idsubseccion"); ?>
+	
+	<? if (isset($iden...)) { ?>
+	<? else ?>
+	< } ?>
+	
 	<div class="row">
 		{{ include file='_tpl/section_main_col1.tpl' }}
 		{{ include file='_tpl/section_main_col2.tpl' }}
