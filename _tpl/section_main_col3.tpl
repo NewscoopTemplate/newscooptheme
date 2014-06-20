@@ -1,6 +1,7 @@
 <!--
   Esto hay que cambiarlo con lo nuevo
 -->
+<div class="col-md-2">
 {{ $contador=0 }}
 {{ $categorias=array() }}
 <!-- aqui seria de tipo prueba -->
@@ -11,5 +12,6 @@
 {{ $categorias = array_unique($categorias) }}  
 {{ foreach from=$categorias item=categoria }}
 {{ $gimme -> article -> subseccion }}
- <li><a href="{{ uri options="article" }}?subsecion=$categoria" title="Ver noticias de subseccion {{$categoria}}">{{ $categoria }}</a></li>
+ <li><a href="{{ uri options='section' }}?subseccion={{ $categoria }}" title="Ver noticias de subseccion {{$categoria}}">{{ $categoria }}</a></li>
 {{ /foreach }}
+</div>
