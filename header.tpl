@@ -1,22 +1,41 @@
-<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portada</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <script  src="{{ url static_file='_js/bootstrap.jss.css' }}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/bootstrap.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/front.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/header.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/nav.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/page.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/social.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/search.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/blogs_menu.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/banners.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/menu_teaser.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_pages/front_col1.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_pages/front_col2.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_pages/front_col3.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_articles/front_article_background.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_articles/front_article_box.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_articles/front_article_images.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_articles/front_article_simple.css' }}"/>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:200italic,200,300italic,300,400italic,400,600italic,600,700italic,700,900italic,900" rel="stylesheet" type="text/css">
 
-	Aqui va la cabecera
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1>Cabecera</h1>
+            </div>
+            <div class="col-md-2">
+                {{ include file='_tpl/social.tpl' }}
+                {{ include file='_tpl/search.tpl' }}
+            </div>      
+        </div>
+<!-- ************************Fin del header*******************************-->
 
--->
-<div class="col-md-12">
-	<h1>Cabecera</h1>
-	<!-- temporalmente, el cuadro de búsqueda aqui-->
-<div class="search">
-{{ search_form template="_tpl/search.tpl" submit_button="&nbsp;"
-html_code="id=\"topSearch\"" button_html_code="class=\"replace\"" }}
-<p class="fields">
-{{ camp_edit object="search" attribute="keywords" html_code="id=\"s\""
-}}
-</p>
-{{ /search_form }}
-</div>
-
-</div>
-</div>
-
+    {{ include file='nav.tpl' }}
 
