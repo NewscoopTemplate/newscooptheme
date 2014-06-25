@@ -1,8 +1,5 @@
-<!--
-
-	Este fichero es el encargado de cargar los de las tres columnas,
-	pero como lo habeis hecho esta bien.
-	
-	Lo dejamos por si en un futuro...
-
--->
+<div class="row">
+		{{ include file='_tpl/front_main_col1.tpl' }}
+		{{ include file='_tpl/front_main_col2.tpl' }}
+		{{ include file='_tpl/front_main_col3.tpl' }}
+</div>
