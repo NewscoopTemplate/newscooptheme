@@ -59,6 +59,7 @@
          Fecha de publicacion {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
         </p>
         <p>{{ $gimme->article->entradilla }}</p><br>
+        </div>
     {{ /if }}
 
     
