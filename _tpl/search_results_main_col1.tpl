@@ -7,7 +7,6 @@
 <div class="col-md-10">
   <div id="principal_busqueda">
     <div class="estilo_busqueda_embebido">
-        <h3>Resultados de noticias (cabecera temporal)</h3>
         {{ include file='_tpl/search.tpl' }}
     </div>
 
