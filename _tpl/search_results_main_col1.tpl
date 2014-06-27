@@ -7,6 +7,10 @@
 <div class="col-md-10">
   <div id="principal_busqueda">
     <h2>Resultados de noticias (cabecera temporal)</h2>
+    <div class="estilo_busqueda_embebido">
+        {{ include file='_tpl/search.tpl' }}
+    </div>
+
     {{ list_search_results length="5" order="bypublishdate desc" constraints="type is articulo" }}
       <div class="seccion_resultados">
         {{ $gimme->article->section }}
