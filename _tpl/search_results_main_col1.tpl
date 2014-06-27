@@ -6,25 +6,22 @@
 
 <div class="col-md-10">
   <div id="principal_busqueda">
-    <h2>Resultados de noticias (cabecera temporal)</h2>
     <div class="estilo_busqueda_embebido">
+        <h3>Resultados de noticias (cabecera temporal)</h3>
         {{ include file='_tpl/search.tpl' }}
     </div>
 
     {{ list_search_results length="5" order="bypublishdate desc" constraints="type is articulo" }}
-      <div class="seccion_resultados">
-        {{ $gimme->article->section }}
-      </div>
+
       <div class="imagen_resultados">
         {{ if $gimme->article->has_image(1) }}
           <a title="{{ $gimme->article->name }}" href="{{ uri options="article" }}">
-          <img src="{{ uri options="image 1 width 134"}}" alt="{{ $gimme->article->image->description }}" class="woo-image thumbnail">
+          <img src="{{ uri options="image 1 width 150"}}" alt="{{ $gimme->article->image->description }}" class="woo-image thumbnail">
           </a>
         {{ /if }}
       </div>
-      
       <div class="seccion_resultados">
-        {{ $gimme -> article -> section }}
+        {{ $gimme->section->name}}
       </div>
       <div class="cabecera_resultados">
         <h2>
