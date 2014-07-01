@@ -1,18 +1,22 @@
-.BARRIOS {
-	color: #930DA1;
+.portada_con_recorrido_col1{
+	border: 1px solid grey;
+	margin-bottom: 2%;
+	padding:2%;
 }
-.CULTURAS {
-	color: #42BF59;
+
+.portada_sin_recorrido_col1{
+	border-bottom: 1px solid #BDBDBD;
+	margin-bottom: 2%;
 }
-.COLECTIVOS {
-p 	color: #5D91F0;	
+
+.portada_sin_recorrido_foto_col1{
+	background-color: #BDBDBD;
+	border-bottom: 1px solid #BDBDBD;
+	margin-bottom: 2%;
+	padding: 2%;
 }
-.REALIDADES {
-	color: #EBAB2A;
-}
-.EDUCACION {
-	color: #C31019;
-}
-.PUEBLOS{
-	color: #825419;	
+
+
+img {
+	width: 100%;
 }
