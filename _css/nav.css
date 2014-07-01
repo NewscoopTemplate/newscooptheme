@@ -15,40 +15,31 @@
 	color: black;
 }
 
-.menu_secciones .BARRIOS a{
+.menu_secciones .nav_1 a{
 	border-bottom: 4px solid #930DA1;
 }
-.menu_secciones .CULTURAS a{
+.menu_secciones .nav_2 a{
 	border-bottom: 4px solid #42BF59;
 }
-.menu_secciones .COLECTIVOS a{
+.menu_secciones .nav_3 a{
 	border-bottom: 4px solid #5D91F0;	
 }
-.menu_secciones .REALIDADES a{
+.menu_secciones .nav_4 a{
 	border-bottom: 4px solid #EBAB2A;
 }
-.menu_secciones .EDUCACION a{
+.menu_secciones .nav_5 a{
 	border-bottom: 4px solid #C31019;
 }
-.menu_secciones .PUEBLOS a{
+.menu_secciones .nav_6 a{
 	border-bottom: 4px solid #825419;	
 }
+.menu_secciones .nav_7 a{
+	border-bottom: 4px solid #F2DD1B;	
+}
+.menu_secciones .nav_8 a{
+	border-bottom: 4px solid #6E1406;	
+}
+.menu_secciones .nav_9 a{
+	border-bottom: 4px solid #F136D8;	
+}
 
-.menu_secciones .BARRIOS a:hover{
-	border-bottom: 8px solid #930DA1;
-}
-.menu_secciones .CULTURAS a:hover{
-	border-bottom: 8px solid #42BF59;
-}
-.menu_secciones .COLECTIVOS a:hover{
-	border-bottom: 8px solid #5D91F0;	
-}
-.menu_secciones .REALIDADES a:hover{
-	border-bottom: 8px solid #EBAB2A;
-}
-.menu_secciones .EDUCACION a:hover{
-	border-bottom: 8px solid #C31019;
-}
-.menu_secciones .PUEBLOS a:hover{
-	border-bottom: 8px solid #825419;	
-}
