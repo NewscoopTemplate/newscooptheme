@@ -1,7 +1,9 @@
-.col2{
-	border-left: 1px solid grey;
-	border-right: 1px solid grey;
+.portada_sin_recorrido_col2{
+	border-bottom: 2px solid #BDBDBD;
+	margin-bottom: 4%;
 }
-.sin_recorrido_foto_col2 img{
-	width: 100%;
+
+.portada_sin_recorrido_foto_col2{
+	border-bottom: 2px solid #BDBDBD;
+	margin-bottom: 4%;
 }
