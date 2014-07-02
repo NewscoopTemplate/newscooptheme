@@ -1,3 +1,40 @@
 body{
 	font-family: "Source Sans Pro";
+} 
+
+.col2{
+	border-left: 2px solid #BDBDBD;
+	border-right: 2px solid #BDBDBD;
+}
+
+.nav_1{
+	color: #930DA1;
+}
+.nav_2{
+	color: #42BF59;
+}
+.nav_3{
+	color: #5D91F0;	
+}
+.nav_4{
+	color: #EBAB2A;
+}
+.nav_5{
+	color: #C31019;
+}
+.nav_6{
+	color: #825419;	
+}
+.nav_7{
+	color: #F2DD1B;	
+}
+.nav_8{
+	color: #6E1406;	
+}
+.nav_9{
+	color: #F136D8;	
+}
+
+.datos_articulos{
+	color: red;
 }
