@@ -1,22 +1,7 @@
-.portada_con_recorrido_col1{
-	border: 1px solid grey;
-	margin-bottom: 2%;
-	padding:2%;
-}
-
-.portada_sin_recorrido_col1{
-	border-bottom: 1px solid #BDBDBD;
-	margin-bottom: 2%;
-}
-
-.portada_sin_recorrido_foto_col1{
-	background-color: #BDBDBD;
-	border-bottom: 1px solid #BDBDBD;
-	margin-bottom: 2%;
-	padding: 2%;
-}
-
-
 img {
 	width: 100%;
+}
+
+a{
+	color: black;
 }
