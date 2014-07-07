@@ -2,8 +2,9 @@
 <html>
 <head>
     <title>Portada</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-    <script  src="{{ url static_file='_js/bootstrap.jss.css' }}" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script  src="{{ url static_file='_js/bootstrap.js' }}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/bootstrap.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/front.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/header.css' }}"/>
@@ -25,14 +26,16 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="content">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <h1>Cabecera</h1>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 {{ include file='_tpl/social.tpl' }}
                 {{ include file='_tpl/search.tpl' }}
             </div>      
         </div>
-</div>
+<!-- ************************Fin del header*******************************-->
+
+    {{ include file='nav.tpl' }}
