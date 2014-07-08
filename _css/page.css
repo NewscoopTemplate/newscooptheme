@@ -1,10 +1,24 @@
-body{
-	font-family: "Source Sans Pro";
-} 
+li{
+	display: inline-block;
+	list-style-type: none;
+}
+
+li a{
+	text-decoration: none;
+	color: black;
+}
+
+hr {
+	border: 1px solid #BDBDBD; 
+}
 
 .col2{
 	border-left: 2px solid #BDBDBD;
 	border-right: 2px solid #BDBDBD;
+}
+.mod_seccion{
+	margin-top: 1%;
+	border-top: solid 1px;
 }
 
 .nav_1{
