@@ -24,7 +24,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 				{{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
 				</p>
 				<p>{{ $gimme->article->entradilla }}</p>
-			</div>
+			</div><hr>
 		{{elseif $gimme -> article -> portada_sin_recorrido_foto }}
 			<div class="portada_sin_recorrido_foto_col2">
 			<img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
@@ -36,7 +36,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 				{{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
 				</p>
 				<p>{{ $gimme->article->entradilla }}</p>
-			</div>
+			</div><hr>
 		{{ /if }}
 	{{ /list_playlist_articles }}
 </div>
