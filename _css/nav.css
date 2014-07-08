@@ -1,13 +1,10 @@
 .menu_secciones {
-	border-bottom: solid 1px;
-	padding: 0 0 6px 0;
 	font-family:Verdana;
 	font-weight:bold;	
 }
-.menu_secciones li{
-	display: inline-block;
-	padding: 0 1em 0 0;
-	list-style-type: none;	
+.menu_secciones li{	
+	padding: 0 1em 0 1em;		
+	text-align: center;
 }
 
 .menu_secciones li a{
@@ -15,33 +12,34 @@
 	color: black;
 }
 
-.menu_secciones .nav_1 a{
+.menu_secciones .nav_1 {
 	border-bottom: 4px solid #930DA1;
 }
-.menu_secciones .nav_2 a{
+.menu_secciones .nav_2 {
 	border-bottom: 4px solid #42BF59;
 }
-.menu_secciones .nav_3 a{
+.menu_secciones .nav_3 {
 	border-bottom: 4px solid #5D91F0;	
 }
-.menu_secciones .nav_4 a{
+.menu_secciones .nav_4 {
 	border-bottom: 4px solid #EBAB2A;
 }
-.menu_secciones .nav_5 a{
+.menu_secciones .nav_5 {
 	border-bottom: 4px solid #C31019;
 }
-.menu_secciones .nav_6 a{
+.menu_secciones .nav_6 {
 	border-bottom: 4px solid #825419;	
 }
-.menu_secciones .nav_7 a{
+.menu_secciones .nav_7 {
 	border-bottom: 4px solid #F2DD1B;	
 }
-.menu_secciones .nav_8 a{
+.menu_secciones .nav_8 {
 	border-bottom: 4px solid #6E1406;	
 }
-.menu_secciones .nav_9 a{
+.menu_secciones .nav_9 {
 	border-bottom: 4px solid #F136D8;	
 }
-.nav_1 .nav_2 .nav_3 .nav_4 .nav_5 .nav_6 .nav_7 .nav_8 .nav_9 .estoy{
+
+.menu_secciones .estoy{
 	border-bottom-width: 8px;
 }
