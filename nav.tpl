@@ -2,12 +2,13 @@
 	{{ $count=1 }}
 	<div class="col-md-12">
 		<ul class="menu_secciones">
-		{{ list_sections }}
-			<li class="seccion nav_{{ $count }}">			
+		{{ list_sections }}						
 			{{ if strstr({{ $smarty.server.REQUEST_URI }}, {{ uri options="section" }}) }}
-				<a  href="{{ uri options='section' }}" class="estoy">{{ $gimme->section->name }}</a>
+			<li class="seccion nav_{{ $count }} estoy">
+				<a  href="{{ uri options='section' }}">{{ $gimme->section->name|upper }}</a>
 			{{ else }}
-				<a  href="{{ uri options='section' }}">{{ $gimme->section->name }}</a>
+			<li class="seccion nav_{{ $count }}">
+				<a  href="{{ uri options='section' }}">{{ $gimme->section->name|upper }}</a>
 			{{ /if }}			
 			</li>
 			{{ $count=$count+1 }}
