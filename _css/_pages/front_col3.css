@@ -1,6 +1,5 @@
 .col3 li{
 	display: block;
-	border-bottom: 1px solid
 }
 
 .menu_seccion_1{
@@ -56,4 +55,41 @@
 	border-bottom: 3px solid #F136D8;
 	border-right: 1px solid #F136D8;
 	border-left: 1px solid #F136D8;
+}
+
+.link_1{
+	border-bottom: 1px solid #930DA1;
+	margin: 1%;
+}
+.link_2{
+	border-bottom: 1px solid #42BF59;
+	margin: 1%;
+}
+.link_3{
+	border-bottom: 1px solid #5D91F0;
+	margin: 1%;
+}
+.link_4{
+	border-bottom: 1px solid #EBAB2A;
+	margin: 1%;
+}
+.link_5{
+	border-bottom: 1px solid #C31019;
+	margin: 1%;
+}
+.link_6{
+	border-bottom: 1px solid #825419;
+	margin: 1%;
+}
+.link_7{
+	border-bottom: 1px solid #F2DD1B;
+	margin: 1%;
+}
+.link_8{
+	border-bottom: 1px solid #6E1406;
+	margin: 1%;
+}
+.link_9{
+	border-bottom: 1px solid #F136D8;
+	margin: 1%;
 }
