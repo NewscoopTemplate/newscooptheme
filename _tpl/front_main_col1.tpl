@@ -12,57 +12,57 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 
 -->
 <div class="col-md-6 col1">
-	{{ list_playlist_articles name="PortadaCol1" }}
-		{{ if $gimme -> article -> portada_con_recorrido }}
-			<div class="portada_con_recorrido_col1">
-				<div class="row">
-					<div class="col-md-5">
-						<img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />	
-					</div>
-					<div class="col-md-7">
-						<p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}<p>
-						<p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
-						</a></p>
-						<p class="datos_articulos">	
-						{{ list_article_authors }}
-						{{ $gimme->author->name|upper }} ::
-						{{ /list_article_authors }}
-						{{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
-						<p>{{ $gimme->article->entradilla }}</p>
-					</div>
-				</div>							
-			</div>
+  {{ list_playlist_articles name="PortadaCol1" }}
+    {{ if $gimme -> article -> portada_con_recorrido }}
+      <div class="portada_con_recorrido_col1">
+        <div class="row">
+          <div class="col-md-5">
+            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />  
+          </div>
+          <div class="col-md-7">
+            <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}<p>
+            <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+            </a></p>
+            <p class="datos_articulos"> 
+            {{ list_article_authors }}
+            {{ $gimme->author->name|upper }} ::
+            {{ /list_article_authors }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+            <p>{{ $gimme->article->entradilla }}</p>
+          </div>
+        </div>              
+      </div>
 
-		{{elseif $gimme -> article -> portada_sin_recorrido }}
-			<div class="portada_sin_recorrido_col1">
-				<p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
-				<p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
-				<p class="datos_articulos">
-				{{ list_article_authors }}
-				{{ $gimme->author->name|upper }} ::
-				{{ /list_article_authors }}
-				{{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-				</p>
-				<p>{{ $gimme->article->entradilla }}</p><hr>
-			</div>
-		{{elseif $gimme -> article -> portada_sin_recorrido_foto }}
-			<div class="portada_sin_recorrido_foto_col1">
-				<div class="img_sin_foto">
-					<img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  />
-				</div>
-				<div class="texto_sin_foto">
-					<p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
-					<p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
-					</a></p>
-					<p class="datos_articulos">
-					{{ list_article_authors }}
-					{{ $gimme->author->name|upper }} ::
-					{{ /list_article_authors }}
-					{{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-					</p>
-					<p>{{ $gimme->article->entradilla }}</p>
-				</div>			
-			</div><hr>
-		{{ /if }}
-	{{ /list_playlist_articles }}
+    {{elseif $gimme -> article -> portada_sin_recorrido }}
+      <div class="portada_sin_recorrido_col1">
+        <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
+        <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+        <p class="datos_articulos">
+        {{ list_article_authors }}
+        {{ $gimme->author->name|upper }} ::
+        {{ /list_article_authors }}
+        {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+        </p>
+        <p>{{ $gimme->article->entradilla }}</p><hr>
+      </div>
+    {{elseif $gimme -> article -> portada_sin_recorrido_foto }}
+      <div class="portada_sin_recorrido_foto_col1">
+        <div class="img_sin_foto">
+          <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  />
+        </div>
+        <div class="texto_sin_foto">
+          <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
+          <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+          </a></p>
+          <p class="datos_articulos">
+          {{ list_article_authors }}
+          {{ $gimme->author->name|upper }} ::
+          {{ /list_article_authors }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          </p>
+          <p>{{ $gimme->article->entradilla }}</p>
+        </div>      
+      </div><hr>
+    {{ /if }}
+  {{ /list_playlist_articles }}
 </div>
