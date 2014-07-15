@@ -1,0 +1,13 @@
+.search input:nth-child(2){
+	width: 80%;
+	float: left;
+}
+
+.replace{
+	background-image: url("../dummy/rrss/search-icon.png");
+	background-color: white;
+	border: solid #b0c2ff 1px;
+	width: 24px;
+	height: 26px;
+	float: left;
+}
