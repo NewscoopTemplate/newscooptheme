@@ -1,14 +1,11 @@
-<div class="col-md-5 col1">
   <!--si no es nulo y coincide pintamos como subseccion-->
   {{ if isset($subseccion_filtrada) }}
+  <div class="col-md-8 col1">
     {{ list_playlist_articles name="SubSeccionCol1" }}
       {{ if $gimme -> article -> subseccion == {{ $subseccion_filtrada}} }}
         {{ if $gimme -> article -> subseccion_con_recorrido }}
           <div class="subseccion_con_recorrido_col1">
-            <div class="row">
-              <div class="col-md-5">
-                <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
-              </div>
+            <div class="row">              
               <div class="col-md-7">
                 <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
                 <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
@@ -20,8 +17,13 @@
                 </p>
                 <p>{{ $gimme->article->entradilla }}</p>
               </div>
-            </div>          
+              <div class="col-md-5">
+                <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+              </div>
+            </div> 
+                   
           </div>
+          <hr>
           {{elseif $gimme -> article -> subseccion_sin_recorrido }}
           <div class="subseccion_sin_recorrido_col1">
             <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
@@ -34,11 +36,13 @@
             </p>
             <p>{{ $gimme->article->entradilla }}</p>
           </div>
+          <hr>
         {{ /if }}
       {{ /if }}
     {{ /list_playlist_articles }}
 <!-- si es nulo pinta como seccion -->
   {{ else }}
+  <div class="col-md-5 col1">
     {{ list_playlist_articles name="SeccionCol1"}}
       {{ if in_array($gimme -> article -> subseccion, $categorias)}}
         {{ if $gimme -> article -> seccion_con_recorrido }}
