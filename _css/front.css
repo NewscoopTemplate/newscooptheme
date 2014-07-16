@@ -1,7 +1,15 @@
 img {
-	width: 100%;
+  width: 100%;
 }
 
 a{
-	color: black;
+  color: black;
+}
+
+.col1{
+  border-right: 1.5px solid #BDBDBD;
+}
+
+.col2{
+  border-right: 1.5px solid #BDBDBD;
 }
