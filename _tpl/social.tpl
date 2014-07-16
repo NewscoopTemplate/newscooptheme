@@ -5,21 +5,19 @@
 ->
 
 <div class="redes_sociales">
-
   <li>
-  <a href="http://facebook.com/example">Facebook</a>
+    <a href="http://facebook.com/example"><img src="{{ url static_file='dummy/rrss/facebook-icon.png' }}" /></a>
   </li>
   <li>
-  <a href="http://twitter.com/example">Twitter</a>
+    <a href="http://twitter.com/example"><img src="{{ url static_file='dummy/rrss/twitter-icon.png' }}" /></a>
   </li>
-    <li>
-  <a href="http://youtube.com/example">YouTube</a>
+  <li>
+    <a href="http://youtube.com/example"><img src="{{ url static_file='dummy/rrss/youtube-icon.png' }}" /></a>
   </li>
-    <li>
-  <a href="http://googlemas.com/example">Google+</a>
+  <li>
+    <a href="http://googlemas.com/example"><img src="{{ url static_file='dummy/rrss/Web-Google-plus-alt-Metro-icon.png' }}" /></a>
   </li>
-    <li>
-  <a href="http://rsstune.com/example">RSS</a>
+  <li>
+    <a href="http://rsstune.com/example"><img src="{{ url static_file='dummy/rrss/Web-RSS-Feed-Metro-icon.png' }}" /></a>
   </li>
-
 </div>
