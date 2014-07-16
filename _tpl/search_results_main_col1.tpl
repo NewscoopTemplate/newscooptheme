@@ -4,7 +4,7 @@
   en principio, ya que no tenemos un diseño, lo mantenemos 'parecido' al template de las subsecciones..
 -->
 
-<div class="col-md-10">
+<div class="col-md-10 col1">
   <div id="principal_busqueda">
 
     <div class="estilo_busqueda_embebido">
@@ -25,7 +25,7 @@
           <div class="col-md-9">
 
             <div class="seccion_resultados">
-              {{ $gimme->section->name}}
+              <p class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</p>
             </div>
 
             <div class="cabecera_resultados">
@@ -34,13 +34,12 @@
                 {{ $gimme -> article -> titular }}
                 </a>
               </h2>
-              <p class="detalles_resultados">
-                {{ list_article_authors }}
-                  {{ $gimme->author->name }}
-                {{ /list_article_authors }}
-                :
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-              </p>
+              <p class="datos_articulos"> 
+              {{ list_article_authors }}
+              {{ $gimme->author->name|upper }} ::
+              {{ /list_article_authors }}
+              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+              
 
               <p>{{ $gimme->article->deck }}</p>
             </div>
