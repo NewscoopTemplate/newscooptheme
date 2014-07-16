@@ -1,13 +1,8 @@
-.portada_sin_recorrido_col2{
-	border-bottom: 2px solid #BDBDBD;
-	margin-bottom: 4%;
+.portada_sin_recorrido_col2,.portada_sin_recorrido_foto_col2{
+    margin-bottom: 4%;
 }
 
-.portada_sin_recorrido_foto_col2{
-	border-bottom: 2px solid #BDBDBD;
-	margin-bottom: 4%;
-}
 
 .portada_sin_recorrido_foto_col2 img, .seccion_sin_recorrido_foto_col2 img{
-	border: 1px solid;
+  border: 1px solid;
 }
