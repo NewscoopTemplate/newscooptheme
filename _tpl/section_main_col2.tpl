@@ -1,131 +1,77 @@
-<div class="col-md-2 col3">
-  <!--el menu de las subsecciones siempre-->
-  <div class="menu_seccion_{{ $gimme->section->number }}">
-    {{ foreach from=$categorias item=categoria name=ultimo }}
-      {{ $gimme -> article -> subseccion }}
-        {{ if $smarty.foreach.ultimo.last}}
-          <li><a href="{{ uri options='section' }}?subseccion={{ $categoria }}" title="Ver noticias de subseccion {{$categoria}}">
-          {{ $categoria|upper }}</a></li>
-        {{ else }}
-          <li class="link_{{ $gimme->section->number }}">
-          <a href="{{ uri options='section' }}?subseccion={{ $categoria }}" title="Ver noticias de subseccion {{$categoria}}">
-          {{ $categoria|upper }}</a></li>
-        {{ /if }}   
-    {{ /foreach }}
-  </div>
-
   <!--si no es nulo y coincide pintamos como subseccion-->
   {{ if isset($subseccion_filtrada) }}
-   <div class="blog">
-    <table>
-      <tr>
-        <th>
-          NUESTROS BLOGS
-        </th>
-      </tr>
-        {{ list_playlist_articles name="Blogs" }}
-          {{ if $gimme->current_list->at_end }}         
-            <tr class="ultimo">
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ else }}
-            <tr>
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ /if }}
-        {{ /list_playlist_articles }}
-   
-    </table>
-  </div><br>
-  <div class="blog_menu">
-    <table>
-      <tr>
-        <th>
-          LA CIUDAD CERCA DE TI
-        </th>
-      </tr>
-        {{ list_playlist_articles name="Interes" }}
-          {{ if $gimme->current_list->at_end }}         
-            <tr class="ultimo">
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ else }}
-            <tr>
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ /if }}
-        {{ /list_playlist_articles }}    
-    </table>
-  </div>
+  <div class="col-md-2 col2">
+    <div class="banner">
+      {{ list_playlist_articles name="SubSeccionCol2Banner" }}
+        <p><a href="{{ $gimme->article->enlace }}" target="_blank"><img src="{{url options="image 1"}}" /></a>
+            </p>
+      {{ /list_playlist_articles}}
+    </div>
+  <!--
+    {{ list_playlist_articles name="SubSeccionCol2" }}
+      {{ if $gimme -> article -> subseccion == {{ $subseccion_filtrada}} }}
+        {{ if $gimme -> article -> subseccion_con_recorrido }}
+          <div class="subseccion_con_recorrido_col2">
+            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+            <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>          
+            <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+            </p>
+            <p class="datos_articulos">
+            {{ list_article_authors }}
+            {{ $gimme->author->name }} ::
+            {{ /list_article_authors }}
+            Fecha de publicacion {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            </p>
+            <p>{{ $gimme->article->entradilla }}</p>
+          </div>
+        {{elseif $gimme -> article -> subseccion_sin_recorrido }}
+          <div class="subseccion_sin_recorrido_col2">
+            <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
+            <a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+            <p class="datos_articulos">
+            {{ list_article_authors }}
+            {{ $gimme->author->name }} ::
+            {{ /list_article_authors }}
+            Fecha de publicacion {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            </p>
+            <p>{{ $gimme->article->entradilla }}</p>
+          </div>
+        {{ /if }}
+      {{ /if }}
+    {{ /list_playlist_articles }}
+    -->
 <!-- si es nulo pinta como seccion -->
   {{ else }}
-    
-  <div class="blog">
-    <table>
-      <tr>
-        <th>
-          NUESTROS BLOGS
-        </th>
-      </tr>
-        {{ list_playlist_articles name="Blogs" }}
-          {{ if $gimme->current_list->at_end }}         
-            <tr class="ultimo">
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ else }}
-            <tr>
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ /if }}
-        {{ /list_playlist_articles }}
-   
-    </table>
-  </div><br>
-  <div class="banner">
-  {{ list_playlist_articles name="PortadaCol3Banner" }}
-    <p>
-    <a href="{{ $gimme -> article -> enlace }}" target="_blank" >
-    <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
-    </a>
-    </p>
-  {{ /list_playlist_articles }}
-  </div><br>
-
-  <div class="blog_menu">
-    <table>
-      <tr>
-        <th>
-          LA CIUDAD CERCA DE TI
-        </th>
-      </tr>
-        {{ list_playlist_articles name="Interes" }}
-          {{ if $gimme->current_list->at_end }}         
-            <tr class="ultimo">
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ else }}
-            <tr>
-              <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
-              </td>
-            </tr>
-          {{ /if }}
-        {{ /list_playlist_articles }}    
-    </table>
-  </div>
+  <div class="col-md-5 col2">
+    {{ list_playlist_articles name="SeccionCol2"}}
+      {{ if in_array($gimme -> article -> subseccion, $categorias) }} 
+        {{ if $gimme -> article -> seccion_sin_recorrido }}
+          <div class="seccion_sin_recorrido_col2">
+            <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
+            <a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+            <p class="datos_articulos">
+            {{ list_article_authors }}
+            {{ $gimme->author->name }} ::
+            {{ /list_article_authors }}
+            Fecha de publicacion {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            </p>
+            <p>{{ $gimme->article->entradilla }}</p><hr>
+          </div>
+        {{elseif $gimme -> article -> seccion_sin_recorrido_foto }}
+          <div class="seccion_sin_recorrido_foto_col2">
+            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+            <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
+            <a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+            <p class="datos_articulos">
+            {{ list_article_authors }}
+            {{ $gimme->author->name }} ::
+            {{ /list_article_authors }}
+            Fecha de publicacion {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            </p>
+            <p>{{ $gimme->article->entradilla }}</p>
+          </div><hr>
+        {{ /if }}
+      {{ /if}}
+    {{ /list_playlist_articles }}
   {{ /if }}
 </div>
