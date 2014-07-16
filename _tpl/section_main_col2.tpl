@@ -1,6 +1,13 @@
-<div class="col-md-5 col2">
   <!--si no es nulo y coincide pintamos como subseccion-->
   {{ if isset($subseccion_filtrada) }}
+  <div class="col-md-2 col2">
+    <div class="banner">
+      {{ list_playlist_articles name="SubSeccionCol2Banner" }}
+        <p><a href="{{ $gimme->article->enlace }}" target="_blank"><img src="{{url options="image 1"}}" /></a>
+            </p>
+      {{ /list_playlist_articles}}
+    </div>
+  <!--
     {{ list_playlist_articles name="SubSeccionCol2" }}
       {{ if $gimme -> article -> subseccion == {{ $subseccion_filtrada}} }}
         {{ if $gimme -> article -> subseccion_con_recorrido }}
@@ -32,8 +39,10 @@
         {{ /if }}
       {{ /if }}
     {{ /list_playlist_articles }}
+    -->
 <!-- si es nulo pinta como seccion -->
   {{ else }}
+  <div class="col-md-5 col2">
     {{ list_playlist_articles name="SeccionCol2"}}
       {{ if in_array($gimme -> article -> subseccion, $categorias) }} 
         {{ if $gimme -> article -> seccion_sin_recorrido }}
