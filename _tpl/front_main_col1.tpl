@@ -17,50 +17,59 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       <div class="portada_con_recorrido_col1">
         <div class="row">
           <div class="col-md-5">
-            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />  
+            <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
           </div>
-          <div class="col-md-7">
-            <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}<p>
-            <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+          <div class="col-md-7">          
+            <p class="semibold_font_3">
+            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
+             </p>
+             
+            <p class="normal_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
             </a></p>
-            <p class="datos_articulos"> 
+            <p class="datos_articulos normal_font_1"> 
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
             {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
-            <p>{{ $gimme->article->entradilla }}</p>
+            <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>
         </div>              
       </div>
 
     {{elseif $gimme -> article -> portada_sin_recorrido }}
       <div class="portada_sin_recorrido_col1">
-        <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
-        <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
-        <p class="datos_articulos">
+        <p class="semibold_font_3">
+         <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
+        </p>
+             
+        <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+        <p class="datos_articulos normal_font_1">
         {{ list_article_authors }}
         {{ $gimme->author->name|upper }} ::
         {{ /list_article_authors }}
         {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
         </p>
-        <p>{{ $gimme->article->entradilla }}</p><hr>
+        <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p><hr>
       </div>
     {{elseif $gimme -> article -> portada_sin_recorrido_foto }}
       <div class="portada_sin_recorrido_foto_col1">
         <div class="img_sin_foto">
-          <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  />
+          <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  /></a>
         </div>
         <div class="texto_sin_foto">
-          <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
-          <p><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+            <p class="semibold_font_3">
+            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
+             </p>
+             
+          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
           </a></p>
-          <p class="datos_articulos">
+          <p class="datos_articulos normal_font_1">
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
           {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
           </p>
-          <p>{{ $gimme->article->entradilla }}</p>
+          <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div>      
       </div><hr>
     {{ /if }}
