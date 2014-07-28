@@ -74,22 +74,17 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
      {{ list_playlist_articles name="slider" }}
        {{ if $contador_slider == 0 }} 
            <div class="item active">
-              <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
-              <div class="carousel-caption">
-                {{ $gimme -> article -> name }}
-            </div>
+              {{ $gimme -> article -> titular }}
+              <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
           </div>
       {{ else }}
            <div class="item">
-              <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
-              <div class="carousel-caption">
-                 {{ $gimme -> article -> name }}
-              </div>
+                 {{ $gimme -> article -> titular }}
+              <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
            </div>
      {{ /if }}
      {{ $contador_slider=$contador_slider+1 }}
      {{ /list_playlist_articles }}
-
     Esto es el pie..
   </div>
 
