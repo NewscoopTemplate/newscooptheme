@@ -92,6 +92,65 @@ articulo_foto_lateral > posibilidad 2 de forma de mostrar articulos.
 
 
 
+Listas de artículos 
+====================================
+
+
+EN LA PORTADA:
+
+PortadaCol1 -> columna 1 de la portada (articulos de "tipo articulo=articulo")
+
+PortadaCol2 -> columna 2 de la portada (articulos de "tipo articulo=articulo")
+PortadaCol2Banner -> ?
+slider -> columna 2 de la portada, los articulos que se van mostrando en el slider (articulos de "tipo articulo=articulo");
+
+Blogs -> columna 3 de la portada/seccion/subseccion/articulo, lista de blogs (articulos de "tipo articulo=enlaces")
+PortadaCol3Banner -> columna 3 de la portada, banners de anuncios (articulos de "tipo articulo=banner")
+Interes -> columna 3 de la portada/seccion/subseccion/articulo, lista de enlaces de interés (articulos de "tipo articulo=enlaces")
+
+
+
+
+EN LA SECCION:
+
+SeccionCol1 -> columna 1 de la seccion (articulos de "tipo articulo=articulo")
+
+SeccionCol2 -> columna 2 de la seccion (articulos de "tipo articulo=articulo")
+SeccionCol2Banner -> ?
+
+Blogs -> columna 3 de la portada/seccion/subseccion/articulo, lista de blogs (articulos de "tipo articulo=enlaces")
+SeccionCol3Banner -> columna 3 de la seccion, banners de anuncios (articulos de "tipo articulo=banner")
+Interes -> columna 3 de la portada/seccion/subseccion/articulo, lista de enlaces de interés (articulos de "tipo articulo=enlaces")
+
+
+
+
+EN LA SUBSECCION:
+
+SubSeccionCol1 -> columna 1 de la subseccion (articulos de "tipo articulo=articulo")
+
+SubSeccionCol2Banner -> banners (articulo de "tipo articulo=banner")
+
+Blogs -> columna 3 de la portada/seccion/subseccion/articulo, lista de blogs (articulos de "tipo articulo=enlaces")
+SubSeccionCol3Banner -> ?
+Interes -> columna 3 de la portada/seccion/subseccion/articulo, lista de enlaces de interés (articulos de "tipo articulo=enlaces")
+
+
+
+
+EN EL ARTICULO:
+
+ArticuloCol1 -> columna 1 de la pagina articulo (articulos de "tipo articulo="articulo")
+
+ArticuloCol2Banner -> banners (articulo de "tipo articulo=banner")
+
+Blogs -> columna 3 de la portada/seccion/subseccion/articulo, lista de blogs (articulos de "tipo articulo=enlaces")
+ArticuloCol3Banner -> ?
+Interes -> columna 3 de la portada/seccion/subseccion/articulo, lista de enlaces de interés (articulos de "tipo articulo=enlaces")
+
+
+
+
 
 
 
