@@ -164,6 +164,7 @@ CREACIÓN DE TÓPICOS:
 Formato del tópico padre:	seccion_x
 	donde x, es el número correspondiente. 
 	IMPORTANTE: el orden de los padres ha de coincidir con el orden de las secciones: por ejemplo
+			Los hijos también deberian llevar, pero ahora al principio el numero de seccion correspondiente de su padre.
 			Si nuestra seccion BARRIOS es la tercera, deberemos crear la siguiente estructura de tópicos
 			
 				+ seccion_1
@@ -173,9 +174,9 @@ Formato del tópico padre:	seccion_x
 					-lo que sea de nuevo..
 					...
 				+ seccion_3
-					-delicias
-					-parquesol
-					-rondilla
+					-1_delicias
+					-1_parquesol
+					-1_rondilla
 					
 			Los siguientes ejemplos serían erróneos:
 				+ barrios_1
