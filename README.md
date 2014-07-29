@@ -44,11 +44,12 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 Tipos de artículo
 =================
 
-articulo > tipo de articulo principal (el de los artículos)
+articulo > tipo de articulo principal (articulos, articulos del slider)
 
-banner > tipo de artículo para los banners
+banner > tipo de artículo para los banners (da igual en que parte estén)
 
-imagen > tipo de artículo para las imágenes
+enlaces > tipo de artículo para las imágenes (para los blogs y enlaces de interés)
+
 
 
 
@@ -66,7 +67,6 @@ sumario > el sumario de la noticia (texto 'titular' resaltado dentro de una noti
 
 subtitular > subtitular de la noticia
 
-subseccion > las noticias se organizan en secciones, y éstas a vez en un nivel más, subsecciones
 
 switches:
 
@@ -89,6 +89,8 @@ subseccion_sin_recorrido > si la noticia no tiene foto (implicitamente ocupa tod
 articulo_foto_superior > posibilidad 1 de forma de mostrar articulos.
 
 articulo_foto_lateral > posibilidad 2 de forma de mostrar articulos.
+
+
 
 
 
@@ -151,6 +153,53 @@ Interes -> columna 3 de la portada/seccion/subseccion/articulo, lista de enlaces
 
 
 
+Tópicos
+====================================
+
+Usaremos los tópicos para definir en que 'subsecciones' estará dicha noticia (puede pertenecer a secciones diferentes)
+
+
+CREACIÓN DE TÓPICOS:
+
+Formato del tópico padre:	seccion_x
+	donde x, es el número correspondiente. 
+	IMPORTANTE: el orden de los padres ha de coincidir con el orden de las secciones: por ejemplo
+			Si nuestra seccion BARRIOS es la tercera, deberemos crear la siguiente estructura de tópicos
+			
+				+ seccion_1
+					-lo que sea
+					...
+				+ seccion_2
+					-lo que sea de nuevo..
+					...
+				+ seccion_3
+					-delicias
+					-parquesol
+					-rondilla
+					
+			Los siguientes ejemplos serían erróneos:
+				+ barrios_1
+					-delicias
+					-parquesol
+					-rondilla
+				+ barrios
+					-delicias
+					-parquesol
+					-rondilla
+				+ mi_seccion_primera
+					-delicias
+					-parquesol
+					-rondilla
+				+ seccion_1 
+					-delicias
+					-parquesol
+					-rondilla
+				
+ASIGNACIÓN DE TÓPICOS:				
+
+	Al crear un artículo, habrá que asignarle SIEMPRE, el tópico padre que contenga al tópico hijo que estemos asignando.
+	Se puede asignar múltiples tópicos, y de diferentes secciones (padres) según convenga.
+	
 
 
 
