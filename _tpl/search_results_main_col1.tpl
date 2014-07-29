@@ -1,4 +1,4 @@
-<!-
+<!--
 
   Este seria el resultado de las busquedas...
   en principio, ya que no tenemos un diseño, lo mantenemos 'parecido' al template de las subsecciones..
@@ -24,17 +24,19 @@
 
           <div class="col-md-9">
 
-            <div class="seccion_resultados">
-              <p class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</p>
+            <div class="seccion_resultados">              
+              <p class="semibold_font_3">
+                <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>  
+             </p>
             </div>
 
             <div class="cabecera_resultados">
               <h2>
-              <a href="{{ uri options="article" }}" rel="bookmark" title="{{ $gimme->article->name }}">
+              <a href="{{ uri options="article" }}" rel="bookmark" title="{{ $gimme->article->name }}" class="normal_font_2">
                 {{ $gimme -> article -> titular }}
                 </a>
               </h2>
-              <p class="datos_articulos"> 
+              <p class="datos_articulos normal_font_1"> 
               {{ list_article_authors }}
               {{ $gimme->author->name|upper }} ::
               {{ /list_article_authors }}
@@ -45,7 +47,7 @@
             </div>
 
             <div class="entradilla_resultados">
-              {{ $gimme->article->entradilla }}
+              <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
             </div>
         
             <hr>
@@ -66,10 +68,6 @@
           <div class="postinformation">No se han encontrado resultados
           </div>
         {{ /if }}
-
-
-
-
       </div> <!--row fin-->
 
   </div>
