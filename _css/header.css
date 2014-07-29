@@ -7,7 +7,7 @@ body{
 }
 
 .normal_font_1{
-	font-family: "Source Sans Pro";
+	font-family: Arial;
 	font-weight: 400;
 	font-style: normal;
 	font-size: 12px;
@@ -23,7 +23,7 @@ body{
 }
 
 .semibold_font_1{
-	font-family: "Source Sans Pro";
+	font-family: Arial;
 	font-weight: 600;
 	font-style: normal;
 	font-size: 12px;
@@ -45,10 +45,18 @@ body{
 	font-size: 17px;
 	line-height: 17px;
 }
-.bold_font{
+.bold_font_1{
 	font-family: "Source Sans Pro";
 	font-weight: 700;
 	font-style: normal;
 	font-size: 16px;
+	line-height: 17px;
+}
+
+.bold_font_2{
+	font-family: "Source Sans Pro";
+	font-weight: 700;
+	font-style: normal;
+	font-size: 15px;
 	line-height: 17px;
 }
