@@ -1,11 +1,11 @@
-.search input:nth-child(2){
+.search .busca{
   width: 80%;
   float: left;
 }
 
-.col1 .search input:nth-child(2){
+.col1 .search .busca{
   width: 96%;
-  float: left;
+  float: left;   
 }
 
 .replace{
@@ -14,5 +14,5 @@
   border: solid #b0c2ff 1px;
   width: 24px;
   height: 26px;
-  float: left;
+  float: left;   
 }
