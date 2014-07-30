@@ -5,7 +5,7 @@ Esta sería la parte grafica del cuadro de busqueda..
 -->
 <div class="search">
   {{ search_form template="_tpl/search_results.tpl" submit_button="&nbsp;" html_code="id=\"topSearch\"" button_html_code="class=\"replace\"" }}
-  {{ camp_edit object="search" attribute="keywords" html_code="placeholder=\"Buscar contenido\""  }}
+  {{ camp_edit object="search" attribute="keywords" html_code="placeholder=\"Buscar contenido\" class=\"busca\""  }}
   {{ /search_form }}
 </div>
 <!--
