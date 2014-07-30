@@ -4,10 +4,10 @@
     {{ list_sections }}           
       {{ if strstr({{ $smarty.server.REQUEST_URI }}, {{ uri options="section" }}) }}
       <li class="seccion nav_{{ $gimme->section->number }} estoy">
-        <a  href="{{ uri options='section' }}">{{ $gimme->section->name|upper }}</a>
+        <a  href="{{ uri options='section' }}" class="semibold_font_2">{{ $gimme->section->name|upper }}</a>
       {{ else }}
       <li class="seccion nav_{{ $gimme->section->number }}">
-        <a  href="{{ uri options='section' }}">{{ $gimme->section->name|upper }}</a>
+        <a  href="{{ uri options='section' }}" class="semibold_font_2">{{ $gimme->section->name|upper }}</a>
       {{ /if }}     
       </li>
       {{ $count=$count+1 }}
