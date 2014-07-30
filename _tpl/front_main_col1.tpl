@@ -20,10 +20,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
           </div>
           <div class="col-md-7">          
-            <p class="semibold_font_3">
-            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
-             </p>
-             
+            <p class="semibold_font_2">
+            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
+             </p>             
             <p class="normal_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
             </a></p>
             <p class="datos_articulos normal_font_1"> 
@@ -38,7 +37,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 
     {{elseif $gimme -> article -> portada_sin_recorrido }}
       <div class="portada_sin_recorrido_col1">
-        <p class="semibold_font_3">
+        <p class="semibold_font_2">
          <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
         </p>
              
@@ -57,7 +56,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  /></a>
         </div>
         <div class="texto_sin_foto">
-            <p class="semibold_font_3">
+            <p class="semibold_font_2">
             <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
              </p>
              
