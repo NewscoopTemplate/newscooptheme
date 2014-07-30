@@ -15,7 +15,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
   {{ list_playlist_articles name="PortadaCol2" }}
     {{if $gimme -> article -> portada_sin_recorrido }}
       <div class="portada_sin_recorrido_col2">
-          <p class="semibold_font_3">
+          <p class="semibold_font_2">
             <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
            </p>
              
@@ -31,7 +31,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
     {{elseif $gimme -> article -> portada_sin_recorrido_foto }}
       <div class="portada_sin_recorrido_foto_col2">
       <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
-             <p class="semibold_font_3">
+             <p class="semibold_font_2">
             <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
              </p>
              
@@ -74,12 +74,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
      {{ list_playlist_articles name="slider" }}
        {{ if $contador_slider == 0 }} 
            <div class="item active">
-              {{ $gimme -> article -> titular }}
+              <p class="semibold_font_2">{{ $gimme -> article -> titular }}</p>
               <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
           </div>
       {{ else }}
            <div class="item">
-                 {{ $gimme -> article -> titular }}
+                 <p class="semibold_font_2">{{ $gimme -> article -> titular }}</p>
               <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
            </div>
      {{ /if }}
