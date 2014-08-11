@@ -8,6 +8,10 @@ li a{
 	color: black;
 }
 
+a img:hover{
+	opacity: 0.3;
+}
+
 hr {
 	border: 1px solid #BDBDBD; 
 }
@@ -43,3 +47,4 @@ hr {
 .datos_articulos{
 	color: red;
 }
+
