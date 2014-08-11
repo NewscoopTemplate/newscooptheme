@@ -1,16 +1,16 @@
-.portada_con_recorrido_col1, .seccion_con_recorrido_col1{
+.con_borde{
   border: 1px solid grey;
   margin-bottom: 2%;
   padding:2%;
 }
 
-.portada_sin_recorrido_col1, .seccion_sin_recorrido_col1{
+.sin_borde{
   margin-bottom: 2%;
 }
 
-.portada_sin_recorrido_foto_col1, .seccion_sin_recorrido_foto_col1{
-  background-color: #BDBDBD;
-    
+.fondo_gris{
+  background-color: #D4D5D7;    
   margin-bottom: 2%;
   padding: 2%;
 }
+
