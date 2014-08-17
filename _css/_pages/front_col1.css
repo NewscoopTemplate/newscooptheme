@@ -1,16 +1,21 @@
-.con_borde{
+/* Estilos para la primera columna de portada y subpaginas */
+
+/* Hay que añadir de donde del arbol DOM vienen */
+
+.col1 .con_borde, .col2 .con_borde { 
   border: 1px solid grey;
   margin-bottom: 2%;
   padding:2%;
 }
 
-.sin_borde{
+.col1 .sin_borde, .col2 .sin_borde {
   margin-bottom: 2%;
 }
 
-.fondo_gris{
+.col1 .fondo_gris, .col2 .fondo_gris {
   background-color: #D4D5D7;    
   margin-bottom: 2%;
   padding: 2%;
 }
 
+/* Añadir el resto que falta */

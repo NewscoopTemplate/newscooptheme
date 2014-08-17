@@ -1,4 +1,6 @@
-.portada_sin_recorrido_col2,.portada_sin_recorrido_foto_col2{
+/* Similar al anterior, es bueno poner comentarios que son gratis */
+
+.portada_sin_recorrido_col2, .portada_sin_recorrido_foto_col2{
     margin-bottom: 4%;
 }
 

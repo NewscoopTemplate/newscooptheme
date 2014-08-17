@@ -1,39 +1,62 @@
+/* 
+
+Definicion de elementos de tercera columna
+Valido para Portada, Seccion, Subseccion y Final
+
+version 0.1
+
+Arriba ves un ejemplo de que es lo que hay aqui y donde lo podemos encontrar
+Revisa el arbol DOM que aqui hay que ponerlo tambien a modo de que no sean genericos y entre ellos no se pegen.
+
+De lo abstracto, lo mayor a lo menor, lo concreto y en estos CSS se pone lo concreto
+*/
+
+
+/* Tabla para el menu de blogs */
 .blog, .blog_menu table{
   width: 100%;
 }
 
+/* Cabecera de la tabla del menu de blogs */
 .blog th{
   color:white;
   background-color: #B6C1FF;
   padding: 1%;
 }
 
+/* Fila de la tabla del menu de blogs */
 .blog tr{
   border-bottom: 1px solid #B6C1FF;
 }
 
+/* Raya del ultimo elemento del menu de blogs */
 .blog .ultimo{
   border-bottom-width: 3px;
 }
 
+/* Cabecera para el menu de blogs */
 .blog_menu th{
   color: white;
   background-color: #B75454;
   padding: 1%;
 }
 
+/* Fila para el menu de blogs */
 .blog_menu tr{
   border-bottom: 1px solid #B75454;
 }
 
+/* Raya para el ultimo elemento del menu de blogs */
 .blog_menu .ultimo{
   border-bottom-width: 3px;
 }
 
+/* Ponemos las listas como bloque para que las muestre de golpe */
 .col3 li{
   display: block;
 }
 
+/* Colores para los menus de las secciones */
 .menu_seccion_1{
   border-top: 15px solid #930DA1;
   border-bottom: 3px solid #930DA1;
@@ -89,6 +112,7 @@
   border-left: 1px solid #F136D8;
 }
 
+/* Colores para los enlaces y definicion */
 .link_1{
   border-bottom: 1px solid #930DA1;
   margin: 1%;
@@ -126,11 +150,13 @@
   margin: 1%;
 }
 
+/* Margenes de ajuste para los menus de seccion */
 .menu_seccion_1,.menu_seccion_2,.menu_seccion_3,.menu_seccion_4,.menu_seccion_5,
 .menu_seccion_6,.menu_seccion_7,.menu_seccion_8,.menu_seccion_9{
   margin: -7% 0 5% 0; 
 }
 
+/* Margenes de ajuste para las listas de los menus de las secciones */
 .menu_seccion_1 li,.menu_seccion_2 li,.menu_seccion_3 li,.menu_seccion_4 li,.menu_seccion_5 li,
 .menu_seccion_6 li,.menu_seccion_7 li,.menu_seccion_8 li,.menu_seccion_9 li{
   padding: 2%;
