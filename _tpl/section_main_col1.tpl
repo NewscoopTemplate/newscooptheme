@@ -2,30 +2,23 @@
 
 {{ if isset($subseccion_filtrada) }}
   <div class="col-md-8 col1"> 
-    {{ $gimme->section->name }} /{{ $subseccion_filtrada }}   
+    <p class="semibold_font_3 nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }} / {{ $subseccion_filtrada|upper }}</p>   
     {{ list_playlist_articles name="SubSeccionCol1" }}
              {{ $baliza=0 }} 
      {{ list_article_topics }} 
-
        {{ if substr($gimme -> topic -> name,2) == {{ $subseccion_filtrada}} }} 
-        {{ if $gimme -> article -> subseccion_con_recorrido }}
+        {{ if $gimme -> article -> subseccion_con_recorrido && $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
           <div class="subseccion_con_recorrido_col1">
             <div class="row">              
-              <div class="col-md-7">              
-                {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}  
-                   {{ if $baliza==0 }}
-                          <p class="semibold_font_2">{{ $gimme -> section -> name|upper }} / <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ substr($gimme->topic->name,0,1) }}">{{ substr($gimme->topic->name|upper,2) }}</a> <p>         
-                      {{ $baliza=1 }}       
-                   {{ /if }}
-                {{/if }}           
-                <p class="semibold_font_3"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+              <div class="col-md-7">                        
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
                 {{ $gimme->author->name }} ::
                 {{ /list_article_authors }}
                  {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                 </p>
-                <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
               <div class="col-md-5">
                 <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
@@ -33,27 +26,18 @@
             </div>                  
           </div><!-- fin subseccion_con_recorrido_col1 -->
           <hr>
-          {{elseif $gimme -> article -> subseccion_sin_recorrido }}
+        
+      <!-- este ya no hace falta, pues es siempre de tipo: lista con foto y texto apaisado..-->
+          {{ else }}
           <div class="subseccion_sin_recorrido_col1">
-            {{ $indice=0 }}     
-             {{ list_article_topics }}  
-            {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-              {{ $indice = substr($gimme->topic->name,0,1) }}
-                 {{ if $baliza==0 }}
-                          <p class="semibold_font_2">{{ $gimme -> section -> name|upper }} / <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ substr($gimme->topic->name,0,1) }}">{{ substr($gimme->topic->name|upper,2) }}</a></p>                        
-                    {{ $baliza=1 }}       
-                 {{ /if }}
-
-                      {{/if }}
-            {{ /list_article_topics }}
-            <p class="semibold_font_3"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+            <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
             <p class="datos_articulos normal_font_1">
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
             </p>
-            <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+            <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div> <!-- fin subseccion_sin_recorrido_col1 -->
           <hr>
         {{ /if }}
@@ -64,77 +48,219 @@
 <!-- si es nulo pinta como seccion -->
   {{ else }}
   <div class="col-md-5 col1">  
-    {{ list_playlist_articles name="SeccionCol1"}}
+    {{ list_playlist_articles name="Seccion{{$gimme->section->number}}Col1"}}
     {{ $contadora=0 }}
       {{ list_article_topics }}
       {{ if $contadora == 0 }}
         {{ if in_array( $gimme -> topic -> name , $categorias)}}      
           {{ if $gimme -> article -> seccion_con_recorrido }}
-            <div class="seccion_con_recorrido_col1">
-              <div class="row">
-                <div class="col-md-5">
-                    <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
-                <!-- aqui lo cortado -->
-                </div>
-                <div class="col-md-7">
-                  {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      {{ $indice = substr($gimme->topic->name,0,1) }}
-                      <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_2">{{substr($gimme->topic->name|upper,2)}}</a>         
-                    {{/if }}
-                  {{ /list_article_topics }}                  
-                  <p class="normal_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
-                  </p>
-                  <p class="datos_articulos normal_font_1">
-                  {{ list_article_authors }}
-                  {{ $gimme->author->name|upper }} ::
-                  {{ /list_article_authors }}
-                   {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-                  </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
-                </div>
-              </div>           
-            </div><!-- fin  seccion_con_recorrido_col1 -->
+            {{ if $gimme->article->con_borde_seccion }}
+              <div class="seccion_con_recorrido_col1 con_borde">              
+                <div class="row">
+                  <div class="col-md-5">
+                      <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
+                  <!-- aqui lo cortado -->
+                  </div>
+                  <div class="col-md-7">
+                    {{ $indice=0 }}     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>         
+                      {{/if }}
+                    {{ /list_article_topics }}                  
+                    <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+                    </p>
+                    <p class="datos_articulos normal_font_1">
+                    {{ list_article_authors }}
+                    {{ $gimme->author->name|upper }} ::
+                    {{ /list_article_authors }}
+                     {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                    </p>
+                    <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+                  </div>
+                </div>           
+              </div><hr><!-- fin  seccion_con_recorrido_col1 -->
+            {{ elseif $gimme->article->con_fondo_gris_seccion }}
+              <div class="seccion_con_recorrido_col1 fondo_gris">              
+                <div class="row">
+                  <div class="col-md-5">
+                      <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
+                  <!-- aqui lo cortado -->
+                  </div>
+                  <div class="col-md-7">
+                    {{ $indice=0 }}     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>         
+                      {{/if }}
+                    {{ /list_article_topics }}                  
+                    <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+                    </p>
+                    <p class="datos_articulos normal_font_1">
+                    {{ list_article_authors }}
+                    {{ $gimme->author->name|upper }} ::
+                    {{ /list_article_authors }}
+                     {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                    </p>
+                    <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+                  </div>
+                </div>           
+              </div><hr><!-- fin  seccion_con_recorrido_col1 -->
+            {{ else }}
+              <div class="seccion_con_recorrido_col1 sin_borde">              
+                <div class="row">
+                  <div class="col-md-5">
+                      <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
+                  <!-- aqui lo cortado -->
+                  </div>
+                  <div class="col-md-7">
+                    {{ $indice=0 }}     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}
+                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>         
+                      {{/if }}
+                    {{ /list_article_topics }}                  
+                    <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
+                    </p>
+                    <p class="datos_articulos normal_font_1">
+                    {{ list_article_authors }}
+                    {{ $gimme->author->name|upper }} ::
+                    {{ /list_article_authors }}
+                     {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                    </p>
+                    <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+                  </div>
+                </div>           
+              </div><hr><!-- fin  seccion_con_recorrido_col1 -->
+            {{ /if }}<!-- fin if seccion_con_recorrido bordes y fondo gris -->            
 
           {{elseif $gimme -> article -> seccion_sin_recorrido }}
-            <div class="seccion_sin_recorrido_col1">            
-              {{ $indice=0 }}     
-               {{ list_article_topics }}  
-                {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                  {{ $indice = substr($gimme->topic->name,0,1) }}
-                  <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_2">{{substr($gimme->topic->name|upper,2)}}</a>       
-                {{/if }}
-              {{ /list_article_topics }}             
-              <p class="normal_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
-              <p class="datos_articulos normal_font_1">
-              {{ list_article_authors }}
-                {{ $gimme->author->name|upper }} ::
-              {{ /list_article_authors }}
-               {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-              </p>
-              <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p><hr>
-            </div><!-- fin seccion_sin_recorrido_col1-->
+            {{ if $gimme->article->con_borde_seccion }}
+              <div class="seccion_sin_recorrido_col1 con_borde">            
+                {{ $indice=0 }}     
+                 {{ list_article_topics }}  
+                  {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                    {{ $indice = substr($gimme->topic->name,0,1) }}
+                    <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>       
+                  {{/if }}
+                {{ /list_article_topics }}             
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+                <p class="datos_articulos normal_font_1">
+                {{ list_article_authors }}
+                  {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                </p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div><hr><!-- fin seccion_sin_recorrido_col1-->
+            {{ elseif $gimme->article->con_fondo_gris_seccion }}
+              <div class="seccion_sin_recorrido_col1 fondo_gris">            
+                {{ $indice=0 }}     
+                 {{ list_article_topics }}  
+                  {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                    {{ $indice = substr($gimme->topic->name,0,1) }}
+                    <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>       
+                  {{/if }}
+                {{ /list_article_topics }}             
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+                <p class="datos_articulos normal_font_1">
+                {{ list_article_authors }}
+                  {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                </p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div><hr><!-- fin seccion_sin_recorrido_col1-->
+            {{ else}}
+              <div class="seccion_sin_recorrido_col1 sin_borde">            
+                {{ $indice=0 }}     
+                 {{ list_article_topics }}  
+                  {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                    {{ $indice = substr($gimme->topic->name,0,1) }}
+                    <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>       
+                  {{/if }}
+                {{ /list_article_topics }}             
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+                <p class="datos_articulos normal_font_1">
+                {{ list_article_authors }}
+                  {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                </p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div><hr><!-- fin seccion_sin_recorrido_col1-->
+            {{ /if }}<!-- fin seccion_sin_recorrido bordes y fondos gris -->            
+
           {{elseif $gimme -> article -> seccion_sin_recorrido_foto }}
-            <div class="seccion_sin_recorrido_foto_col1">
-               <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"/></a>
-               {{ $indice=0 }}     
-               {{ list_article_topics }}  
-                {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                  {{ $indice = substr($gimme->topic->name,0,1) }}
-                  <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_2">{{substr($gimme->topic->name|upper,2)}}</a>        
-                {{/if }}
-              {{ /list_article_topics }}
-              <p class="normal_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
-              <p class="datos_articulos normal_font_1">
-              {{ list_article_authors }}
-                {{ $gimme->author->name|upper }} ::
-              {{ /list_article_authors }}
-               {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-              </p>
-              <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
-            </div><!-- fin seccion_sin_recorrido_foto_col1 --><hr>
-          {{ /if }}
+            {{ if $gimme->article->con_borde_seccion }}
+              <div class="seccion_sin_recorrido_foto_col1 con_borde">
+                 <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"/></a>
+                 <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+                 {{ $indice=0 }}     
+                 {{ list_article_topics }}  
+                  {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                    {{ $indice = substr($gimme->topic->name,0,1) }}
+                    <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
+                  {{/if }}
+                {{ /list_article_topics }}
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+                <p class="datos_articulos normal_font_1">
+                {{ list_article_authors }}
+                  {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                </p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div><hr><!-- fin seccion_sin_recorrido_foto_col1 -->
+            {{ elseif $gimme->article->con_fondo_gris_seccion }}
+              <div class="seccion_sin_recorrido_foto_col1 fondo_gris">
+                 <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"/></a>
+                 <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+                 {{ $indice=0 }}     
+                 {{ list_article_topics }}  
+                  {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                    {{ $indice = substr($gimme->topic->name,0,1) }}
+                    <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
+                  {{/if }}
+                {{ /list_article_topics }}
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+                <p class="datos_articulos normal_font_1">
+                {{ list_article_authors }}
+                  {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                </p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div><hr><!-- fin seccion_sin_recorrido_foto_col1 -->
+            {{ else }}
+              <div class="seccion_sin_recorrido_foto_col1 sin_borde">
+                 <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"/></a>
+                 <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+                 {{ $indice=0 }}     
+                 {{ list_article_topics }}  
+                  {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                    {{ $indice = substr($gimme->topic->name,0,1) }}
+                    <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
+                  {{/if }}
+                {{ /list_article_topics }}
+                <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+                <p class="datos_articulos normal_font_1">
+                {{ list_article_authors }}
+                  {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+                </p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div><hr><!-- fin seccion_sin_recorrido_foto_col1 -->
+            {{ /if }}<!-- fin seccion_sin_recorrrido_foto bordes y fondo gris -->
+            
+          {{ /if }}<!-- switches de los articulos -->
           {{ $contadora=1 }}
       {{ /if}}
 
