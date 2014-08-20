@@ -13,24 +13,10 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 -->
 <div class="col-md-4 col2">
   {{ list_playlist_articles name="PortadaCol2" }}
-    {{if $gimme -> article -> portada_sin_recorrido }}
-      {{ if $gimme->article->sin_borde }}
-        <div class="portada_sin_recorrido_col2 sin_borde">
-          <p class="semibold_font_2">
-            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
-           </p>             
-          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
-          <p  class="datos_articulos normal_font_1">
-          {{ list_article_authors }}
-          {{ $gimme->author->name|upper }} ::
-          {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-          </p>
-          <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
-        </div><hr>                                    
-      {{ elseif $gimme->article->con_borde }}
+    {{if $gimme -> article -> portada_sin_recorrido }}                                            
+      {{ if $gimme->article->con_borde_portada }}
         <div class="portada_sin_recorrido_col2 con_borde">
-          <p class="semibold_font_2">
+          <p class="semibold_font_3">
             <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
            </p>             
           <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
@@ -42,9 +28,23 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
-      {{ elseif $gimme->article->con_fondo_gris }}
+      {{ elseif $gimme->article->con_fondo_gris_portada }}
         <div class="portada_sin_recorrido_col2 fondo_gris">
-          <p class="semibold_font_2">
+          <p class="semibold_font_3">
+            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
+           </p>             
+          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+          <p  class="datos_articulos normal_font_1">
+          {{ list_article_authors }}
+          {{ $gimme->author->name|upper }} ::
+          {{ /list_article_authors }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          </p>
+          <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+        </div><hr>
+      {{ else }}
+        <div class="portada_sin_recorrido_col2 sin_borde">
+          <p class="semibold_font_3">
             <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
            </p>             
           <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
@@ -60,26 +60,13 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       
       <!-- fin if  portada_sin_recorrido -->
 
-    {{elseif $gimme -> article -> portada_sin_recorrido_foto }}
-      {{ if $gimme->article->sin_borde }}
-        <div class="portada_sin_recorrido_foto_col2 sin_borde">
-          <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
-          <p class="semibold_font_2">
-          <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
-          </p>               
-          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
-          <p class="datos_articulos normal_font_1">
-          {{ list_article_authors }}
-          {{ $gimme->author->name|upper }} ::
-          {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
-          </p>
-          <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
-        </div><hr>
-      {{ elseif $gimme->article->con_borde }}
+    {{elseif $gimme -> article -> portada_sin_recorrido_foto || $gimme->article->portada_con_recorrido }}
+      {{ if $gimme->article->con_borde_portada }}
         <div class="portada_sin_recorrido_foto_col2 con_borde">
           <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
-          <p class="semibold_font_2">
+          <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+          <p class="semibold_font_3">
           <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
           </p>               
           <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
@@ -91,10 +78,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
-      {{ elseif $gimme->article->con_fondo_gris }}
+      {{ elseif $gimme->article->con_fondo_gris_portada }}
         <div class="portada_sin_recorrido_foto_col2 fondo_gris">
           <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
-          <p class="semibold_font_2">
+          <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+          <p class="semibold_font_3">
           <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
           </p>               
           <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
@@ -106,8 +95,28 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
-      {{ /if }}
-      
+        {{ else }}
+          <div class="portada_sin_recorrido_foto_col2 sin_borde">
+          <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>
+          <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+          <p class="semibold_font_3">
+          <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
+          </p>               
+          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
+          <p class="datos_articulos normal_font_1">
+          {{ list_article_authors }}
+          {{ $gimme->author->name|upper }} ::
+          {{ /list_article_authors }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          </p>
+          <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+        </div><hr>
+      {{ /if }}<!-- fin if bordes y fondo gris -->
+    {{ else }}<!-- trata los banners -->
+        <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
+        <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+        </a><hr>
     {{ /if }}
   {{ /list_playlist_articles }} 
   
@@ -132,18 +141,18 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
        {{ list_playlist_articles name="slider" }}
          {{ if $contador_slider == 0 }} 
              <div class="item active">
-                <p class="semibold_font_2">{{ $gimme -> article -> titular }}</p>
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
+                <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:207px; "  /></a>         
             </div>
         {{ else }}
              <div class="item">
-                   <p class="semibold_font_2">{{ $gimme -> article -> titular }}</p>
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
+                   <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:207px; " /></a>         
              </div>
        {{ /if }}
        {{ $contador_slider=$contador_slider+1 }}
        {{ /list_playlist_articles }}
-      Esto es el pie..
+      
     </div>
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -153,11 +162,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
   </div><hr><!-- fin carrusel -->
+  <!--
   <div class="banner">
     {{ list_playlist_articles name="PortadaCol2Banner" }}
       <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
       <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
-      </a>
+      </a><hr>
     {{ /list_playlist_articles }}
-  </div> 
+  </div> -->
 </div>
