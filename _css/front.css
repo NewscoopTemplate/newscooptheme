@@ -5,11 +5,12 @@ img {
 a{
   color: black;
 }
-
-.col1{
+/* pinta el borde que sapara las columna 1 de la 2 */
+.content .col1{
   border-right: 1.5px solid #BDBDBD;
 }
 
-.col2{
+/* pinta el borde que sapara las columna 2 de la 3 */
+.content .col2{
   border-right: 1.5px solid #BDBDBD;
 }
