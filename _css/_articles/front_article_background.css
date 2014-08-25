@@ -1,55 +1,109 @@
-/* Hay que entender que los CSS son similares a la programación orientada a objetos, tienen herencia y similares, lo que nos ayuda a poder definir los basicos e ir heredando y ampliando segun lo que necesitemos, de esta forma podemos modificar un objeto sin cambiar nada de los padres y sin romper las cosas.
-
+/* Hay que entender que los CSS son similares a la programación orientada a objetos, 
+tienen herencia y similares, lo que nos ayuda a poder definir los basicos e ir heredando y 
+ampliando segun lo que necesitemos, de esta forma podemos modificar un objeto sin cambiar nada de los padres y sin romper las cosas.
 Te hago los ejemplos y continuas con los que quedan */
-
 /* Definicion de las imagenes en portada columna 1 */
 .col1 .portada_con_recorrido_col1.sin_borde img {
-	
 }
-
 .col1 .portada_con_recorrido_col1.con_borde img {
-
 }
-
 .col1 .portada_con_recorrido_col1.con_fondogris img {
-
 }
-
 /* ... continuar con el resto ... */
-
 /* Definicion de las imagenes en portada columna 2 */
 .col2 .portada_con_recorrido_col1.sin_borde img {
-	
 }
-
 .col2 .portada_con_recorrido_col1.con_borde img {
-
 }
-
 .col2 .portada_con_recorrido_col1.con_fondogris img {
-
 }
 
-/* ... continuar con el resto ... */
-
-/* Definicion de los datos extras, se supone que para todos son iguales y podemos definir varios a la vez */
-
-.col1 .portada_con_recorrido_col1 .datos_articulos.normal_font_1, .col1 .portada_sin_recorrido_col1 .datos_articulos.normal_font_1 {
-
-	/* Aqui podemos modificar justo los de ese sitio, solo hay que ver como he seguido el DOM, el arbol, de como se ha montado la web para definir esos elementos */
-
+/* Definicion de la fuente para el nombre de los autores y la fecha de publicacion columna 1 */
+.col1 .portada_con_recorrido_col1 .normal_font_1, .col1 .portada_sin_recorrido_col1 .normal_font_1, .col1 .portada_sin_recorrido_foto_col1 .normal_font_1  {
+	font-family: Arial;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
 }
 
-.col1 .portada_con_recorrido_col1 .datos_articulos .semibold_font_1, .col1 .portada_sin_recorrido_col1 .datos_articulos .semibold_font_1 {
-
-	/* Aqui podemos modificar justo los de ese sitio, solo hay que ver como he seguido el DOM, el arbol, de como se ha montado la web para definir esos elementos */
-
+/* Definicion de la fuente para el pie de las fotos columna 1 */
+.col1 .portada_sin_recorrido_foto_col1 .normal_font_2, .col2 .portada_sin_recorrido_foto_col1 .normal_font_2{
+	font-family: "Source Sans Pro";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 11px;
+	line-height: 14px;
+	border-bottom: 1px dotted #888;  
 }
 
-.col1 .portada_con_recorrido_col1 .datos_articulos .semibold_font_2, .col1 .portada_sin_recorrido_col1 .datos_articulos .semibold_font_2 {
-
-	/* Aqui podemos modificar justo los de ese sitio, solo hay que ver como he seguido el DOM, el arbol, de como se ha montado la web para definir esos elementos */
+/* Definicion de la fuente para la entradilla columna 1 */
+.col1 .portada_con_recorrido_col1 .semibold_font_1, .col1 .portada_sin_recorrido_col1 .semibold_font_1, .col1 .portada_sin_recorrido_foto_col1 .semibold_font_1 {
+	font-family: Arial;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 18px;
 
 }
+/* Definicion de la fuente del titular columna 1 */
+.col1 .portada_con_recorrido_col1 .semibold_font_2, .col1 .portada_sin_recorrido_col1 .semibold_font_2, .col1 .portada_sin_recorrido_foto_col1 .semibold_font_2 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 26px;
+}
 
-/* ... continuar con el resto ... */
+/* Definicion de la fuente de las secciones columna 1 */
+.col1 .portada_con_recorrido_col1 .semibold_font_3, .col1 .portada_sin_recorrido_col1 .semibold_font_3, .col1 .portada_sin_recorrido_foto_col1 .semibold_font_3 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	padding-top: 2%;
+}
+
+/* Definicion de la fuente para el nombre de los autores y la fecha de publicacion columna 2 */
+.col2 .portada_con_recorrido_col2 .normal_font_1, .col1 .portada_sin_recorrido_col2 .normal_font_1, .col1 .portada_sin_recorrido_foto_col2 .normal_font_1  {
+	font-family: Arial;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+}
+
+/* Definicion de la fuente para el pie de las fotos columna 2 */
+.col2 .portada_sin_recorrido_foto_col2 .normal_font_2, .col2 .portada_sin_recorrido_foto_col2 .normal_font_2{
+	font-family: "Source Sans Pro";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 11px;
+	line-height: 14px;
+	border-bottom: 1px dotted #888;  
+}
+
+/* Definicion de la fuente para la entradilla columna 2 */
+.col2 .portada_con_recorrido_col2 .semibold_font_1, .col2 .portada_sin_recorrido_col2 .semibold_font_1, .col2 .portada_sin_recorrido_foto_col2 .semibold_font_1 {
+	font-family: Arial;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 18px;
+
+}
+/* Definicion de la fuente del titular columna 2 */
+.col2 .portada_con_recorrido_col2 .semibold_font_2, .col2 .portada_sin_recorrido_col2 .semibold_font_2, .col2 .portada_sin_recorrido_foto_col2 .semibold_font_2 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 26px;
+}
+
+/* Definicion de la fuente de las secciones columna 2 */
+.col2 .portada_con_recorrido_col2 .semibold_font_3, .col2 .portada_sin_recorrido_col2 .semibold_font_3, .col2 .portada_sin_recorrido_foto_col2 .semibold_font_3 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	padding-top: 2%;
+}
