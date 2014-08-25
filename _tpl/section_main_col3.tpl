@@ -1,4 +1,4 @@
-<div class="col-md-2 col3">
+<div class="col-xs-2 col3">
   <!--el menu de las subsecciones siempre-->
   <div class="menu_seccion_{{ $gimme->section->number }}">
     {{ set_language name="Spanish" }}
