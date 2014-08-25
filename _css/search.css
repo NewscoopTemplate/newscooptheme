@@ -1,18 +1,23 @@
-.search .busca{
+/* posion de la campo de texto del buscador  */
+.content .search .busca{
   width: 80%;
   float: left;
 }
 
-.col1 .search .busca{
-  width: 96%;
-  float: left;   
-}
-
-.replace{
+.content .search .replace{
   background-image: url("../dummy/rrss/search-icon.png");
   background-color: white;
   border: solid #b0c2ff 1px;
   width: 24px;
   height: 26px;
-  float: left;   
+  float: left;
+}
+
+.col1 #principal_busqueda .estilo_busqueda_embebido .search .busca{
+  width: 96%;
+  float: left;
+}
+
+.col1 #principal_busqueda .imagen_resultados a img{
+  margin-bottom: 0px;
 }
