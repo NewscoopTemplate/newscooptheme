@@ -1,6 +1,6 @@
   <!--si no es nulo y coincide pintamos como subseccion-->
   {{ if isset($subseccion_filtrada) }}
-  <div class="col-md-2 col2">    
+  <div class="col-xs-2 col2">    
     {{ list_playlist_articles name="SubSeccionCol2Banner" }}
       <div class="banner">
         <p><a href="http://{{ $gimme->article->enlace }}" target="_blank"><img src="{{url options="image 1"}}" /></a>
@@ -9,7 +9,7 @@
       {{ /list_playlist_articles}}
 
   {{ else }}<!-- si no existe la subseccion_filtrada -->
-  <div class="col-md-5 col2">
+  <div class="col-xs-5 col2">
     {{ list_playlist_articles name="Seccion{{$gimme->section->number}}Col2"}}
         {{ $contadora=0 }}
         {{ list_article_topics }}
@@ -75,7 +75,20 @@
             {{elseif $gimme -> article -> seccion_sin_recorrido_foto || $gimme->article->seccion_con_recorrido }}
               {{ if $gimme->article->con_borde_seccion }}
                 <div class="seccion_sin_recorrido_foto_col2 con_borde">
-                  <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+                  {{ if $gimme->article->has_image(2) }}
+                    {{ list_article_images }}
+                      {{ if $gimme->current_list->at_beginning }}
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                      {{ else }}
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                      {{ /if }}
+                    {{ /list_article_images }}
+                  {{ else }}
+                    <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+                  {{ /if }}<!-- fin ligthbox -->
                   <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p> 
                     {{ $indice=0 }}     
@@ -96,7 +109,20 @@
                 </div><hr>
               {{ elseif $gimme->article->con_fondo_gris_seccion }}
                 <div class="seccion_sin_recorrido_foto_col2 fondo_gris">
-                  <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+                  {{ if $gimme->article->has_image(2) }}
+                    {{ list_article_images }}
+                      {{ if $gimme->current_list->at_beginning }}
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                      {{ else }}
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                      {{ /if }}
+                    {{ /list_article_images }}
+                  {{ else }}
+                    <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+                  {{ /if }}<!-- fin ligthbox -->
                   <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p> 
                     {{ $indice=0 }}     
@@ -117,7 +143,20 @@
                 </div><hr>
               {{ else }}
                 <div class="seccion_sin_recorrido_foto_col2 sin_borde">
-                  <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+                  {{ if $gimme->article->has_image(2) }}
+                    {{ list_article_images }}
+                      {{ if $gimme->current_list->at_beginning }}
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                      {{ else }}
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                      {{ /if }}
+                    {{ /list_article_images }}
+                  {{ else }}
+                    <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+                  {{ /if }}<!-- fin ligthbox -->
                   <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p> 
                     {{ $indice=0 }}     
