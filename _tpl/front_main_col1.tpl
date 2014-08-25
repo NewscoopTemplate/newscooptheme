@@ -11,17 +11,30 @@ en que columna sale.
 Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 
 -->
-<div class="col-md-6 col1">
+<div class="col-xs-6 col1">
 
   {{ list_playlist_articles name="PortadaCol1" order="bypublishdate desc" }}
     {{ if $gimme -> article -> portada_con_recorrido }}
       {{ if $gimme->article->con_borde_portada }}
         <div class="portada_con_recorrido_col1 con_borde">
           <div class="row">
-            <div class="col-md-5">
-              <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>          
+            <div class="col-xs-5">
+              <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+              {{ if $gimme->article->has_image(2) }}
+                {{ list_article_images }}
+                  {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                  {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  {{ /if }}
+                {{ /list_article_images }}
+              {{ else }}
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+              {{ /if }}<!-- fin ligthbox -->
             </div>
-            <div class="col-md-7">          
+            <div class="col-xs-7">          
               <p class="semibold_font_3">
               <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
                </p>             
@@ -39,10 +52,23 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       {{ elseif $gimme ->article->con_fondo_gris_portada }}
         <div class="portada_con_recorrido_col1 fondo_gris">
           <div class="row">
-            <div class="col-md-5">
-              <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a> 
+            <div class="col-xs-5">
+               <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+              {{ if $gimme->article->has_image(2) }}
+                {{ list_article_images }}
+                  {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                  {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  {{ /if }}
+                {{ /list_article_images }}
+              {{ else }}
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+              {{ /if }}<!-- fin ligthbox -->
             </div>
-            <div class="col-md-7">          
+            <div class="col-xs-7">          
               <p class="semibold_font_3">
               <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
                </p>             
@@ -60,10 +86,23 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       {{ else }}
         <div class="portada_con_recorrido_col1 sin_borde">
           <div class="row">
-            <div class="col-md-5">              
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>        
+            <div class="col-xs-5">              
+                <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+              {{ if $gimme->article->has_image(2) }}
+                {{ list_article_images }}
+                  {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                  {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  {{ /if }}
+                {{ /list_article_images }}
+              {{ else }}
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+              {{ /if }}<!-- fin ligthbox -->        
             </div>
-            <div class="col-md-7">          
+            <div class="col-xs-7">          
               <p class="semibold_font_3">
               <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
                </p>             
@@ -133,7 +172,20 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       {{ if $gimme->article->con_borde_portada}}
         <div class="portada_sin_recorrido_foto_col1 con_borde">
           <div class="img_sin_foto">
-            <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  /></a>
+            <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+              {{ if $gimme->article->has_image(2) }}
+                {{ list_article_images }}
+                  {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                  {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  {{ /if }}
+                {{ /list_article_images }}
+              {{ else }}
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+              {{ /if }}<!-- fin ligthbox -->
             <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
           </div>
@@ -156,7 +208,20 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       {{ elseif $gimme->article->con_fondo_gris_portada}}
         <div class="portada_sin_recorrido_foto_col1 fondo_gris">
           <div class="img_sin_foto">
-            <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  /></a>
+            <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+              {{ if $gimme->article->has_image(2) }}
+                {{ list_article_images }}
+                  {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                  {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  {{ /if }}
+                {{ /list_article_images }}
+              {{ else }}
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+              {{ /if }}<!-- fin ligthbox -->
             <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
           </div>
@@ -179,7 +244,20 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
       {{ else }}
         <div class="portada_sin_recorrido_foto_col1 sin_borde">
           <div class="img_sin_foto">
-            <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}"  /></a>
+            <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+              {{ if $gimme->article->has_image(2) }}
+                {{ list_article_images }}
+                  {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                  {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  {{ /if }}
+                {{ /list_article_images }}
+              {{ else }}
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
+              {{ /if }}<!-- fin ligthbox -->
             <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
           </div>
