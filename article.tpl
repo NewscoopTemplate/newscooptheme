@@ -8,15 +8,18 @@
            {{ list_article_topics }}  
             {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
               {{ $indice = substr($gimme->topic->name,0,1) }}
-              <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_2">{{substr($gimme->topic->name|upper,2)}}</a>        
+              <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
             {{/if }}
           {{ /list_article_topics }}
         {{ if $gimme->article->has_image(1) }}
 
         <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+        <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+
         {{ /if }}
-        <p class="semibold_font_3">{{ $gimme->article->titular }}</p>
-        <p class="normal_font_3">{{ $gimme->article->entradilla }}</p>
+        <p class="semibold_font_2">{{ $gimme->article->titular }}</p>
+        <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
         <p class="datos_articulos normal_font_1">{{ list_article_authors }}
         {{ $gimme->author->name }}:: {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
         {{ if !$gimme->current_list->at_end }}, </p>{{ /if }}
@@ -49,14 +52,14 @@
            {{ list_article_topics }}  
             {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
               {{ $indice = substr($gimme->topic->name,0,1) }}
-              <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_2">{{substr($gimme->topic->name|upper,2)}}</a>        
+              <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
             {{/if }}
           {{ /list_article_topics }}
 
           <div class="row">
             <div class="col-md-7">
-              <p class="semibold_font_3">{{ $gimme->article->titular }}</p>
-              <p class="normal_font_3">{{ $gimme->article->entradilla }}</p>
+              <p class="semibold_font_2">{{ $gimme->article->titular }}</p>
+              <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
             </div>
             <div class="col-md-5">
               {{ if $gimme->article->has_image(1) }}
@@ -91,15 +94,18 @@
     {{ elseif $gimme->article->articulo_sin_banner }}
     <div class="col-md-10 col1">
       <div class="articulo_sin_banner_col1">
-        <p class="nav_{{ $gimme->section->number }}">{{ $gimme->article->subseccion|upper }}</p>
+        <p class="nav_{{ $gimme->section->number }} semibold_font_3">{{ $gimme->article->subseccion|upper }}</p>
         <div class="row">
           <div class="col-md-7">
-            <p class="semibold_font_3">{{ $gimme->article->titular }}</p>
-            <p class="normal_font_3">{{ $gimme->article->entradilla }}</p>
+            <p class="semibold_font_2">{{ $gimme->article->titular }}</p>
+            <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
           </div>
           <div class="col-md-5">
             {{ if $gimme->article->has_image(1) }}
               <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+              <p class="normal_font_2" >
+                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
+
             {{ /if }}
           </div>
         </div>
