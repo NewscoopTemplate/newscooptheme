@@ -1,4 +1,4 @@
-<div class="col-md-2 col3">
+<div class="col-xs-2 col3">
   <div class="blog">
     <table>
       <tr>
@@ -10,13 +10,13 @@
           {{ if $gimme->current_list->at_end }}         
             <tr class="ultimo">
               <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+                <a href=" http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
               </td>
             </tr>
           {{ else }}
             <tr>
               <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+                <a href=" http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
               </td>
             </tr>
           {{ /if }}
@@ -44,13 +44,13 @@
           {{ if $gimme->current_list->at_end }}         
             <tr class="ultimo">
               <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+                <a href="http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
               </td>
             </tr>
           {{ else }}
             <tr>
               <td>
-                <a href=" {{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+                <a href="http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
               </td>
             </tr>
           {{ /if }}
