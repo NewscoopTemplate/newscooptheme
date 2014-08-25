@@ -1,50 +1,55 @@
 li{
-	display: inline-block;
-	list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
 }
 
 li a{
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a img:hover{
-	opacity: 0.3;
+  opacity: 0.8;
 }
 
 hr {
-	border: 1px solid #BDBDBD; 
+  border: 1px solid #BDBDBD;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.nav_1{
-	color: #930DA1;
+.col2 hr{
+  margin-bottom: 3%;
 }
-.nav_2{
-	color: #42BF59;
+/* pintara los nombre de la secciones con el respectivo color al que pertenece */ 
+.content .nav_1, .menu_secciones .nav_1, .col1 .nav_1, .col2 .nav_1, .principal_busqueda .seccion_resultados .nav_1{
+  color: #930DA1;
 }
-.nav_3{
-	color: #5D91F0;	
+.content .nav_2, .menu_secciones .nav_2, .col1 .nav_2, .col2 .nav_2, .principal_busqueda .seccion_resultados .nav_2{
+  color: #42BF59;
 }
-.nav_4{
-	color: #EBAB2A;
+.content .nav_3, .menu_secciones .nav_3, .col1 .nav_3, .col2 .nav_3, .principal_busqueda .seccion_resultados .nav_3{
+  color: #5D91F0; 
 }
-.nav_5{
-	color: #C31019;
+.content .nav_4, .menu_secciones .nav_4, .col1 .nav_4, .col2 .nav_4, .principal_busqueda .seccion_resultados .nav_4{
+  color: #EBAB2A;
 }
-.nav_6{
-	color: #825419;	
+.content .nav_5, .menu_secciones .nav_5, .col1 .nav_5, .col2 .nav_5, .principal_busqueda .seccion_resultados .nav_5{
+  color: #C31019;
 }
-.nav_7{
-	color: #F2DD1B;	
+.content .nav_6, .menu_secciones .nav_6, .col1 .nav_6, .col2 .nav_6, .principal_busqueda .seccion_resultados .nav_6{
+  color: #825419; 
 }
-.nav_8{
-	color: #6E1406;	
+.content .nav_7, .menu_secciones .nav_7, .col1 .nav_7, .col2 .nav_7, .principal_busqueda .seccion_resultados .nav_7{
+  color: #F2DD1B; 
 }
-.nav_9{
-	color: #F136D8;	
+.content .nav_8, .menu_secciones .nav_8, .col1 .nav_8, .col2 .nav_8, .principal_busqueda .seccion_resultados .nav_8{
+  color: #6E1406; 
 }
-
-.datos_articulos{
-	color: red;
+.content .nav_9, .menu_secciones .nav_9, .col1 .nav_9, .col2 .nav_9, .principal_busqueda .seccion_resultados .nav_9{
+  color: #F136D8; 
 }
-
+/* Pintara el nombre del autor del articulo y la fecha de publicacion */
+.col1 .datos_articulos, .col2 .datos_articulos, .principal_busqueda .cabecera_resultados .datos_articulos{
+  color: #930909;
+}
