@@ -22,13 +22,13 @@
               </div>
               <div class="col-xs-5">
                 <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                {{ if $gimme->article->has_image(2) }}
+                {{ if $gimme->article->has_image(1) }}
                   {{ list_article_images }}
                     {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                     {{ else }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                     {{ /if }}
                   {{ /list_article_images }}
@@ -72,13 +72,13 @@
                 <div class="row">
                   <div class="col-xs-5">
                     <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                    {{ if $gimme->article->has_image(2) }}
+                    {{ if $gimme->article->has_image(1) }}
                       {{ list_article_images }}
                         {{ if $gimme->current_list->at_beginning }}
-                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                           <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                         {{ else }}
-                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                           <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                         {{ /if }}
                       {{ /list_article_images }}
@@ -112,13 +112,13 @@
                 <div class="row">
                   <div class="col-xs-5">
                     <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                    {{ if $gimme->article->has_image(2) }}
+                    {{ if $gimme->article->has_image(1) }}
                       {{ list_article_images }}
                         {{ if $gimme->current_list->at_beginning }}
-                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                           <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                         {{ else }}
-                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                           <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                         {{ /if }}
                       {{ /list_article_images }}
@@ -152,13 +152,13 @@
                 <div class="row">
                   <div class="col-xs-5">
                     <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                    {{ if $gimme->article->has_image(2) }}
+                    {{ if $gimme->article->has_image(1) }}
                       {{ list_article_images }}
                         {{ if $gimme->current_list->at_beginning }}
-                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                           <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                         {{ else }}
-                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                           <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                         {{ /if }}
                       {{ /list_article_images }}
@@ -250,19 +250,19 @@
             {{ if $gimme->article->con_borde_seccion }}
               <div class="seccion_sin_recorrido_foto_col1 con_borde">
                 <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                {{ if $gimme->article->has_image(2) }}
+                {{ if $gimme->article->has_image(1) }}
                   {{ list_article_images }}
                     {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                     {{ else }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                     {{ /if }}
                   {{ /list_article_images }}
                 {{ else }}
                   <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
-                {{ /if }}<!-- fin ligthbox -->
+                {{ /if }}<!-- fin ligthbox -->                
               <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
                  {{ $indice=0 }}     
@@ -284,13 +284,13 @@
             {{ elseif $gimme->article->con_fondo_gris_seccion }}
               <div class="seccion_sin_recorrido_foto_col1 fondo_gris">
                 <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                {{ if $gimme->article->has_image(2) }}
+                {{ if $gimme->article->has_image(1) }}
                   {{ list_article_images }}
                     {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                     {{ else }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                     {{ /if }}
                   {{ /list_article_images }}
@@ -318,13 +318,13 @@
             {{ else }}
               <div class="seccion_sin_recorrido_foto_col1 sin_borde">
                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                {{ if $gimme->article->has_image(2) }}
+                {{ if $gimme->article->has_image(1) }}
                   {{ list_article_images }}
                     {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip">
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
                     {{ else }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="roadtrip" >
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                     {{ /if }}
                   {{ /list_article_images }}
