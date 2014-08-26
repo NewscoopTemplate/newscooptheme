@@ -174,7 +174,7 @@ Te hago los ejemplos y continuas con los que quedan */
 /* Secciones Col2 */
 
 /* Definicion de la fuente para el nombre de los autores y la fecha de publicacion columna 2 */
-.col2 .seccion_con_recorrido_col2 .normal_font_1, .col1 .seccion_sin_recorrido_col2 .normal_font_1, .col1 .seccion_sin_recorrido_foto_col2 .normal_font_1  {
+.col2 .seccion_con_recorrido_col2 .normal_font_1, .col2 .seccion_sin_recorrido_col2 .normal_font_1, .col2 .seccion_sin_recorrido_foto_col2 .normal_font_1  {
 	font-family: Arial;
 	font-weight: 400;
 	font-style: normal;
@@ -211,6 +211,79 @@ Te hago los ejemplos y continuas con los que quedan */
 
 /* Definicion de la fuente de las secciones columna 2 */
 .col2 .seccion_con_recorrido_col2 .semibold_font_3, .col2 .seccion_sin_recorrido_col2 .semibold_font_3, .col2 .seccion_sin_recorrido_foto_col2 .semibold_font_3 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	padding-top: 2%;
+}  
+
+
+/* Subseccion Col1*/
+/* Definicion de la fuente para el nombre de los autores y la fecha de publicacion columna  */
+.col1 .subseccion_con_recorrido_col1 .normal_font_1, .col1 .subseccion_sin_recorrido_col1 .normal_font_1, .col1 .subseccion_sin_recorrido_foto_col1 .normal_font_1  {
+	font-family: Arial;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+}
+
+/* Definicion de la fuente para la entradilla columna 2 */
+.col1 .subseccion_con_recorrido_col1 .semibold_font_1, .col1 .subseccion_sin_recorrido_col1 .semibold_font_1, .col1 .subseccion_sin_recorrido_foto_col1 .semibold_font_1 {
+	font-family: Arial;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 18px;
+
+}
+/* Definicion de la fuente del titular columna 2 */
+.col1 .subseccion_con_recorrido_col1 .semibold_font_2, .col1 .subseccion_sin_recorrido_col1 .semibold_font_2, .col1 .subseccion_sin_recorrido_foto_col1 .semibold_font_2 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 26px;
+}
+
+/* Definicion de la fuente de las secciones columna 2 */
+.col1 .subseccion_con_recorrido_col1 .semibold_font_3, .col1 .subseccion_sin_recorrido_col1 .semibold_font_3, .col1 .subseccion_sin_recorrido_foto_col1 .semibold_font_3 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	padding-top: 2%;
+}
+
+/* Subsecion Col2*/
+/* Definicion de la fuente para el nombre de los autores y la fecha de publicacion columna 2 */
+.col2 .subseccion_con_recorrido_col2 .normal_font_1, .col2 .subseccion_sin_recorrido_col2 .normal_font_1, .col2 .subseccion_sin_recorrido_foto_col2 .normal_font_1  {
+	font-family: Arial;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+}
+
+/* Definicion de la fuente para la entradilla columna 2 */
+.col2 .subseccion_con_recorrido_col2 .semibold_font_1, .col2 .subseccion_sin_recorrido_col2 .semibold_font_1, .col2 .subseccion_sin_recorrido_foto_col2 .semibold_font_1 {
+	font-family: Arial;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 18px;
+
+}
+/* Definicion de la fuente del titular columna 2 */
+.col2 .subseccion_con_recorrido_col2 .semibold_font_2, .col2 .subseccion_sin_recorrido_col2 .semibold_font_2, .col2 .subseccion_sin_recorrido_foto_col2 .semibold_font_2 {
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 26px;
+}
+
+/* Definicion de la fuente de las secciones columna 2 */
+.col2 .subseccion_con_recorrido_col2 .semibold_font_3, .col2 .subseccion_sin_recorrido_col2 .semibold_font_3, .col2 .subseccion_sin_recorrido_foto_col2 .semibold_font_3 {
 	font-family: "Source Sans Pro";
 	font-weight: 600;
 	font-style: normal;
