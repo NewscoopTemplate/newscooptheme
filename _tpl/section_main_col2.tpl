@@ -32,7 +32,7 @@
                   {{ /list_article_authors }}
                    {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                   </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                  <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
               {{ elseif $gimme->article->con_fondo_gris_seccion }}
                 <div class="seccion_sin_recorrido_col2 fondo_gris">          
@@ -50,7 +50,7 @@
                   {{ /list_article_authors }}
                    {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                   </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                  <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
               {{ else }}
                 <div class="seccion_sin_recorrido_col2 sin_borde">          
@@ -68,7 +68,7 @@
                   {{ /list_article_authors }}
                    {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                   </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                  <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
               {{ /if }}<!-- fin seccion_sin_recorrido  bordes y fondo gris -->
               
@@ -105,7 +105,7 @@
                   {{ /list_article_authors }}
                    {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                   </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                  <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
               {{ elseif $gimme->article->con_fondo_gris_seccion }}
                 <div class="seccion_sin_recorrido_foto_col2 fondo_gris">
@@ -139,7 +139,7 @@
                   {{ /list_article_authors }}
                    {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                   </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                  <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
               {{ else }}
                 <div class="seccion_sin_recorrido_foto_col2 sin_borde">
@@ -173,15 +173,17 @@
                   {{ /list_article_authors }}
                    {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
                   </p>
-                  <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
+                  <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
-              {{ /if }}              
+              {{ /if }}
+            {{ else }}<!-- trata los banners -->
+              <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
+              <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+              </a><hr>           
             {{ /if }}    
         {{ $contadora=1 }}
-                {{ /if }}
-            {{ else }}<!-- trata los banners -->
-          
-            {{ /if}}              
+                {{ /if }}            
+            {{ /if}}
           {{ /list_article_topics }}
     {{ /list_playlist_articles }}
     
@@ -207,12 +209,12 @@
          {{ if $contador_slider == 0 }} 
              <div class="item active">
                 <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:250px;" /></a>              
             </div>
         {{ else }}
              <div class="item">
                    <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /></a>              
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:250px;" /></a>              
              </div>
        {{ /if }}
        {{ $contador_slider=$contador_slider+1 }}
