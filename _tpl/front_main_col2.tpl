@@ -181,12 +181,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
          {{ if $contador_slider == 0 }} 
              <div class="item active">
                 <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:207px; "  /></a>         
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:250px;"/></a>         
             </div>
         {{ else }}
              <div class="item">
                    <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:207px; " /></a>         
+                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:250px;"></a>         
              </div>
        {{ /if }}
        {{ $contador_slider=$contador_slider+1 }}
