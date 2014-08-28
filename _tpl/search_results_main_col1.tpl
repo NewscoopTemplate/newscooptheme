@@ -12,11 +12,11 @@
     </div>
     <div class="row">
       {{ list_search_results length="5" order="bypublishdate desc" constraints="type is articulo" }}
-        {{ if $gimme->article->has_image(1) }}
+        {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
           <div class="col-xs-3">
             <div class="imagen_resultados">                
                 <a title="{{ $gimme->article->name }}" href="{{ uri options="article" }}">
-                <img src="{{ uri options="image 1 "}}" alt="{{ $gimme->article->image->description }}" class="woo-image thumbnail"/>
+                <img src="{{ uri options="image 1 "}}" alt="{{ $gimme->article->image->description }}" class="woo-image thumbnail" />
                 </a>                
             </div>
           </div>
