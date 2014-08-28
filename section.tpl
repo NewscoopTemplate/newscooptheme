@@ -3,13 +3,17 @@
 {{ $contador=0 }}
 {{ $categorias=array() }}
 <!-- aqui seria de tipo prueba -->
-{{ list_articles constraints="type is articulo" }}
-  {{$categorias[$contador]={{ $gimme->article->subseccion }} }}
+  {{ set_language name="Spanish" }}
+  {{ set_topic name="seccion_{{ $gimme->section->number }}:es" }}
+  {{ list_subtopics  }}
+        
+   {{$categorias[$contador]={{ $gimme->topic->name }} }}
   {{$contador=$contador+1}}
-{{ /list_articles }}
-{{ $categorias = array_unique($categorias) }}
+  
+  {{ /list_subtopics  }}
+  {{ $categorias = array_unique($categorias) }}
 
-{{ $subseccion_filtrada = $smarty.get.subseccion }}
+  {{ $subseccion_filtrada = $smarty.get.subseccion }}
 
   <div class="row mod_seccion">
     {{ include file='_tpl/section_main_col1.tpl' }}
@@ -20,4 +24,3 @@
 </div>
 </body>
 </html>
-
