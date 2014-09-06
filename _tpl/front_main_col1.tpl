@@ -14,114 +14,134 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 <div class="col-xs-6 col1">
 
   {{ list_playlist_articles name="PortadaCol1" order="bypublishdate desc" }}
-    {{ if $gimme -> article -> portada_con_recorrido }}
-      {{ if $gimme->article->con_borde_portada }}
+    {{ if $gimme -> article -> portada_recorrido && !$gimme->article->portada_sin_foto }}
+      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
         <div class="portada_con_recorrido_col1 con_borde">
+          <p class="semibold_font_3">
+          <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}
+          </a></p>             
+          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+          </a></p>
           <div class="row">
-            <div class="col-xs-5">
-              <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-              {{ if $gimme->article->has_image(1) }}
-                {{ list_article_images }}
-                  {{ if $gimme->current_list->at_beginning }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                  {{ else }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                  {{ /if }}
-                {{ /list_article_images }}
-              {{ else }}
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
-              {{ /if }}<!-- fin ligthbox -->
-            </div>
-            <div class="col-xs-7">          
-              <p class="semibold_font_3">
-              <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
-               </p>             
-              <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
-              </a></p>
-              <p class="datos_articulos normal_font_1"> 
-              {{ list_article_authors }}
-              {{ $gimme->author->name|upper }} ::
-              {{ /list_article_authors }}
-              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
-              <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
-            </div>
+            {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
+              <div class="col-xs-5">
+                <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
+                  {{ list_article_images }}
+                    {{ if $gimme->current_list->at_beginning }}
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                    {{ else }}
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                    {{ /if }}
+                  {{ /list_article_images }}              
+              </div>
+              <div class="col-xs-7">
+                <p class="datos_articulos normal_font_1"> 
+                {{ list_article_authors }}
+                {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div>
+            {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
+              <div class="col-xs-12">
+                <p class="datos_articulos normal_font_1"> 
+                {{ list_article_authors }}
+                {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div>
+            {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
           </div>              
-        </div><hr><!-- fin portada_con_recorrido_col1 con borde -->
-      {{ elseif $gimme ->article->con_fondo_gris_portada }}
+        </div><hr><!-- fin portada_recorrido_col1 con borde -->
+      {{ elseif $gimme ->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_con_recorrido_col1 fondo_gris">
+          <p class="semibold_font_3">
+          <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}
+          </a></p>             
+          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+          </a></p>
           <div class="row">
-            <div class="col-xs-5">
-               <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-              {{ if $gimme->article->has_image(1) }}
-                {{ list_article_images }}
-                  {{ if $gimme->current_list->at_beginning }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                  {{ else }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                  {{ /if }}
-                {{ /list_article_images }}
-              {{ else }}
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
-              {{ /if }}<!-- fin ligthbox -->
-            </div>
-            <div class="col-xs-7">          
-              <p class="semibold_font_3">
-              <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
-               </p>             
-              <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
-              </a></p>
-              <p class="datos_articulos normal_font_1"> 
-              {{ list_article_authors }}
-              {{ $gimme->author->name|upper }} ::
-              {{ /list_article_authors }}
-              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
-              <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
-            </div>
+            {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
+              <div class="col-xs-5">
+                <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
+                  {{ list_article_images }}
+                    {{ if $gimme->current_list->at_beginning }}
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                    {{ else }}
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                    {{ /if }}
+                  {{ /list_article_images }}              
+              </div>
+              <div class="col-xs-7">
+                <p class="datos_articulos normal_font_1"> 
+                {{ list_article_authors }}
+                {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div>
+            {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
+              <div class="col-xs-12">
+                <p class="datos_articulos normal_font_1"> 
+                {{ list_article_authors }}
+                {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div>
+            {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
           </div>             
-        </div><hr><!-- fin portada_con_recorrido_col1 fondo gris-->
+        </div><hr><!-- fin portada_recorrido_col1 fondo gris-->      
       {{ else }}
         <div class="portada_con_recorrido_col1 sin_borde">
+          <p class="semibold_font_3">
+          <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}
+          </a></p>             
+          <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
+          </a></p>
           <div class="row">            
-            <div class="col-xs-5">              
-                <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-              {{ if $gimme->article->has_image(1) }}
-                {{ list_article_images }}
-                  {{ if $gimme->current_list->at_beginning }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                  {{ else }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                  {{ /if }}
-                {{ /list_article_images }}
-              {{ else }}
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
-              {{ /if }}<!-- fin ligthbox -->        
-            </div>
-            <div class="col-xs-7">          
-              <p class="semibold_font_3">
-              <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>      
-               </p>             
-              <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
-              </a></p>
-              <p class="datos_articulos normal_font_1"> 
-       
-              {{ list_article_authors }}
-              {{ $gimme->author->name|upper }} ::
-              {{ /list_article_authors }}
-              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
-              <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
-            </div>
+            {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
+              <div class="col-xs-5">
+                <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
+                  {{ list_article_images }}
+                    {{ if $gimme->current_list->at_beginning }}
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                    {{ else }}
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                    {{ /if }}
+                  {{ /list_article_images }}              
+              </div>
+              <div class="col-xs-7">
+                <p class="datos_articulos normal_font_1"> 
+                {{ list_article_authors }}
+                {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div>
+            {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
+              <div class="col-xs-12">
+                <p class="datos_articulos normal_font_1"> 
+                {{ list_article_authors }}
+                {{ $gimme->author->name|upper }} ::
+                {{ /list_article_authors }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+              </div>
+            {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
           </div>              
         </div><hr><!-- fin portada_con_recorrido_col1 sin borde -->
-      {{ /if }}<!-- fin if bordes y fondo gris -->
+      {{ /if }}<!-- fin if bordes y fondo  gris con recorrido -->
 
-    {{elseif $gimme -> article -> portada_sin_recorrido }}
-      {{ if $gimme->article->con_borde_portada }}      
+    {{elseif $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto && $gimme->article->portada_recorrido }}
+      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}      
         <div class="portada_sin_recorrido_col1 con_borde">
           <p class="semibold_font_3">
            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
@@ -136,7 +156,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
 
-      {{ elseif $gimme->article->con_fondo_gris_portada }}
+      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_sin_recorrido_col1 fondo_gris">
           <p class="semibold_font_3">
            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
@@ -150,7 +170,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
-        </div><hr>
+        </div><hr>      
       {{ else }}
         <div class="portada_sin_recorrido_col1 sin_borde">
           <p class="semibold_font_3">
@@ -166,10 +186,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
-      {{ /if }}<!-- fin if bordes y fondo gris -->
-      
-    {{elseif $gimme -> article -> portada_sin_recorrido_foto }}
-      {{ if $gimme->article->con_borde_portada}}
+      {{ /if }}<!-- fin if bordes y fondo gris sin foto -->
+    {{ else }}
+      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
         <div class="portada_sin_recorrido_foto_col1 con_borde">
           <div class="img_sin_foto">
             <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
@@ -183,17 +202,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                   {{ /if }}
                 {{ /list_article_images }}
-              {{ else }}
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
               {{ /if }}<!-- fin ligthbox -->
             <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
           </div>
           <div class="texto_sin_foto">
-              <p class="semibold_font_3">
-              <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
-               </p>
-               
+            <p class="semibold_font_3">
+            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
+             </p>               
             <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
             </a></p>
             <p class="datos_articulos normal_font_1">
@@ -204,8 +220,8 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
-        </div><hr>
-      {{ elseif $gimme->article->con_fondo_gris_portada}}
+        </div><hr><!-- fin con borde de la opcion por defecto -->
+      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_sin_recorrido_foto_col1 fondo_gris">
           <div class="img_sin_foto">
             <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
@@ -219,16 +235,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                   {{ /if }}
                 {{ /list_article_images }}
-              {{ else }}
-                <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
               {{ /if }}<!-- fin ligthbox -->
             <p class="normal_font_2" >
                   {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
           </div>
           <div class="texto_sin_foto">
-              <p class="semibold_font_3">
-              <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
-               </p>
+            <p class="semibold_font_3">
+            <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}</a>          
+             </p>
                
             <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
             </a></p>
