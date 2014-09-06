@@ -25,7 +25,7 @@
     </table>
   </div><br>
   <div class="banner">
-  {{ list_playlist_articles name="PortadaCol3Banner" }}
+  {{ list_playlist_articles name="PortadaCol3" }}
     <p><a href="{{ $gimme -> article -> enlace }}" target="_blank" >
     <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
     </a>
