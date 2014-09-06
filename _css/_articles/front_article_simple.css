@@ -1,7 +1,7 @@
 /* Añadir los CSS correspondientes a los textos de los articulos */
 
 /* Texto del cuerpo del articulo */
-.col1 .articulo_foto_superior_col1 .texto_articulo p, .col1 .articulo_foto_lateral_col1 .texto_articulo p, .col1 .articulo_sin_banner_col1 .texto_articulo p{
+.col1 .articulo_recorrido_col1 .texto_articulo p, .col1 .articulo_estandar_col1 .texto_articulo p{
   font-family: Arial;
   font-weight: 500;
   font-style: normal;
@@ -10,14 +10,14 @@
 }
 
 /* Fuente autor y publicacion del articulo */ 
-.col1 .articulo_foto_superior_col1 .normal_font_1, .col1 .articulo_foto_lateral_col1 .normal_font_1, .col1 .articulo_sin_banner_col1 .normal_font_1 {
+.col1 .articulo_recorrido_col1 .normal_font_1, .col1 .articulo_estandar_col1 .normal_font_1 {
 	font-family: Arial;
 	font-weight: 400;
 	font-style: normal;
 	font-size: 12px;
 }
 
-.col1 .articulo_foto_superior_col1 .normal_font_2, .col2 .articulo_sin_banner_col1 .normal_font_2{
+.col1 .articulo_recorrido_col1 .normal_font_2, .col2 .articulo_estandar_col1 .normal_font_2{
 	font-family: "Source Sans Pro";
 	font-weight: 400;
 	font-style: normal;
@@ -27,7 +27,7 @@
 }
 
 /* Fuente de la entradilla del articulo */
-.col1 .articulo_foto_superior_col1 .semibold_font_1, .col1 .articulo_foto_lateral_col1 .semibold_font_1, .col1 .articulo_sin_banner_col1 .semibold_font_1 {
+.col1 .articulo_recorrido_col1 .semibold_font_1, .col1 .articulo_estandar_col1 .semibold_font_1{
 	font-family: Arial;
 	font-weight: 600;
 	font-style: normal;
@@ -36,7 +36,7 @@
 }
 
 /* Fuente del titular del articulo */
-.col1 .articulo_foto_superior_col1 .semibold_font_2, .col1 .articulo_foto_lateral_col1 .semibold_font_2, .col1 .articulo_sin_banner_col1 .semibold_font_2 {
+.col1 .articulo_recorrido_col1 .semibold_font_2, .col1 .articulo_estandar_col1 .semibold_font_2{
 	font-family: "Source Sans Pro";
 	font-weight: 600;
 	font-style: normal;
@@ -45,7 +45,7 @@
 }
 
 /* Fuente de la seccion del articulo */
-.col1 .articulo_foto_superior_col1 .semibold_font_3, .col1 .articulo_foto_lateral_col1 .semibold_font_3, .col1 .articulo_sin_banner_col1 .semibold_font_3 {
+.col1 .articulo_recorrido_col1 .semibold_font_3, .col1 .articulo_estandar_col1 .semibold_font_3 {
 	font-family: "Source Sans Pro";
 	font-weight: 600;
 	font-style: normal;
