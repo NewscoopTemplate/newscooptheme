@@ -1,8 +1,8 @@
-<!-
+<!--
 
   Esto es lo que va en la cabecera, donde estaran los enlaces sociales
 
-->
+-->
 
 <div class="redes_sociales">
   <li>
@@ -15,9 +15,7 @@
     <a href="http://youtube.com/example"><img src="{{ url static_file='dummy/rrss/youtube-icon.png' }}" /></a>
   </li>
   <li>
-    <a href="http://googlemas.com/example"><img src="{{ url static_file='dummy/rrss/Web-Google-plus-alt-Metro-icon.png' }}" /></a>
+    <a href="http://instagram.com/example"><img src="{{ url static_file='dummy/rrss/instagram-icon.png' }}" /></a>
   </li>
-  <li>
-    <a href="http://rsstune.com/example"><img src="{{ url static_file='dummy/rrss/Web-RSS-Feed-Metro-icon.png' }}" /></a>
-  </li>
+  
 </div>
