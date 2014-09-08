@@ -13,6 +13,7 @@ body{
 /* matiene fijo la web y no aplica el responsive */
 .container{
   width: 1092px;
+  margin: 0 auto;
   max-width: none !important;
 }
 
@@ -54,4 +55,3 @@ body{
   line-height: 17px;
 }
 */
-
