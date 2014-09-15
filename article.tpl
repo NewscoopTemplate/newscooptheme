@@ -1,7 +1,7 @@
 {{ include file='header.tpl' }}
   <div class="row">
     {{ if $gimme ->article ->articulo_recorrido }}
-    <div class="col-md-8 col1">
+    <div class="col-md-10 col1">
       <div class="articulo_recorrido_col1">
         {{ $indice=0 }}     
            {{ list_article_topics }}  
@@ -17,9 +17,23 @@
         {{ if !$gimme->current_list->at_end }}, </p>{{ /if }}
         {{ /list_article_authors }}
         <div>
+          <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) }}
-            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="float:left; width:200px; margin-right:1%;" />
-          {{ /if }}        
+            {{ list_article_images }}
+              {{ if $gimme->current_list->count > 2}}
+                {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="float:left; width:200px; margin-right:1%;" />
+                  <span class="stack">&raquo; FOTOS</span></a>
+                {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                {{ /if }}
+              {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="float:left; width:200px; margin-right:1%;" />
+              {{ /if }}                  
+            {{ /list_article_images }}         
+          {{ /if }}<!-- fin ligthbox -->
           <div class="texto_articulo">{{ $gimme->article->texto }}</div>
           <div id="redes_sociales">
           <!--facebook-->
@@ -41,13 +55,27 @@
           <!--redes_sociales -->
         </div>   
     {{ else }}
-      <div class="col-xs-8 col1">
+      <div class="col-xs-10 col1">
         <div class="articulo_estandar_col1">
+          <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) }}
-          <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
-          <p class="normal_font_2" >
-              {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>
-          {{ /if }}
+            {{ list_article_images }}
+              {{ if $gimme->current_list->count > 2}}
+                {{ if $gimme->current_list->at_beginning }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" />
+                  <span class="stack">&raquo; FOTOS</span></a>
+                {{ else }}
+                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                {{ /if }}
+              {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+              {{ /if }}                  
+            {{ /list_article_images }}
+            <p class="normal_font_2" >
+              {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
+          {{ /if }}<!-- fin ligthbox --> 
           {{ $indice=0 }}     
            {{ list_article_topics }}  
             {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
@@ -85,17 +113,79 @@
           {{ /if }}
         </div>        
       </div>    
-    <div class="col-md-2 col2">
-      {{ list_playlist_articles name="ArticuloCol2"}}
-        <p>
-          <a href="{{ $gimme -> article -> enlace }}" target="_blank" >
-          <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
-          </a>
-        </p>
-      {{ /list_playlist_articles }}
-    </div>
     {{ $subseccion_filtrada = $smarty.get.subseccion }}
-    {{ include file='_tpl/section_main_col3.tpl' }} 
+    <div class="col-xs-2 col3">
+      <!--el menu de las subsecciones siempre-->
+      <div class="menu_seccion_{{ $gimme->section->number }}">
+        {{ set_language name="Spanish" }}
+        {{ set_topic name="seccion_{{ $gimme->section->number }}:es" }}
+          {{ list_subtopics  }}
+            {{ if $gimme->current_list->at_end }}
+              <li class=" bold_font_2"><a href="{{ uri options='section' }}?subseccion={{ substr($gimme->topic->name,2) }}"> {{ substr($gimme->topic->name|upper,2) }}</a></li>
+            {{ else }}
+              <li class="link_{{ $gimme->section->number }} bold_font_2"><a href="{{ uri options='section' }}?subseccion={{ substr($gimme->topic->name,2) }}"> {{ substr($gimme->topic->name|upper,2) }}</a></li>
+            {{ /if }}        
+          {{ /list_subtopics  }}
+      </div>
+      <div class="blog">
+        <table>
+          <tr>
+          <th>
+            NUESTROS BLOGS
+          </th>
+          </tr>
+          {{ list_playlist_articles name="Blogs" }}
+          {{ if $gimme->current_list->at_end }}
+            <tr class="ultimo">
+            <td>
+              <a href="http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+            </td>
+            </tr>
+          {{ else }}
+            <tr>
+            <td>
+              <a href="http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+            </td>
+            </tr>
+          {{ /if }}
+          {{ /list_playlist_articles }}
+        </table>
+      </div><br>
+      <div class="banner">    
+          {{ list_playlist_articles name="ArticuloCol2" }}
+            <p>
+            <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
+            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+            </a>
+            </p>
+          {{ /list_playlist_articles }}
+      </div><br>
+
+      <div class="blog_menu">
+        <table>
+          <tr>
+          <th>
+            LA CIUDAD CERCA DE TI
+          </th>
+          </tr>
+          {{ list_playlist_articles name="Interes" }}
+          {{ if $gimme->current_list->at_end }}
+            <tr class="ultimo">
+            <td>
+              <a href="http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+            </td>
+            </tr>
+          {{ else }}
+            <tr>
+            <td>
+              <a href="http://{{ $gimme->article->enlace }} " target="_blank">{{ $gimme->article->name|upper }}</a>
+            </td>
+            </tr>
+          {{ /if }}
+          {{ /list_playlist_articles }}
+        </table>
+      </div>
+    </div>
   </div>   
 </div>
 </body>
