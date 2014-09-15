@@ -13,7 +13,8 @@ a img:hover{
 }
 
 hr {
-  border: 1px solid #BDBDBD;
+  border: 0 none #BDBDBD;
+  border-top: 1px solid #BDBDBD;
   margin-top: 2%;
   margin-bottom: 2%;
 }
