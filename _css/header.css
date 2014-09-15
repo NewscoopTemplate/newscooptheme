@@ -1,14 +1,13 @@
 body{
   font-family: "Source Sans Pro";
   width: 1092px;
+  margin: 0 auto;
 } 
 
 .content{
   width: 1092px;
-  padding-left: 2%;
-  padding-top: 2%;
-  padding-bottom: 2%;
   margin: 0 auto;
+  padding-top: 1%;
 } 
 /* matiene fijo la web y no aplica el responsive */
 .container{
@@ -55,3 +54,4 @@ body{
   line-height: 17px;
 }
 */
+
