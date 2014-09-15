@@ -1,3 +1,129 @@
-/* Añadir los CSS correspondientes a las imagenes TODAS DE TODOS LOS ARTICULOS Y SUS TIPOS */
+/* posicion del stack de la imagenes que tienen lightbox */
 
-/* Podemos, por como va el asunto, dividir los CSS para portada, seccion y subseccion de articulos en cada uno de estos tipos, de esta forma, en caso de modificarlos son faciles de encontrar */
+.col1 .portada_con_recorrido_col1 a .stack, .col1 .portada_sin_recorrido_foto_col1 .img_sin_foto a .stack{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;
+}
+
+.col2 .portada_sin_recorrido_foto_col2 a .stack{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;
+}
+
+.col1 .seccion_con_recorrido_col1 a .stack, .col1 .seccion_sin_recorrido_foto_col1 a .stack{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;
+}
+
+.col2 .seccion_con_recorrido_col2 a .stack, .col2 .seccion_sin_recorrido_foto_col2 a .stack{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;  
+}
+
+.col1 .subseccion_con_recorrido_col1 a .stack{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;
+}
+
+.col2 .subseccion_con_recorrido_col2 a .stack{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;  
+}
+
+.col1 .articulo_recorrido_col1{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%; 
+}
+
+.col1 .articulo_estandar_col1{
+  background-color: #123;
+  /* las propiedades del texto */
+  color: #FFF;
+  font-size: 14px;
+  padding: 5px 10px;
+  /* transparencia */
+  filter:alpha(opacity=65); /* IE genérico */
+  opacity:.65; /* Firefox */
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)'; /* IE8 */
+  /* posicionamos ese texto abajo y a la izquierda sin importar la altura de la imagen */
+  position: absolute;
+  bottom: 2%;
+  right: 9%;
+}
