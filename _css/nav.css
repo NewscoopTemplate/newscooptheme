@@ -47,11 +47,11 @@
 .menu_secciones .nav_1:hover, .menu_secciones .nav_2:hover, .menu_secciones .nav_3:hover, .menu_secciones .nav_4:hover, .menu_secciones .nav_5:hover,
 .menu_secciones .nav_6:hover, .menu_secciones .nav_7:hover, .menu_secciones .nav_8:hover{
   border-bottom-width: 8px;
-  margin-bottom:-4px;
+  margin-bottom: -8px; /* Si gano 8, he de quitar 8 */
 }
 
 /* se aplica un border mas grueso en la seccion en la que se encuentra */
 .menu_secciones .estoy{
   border-bottom-width: 8px;
-  margin-bottom: -4px;
+  margin-bottom: 0px; /* Aqui ponemos 0 porque sino sumamos a los 8 anteriores y se hace la picha un lio */
 }
