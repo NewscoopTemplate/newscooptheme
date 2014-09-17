@@ -44,6 +44,14 @@
   border-bottom: 4px solid #F136D8; 
 }
 
+/* Animación de la transicion */
+/* Hay que ponerla antes de cuando se define */
+.menu_secciones .nav1, .menu_secciones .nav2, .menu_secciones .nav3, .menu_secciones .nav4, .menu_secciones .nav5, .menu_secciones .nav6, .menu_secciones .nav7, .menu_secciones .nav8, .menu_secciones .nav9 {
+  transition-property: border-bottom, margin-bottom;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+
 .menu_secciones .nav_1:hover, .menu_secciones .nav_2:hover, .menu_secciones .nav_3:hover, .menu_secciones .nav_4:hover, .menu_secciones .nav_5:hover,
 .menu_secciones .nav_6:hover, .menu_secciones .nav_7:hover, .menu_secciones .nav_8:hover{
   border-bottom-width: 8px;
