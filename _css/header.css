@@ -5,13 +5,15 @@ body{
 } 
 
 .content{
-  width: 1092px;
+ /* width: 1092px;*/
+  width: 1008px;
   margin: 0 auto;
   padding-top: 1%;
 } 
 /* matiene fijo la web y no aplica el responsive */
 .container{
-  width: 1092px;
+  /* width: 1092px; */
+  width: 1008px;
   margin: 0 auto;
   max-width: none !important;
   position: absolute;
