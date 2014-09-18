@@ -28,10 +28,16 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
                   {{ list_article_images }}
                     {{if $gimme->current_list->count > 2}}
-                      {{ if $gimme->current_list->at_beginning }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" >
-                        <span class="stack">&raquo; FOTOS</span></img></a>
+                      {{ if $gimme->current_list->at_beginning }}                        
+                        <div class="contenedor_imagen">
+                          <div class="imagen">
+                            <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                          </div>
+                          <div class="icono">
+                            <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                          </div>                         
+                        </div>                        
                       {{ else }}
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                         <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" />                
@@ -75,9 +81,15 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   {{ list_article_images }}
                     {{if $gimme->current_list->count > 2}}
                       {{ if $gimme->current_list->at_beginning }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  />
-                        <span class="stack">&raquo; FOTOS</span></a>
+                        <div class="contenedor_imagen">
+                          <div class="imagen">
+                            <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                          </div>
+                          <div class="icono">
+                            <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                          </div>                         
+                        </div>
                       {{ else }}
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                         <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
@@ -121,9 +133,15 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   {{ list_article_images }}
                     {{if $gimme->current_list->count > 2}}
                       {{ if $gimme->current_list->at_beginning }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  />
-                        <span class="stack">&raquo; FOTOS</span></a>
+                        <div class="contenedor_imagen">
+                          <div class="imagen">
+                            <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                          </div>
+                          <div class="icono">
+                            <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                          </div>                         
+                        </div>
                       {{ else }}
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                         <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
@@ -211,9 +229,15 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
               {{ list_article_images }}
                 {{ if $gimme->current_list->count > 2}}
                   {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  > 
-                      <span class="stack">&raquo; FOTOS</span></a>                   
+                    <div class="contenedor_imagen">
+                      <div class="imagen">
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                      </div>
+                      <div class="icono">
+                        <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                      </div>                         
+                    </div>                                       
                   {{ else }}
                     <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
@@ -249,9 +273,15 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
               {{ list_article_images }}
                 {{ if $gimme->current_list->count > 2}}
                   {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  />
-                      <span class="stack">&raquo; FOTOS</span></a>
+                    <div class="contenedor_imagen">
+                      <div class="imagen">
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                      </div>
+                      <div class="icono">
+                        <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                      </div>                         
+                    </div>
                   {{ else }}
                     <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
@@ -288,9 +318,15 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
               {{ list_article_images }}
                 {{ if $gimme->current_list->count > 2}}
                   {{ if $gimme->current_list->at_beginning }}
-                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  />
-                      <span class="stack">&raquo; FOTOS</span></a>
+                    <div class="contenedor_imagen">
+                      <div class="imagen">
+                        <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                      </div>
+                      <div class="icono">
+                        <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                      </div>                         
+                    </div>
                   {{ else }}
                     <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display: none;" /></a>
