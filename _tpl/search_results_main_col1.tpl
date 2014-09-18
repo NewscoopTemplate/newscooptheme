@@ -28,11 +28,9 @@
             </div>
 
             <div class="cabecera_resultados">
-              <h2>
               <a href="{{ uri options="article" }}" rel="bookmark" title="{{ $gimme->article->name }}" class="semibold_font_2">
                 {{ $gimme -> article -> titular }}
                 </a>
-              </h2>
               <p class="datos_articulos normal_font_1"> 
               {{ list_article_authors }}
               {{ $gimme->author->name|upper }} ::
@@ -59,11 +57,9 @@
             </div>
 
             <div class="cabecera_resultados">
-              <h2>
               <a href="{{ uri options="article" }}" rel="bookmark" title="{{ $gimme->article->name }}" class="semibold_font_2">
                 {{ $gimme -> article -> titular }}
                 </a>
-              </h2>
               <p class="datos_articulos normal_font_1"> 
               {{ list_article_authors }}
               {{ $gimme->author->name|upper }} ::
@@ -91,3 +87,4 @@
 
   </div>
 </div>
+

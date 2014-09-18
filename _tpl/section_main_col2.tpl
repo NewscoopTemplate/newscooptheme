@@ -86,20 +86,30 @@
                   </a></p>
                   <div class="row">
                     {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
-                      <div class="col-xs-5">
-                      <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+                    <div class="col-xs-5">
+                      <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
                         {{ list_article_images }}
-                          {{ if $gimme->current_list->at_beginning }}
-                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                          {{if $gimme->current_list->count > 2}}
+                            {{ if $gimme->current_list->at_beginning }}
+                              <div class="contenedor_imagen">
+                                <div class="imagen">
+                                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                                  <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                                </div>
+                                <div class="icono">
+                                  <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                                </div>                         
+                              </div>
+                            {{ else }}
+                            <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                              <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                            {{ /if }}
                           {{ else }}
-                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                            <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
                           {{ /if }}
-                        {{ /list_article_images }}                      
-                      <!-- aqui lo cortado -->
-                      </div>
-                      <div class="col-xs-7">                    
+                        {{ /list_article_images }}              
+                    </div>
+                    <div class="col-xs-7">                    
                         <p class="datos_articulos normal_font_1">
                         {{ list_article_authors }}
                         {{ $gimme->author->name|upper }} ::
@@ -134,19 +144,29 @@
                   </a></p>
                   <div class="row">
                     {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
-                      <div class="col-xs-5">
-                      <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
+                    <div class="col-xs-5">
+                      <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
                         {{ list_article_images }}
-                          {{ if $gimme->current_list->at_beginning }}
-                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
+                          {{if $gimme->current_list->count > 2}}
+                            {{ if $gimme->current_list->at_beginning }}
+                              <div class="contenedor_imagen">
+                                <div class="imagen">
+                                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                                  <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                                </div>
+                                <div class="icono">
+                                  <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                                </div>                         
+                              </div>
+                            {{ else }}
+                            <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                              <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                            {{ /if }}
                           {{ else }}
-                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                            <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
                           {{ /if }}
-                        {{ /list_article_images }}                      
-                      <!-- aqui lo cortado -->
-                      </div>
+                        {{ /list_article_images }}              
+                    </div>
                       <div class="col-xs-7">                    
                         <p class="datos_articulos normal_font_1">
                         {{ list_article_authors }}
@@ -183,17 +203,27 @@
                   <div class="row">
                     {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
                       <div class="col-xs-5">
-                      <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                        {{ list_article_images }}
-                          {{ if $gimme->current_list->at_beginning }}
-                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                          {{ else }}
-                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                          {{ /if }}
-                        {{ /list_article_images }}                      
-                      <!-- aqui lo cortado -->
+                        <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
+                          {{ list_article_images }}
+                            {{if $gimme->current_list->count > 2}}
+                              {{ if $gimme->current_list->at_beginning }}
+                                <div class="contenedor_imagen">
+                                  <div class="imagen">
+                                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                                  </div>
+                                  <div class="icono">
+                                    <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                                  </div>                         
+                                </div>
+                              {{ else }}
+                              <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                                <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                              {{ /if }}
+                            {{ else }}
+                              <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                            {{ /if }}
+                          {{ /list_article_images }}              
                       </div>
                       <div class="col-xs-7">                    
                         <p class="datos_articulos normal_font_1">
@@ -225,22 +255,31 @@
             {{ else }}<!-- opcion por defecto si no se elije con recorrido o sin foto -->
                 {{ if $gimme->article->seccion_borde || $gimme->article->seccion_borde && $gimme->article->seccion_gris }}
                 <div class="seccion_sin_recorrido_foto_col2 con_borde">
-                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                  {{ if $gimme->article->has_image(1) }}
+                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
+                  {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
                     {{ list_article_images }}
-                      {{ if $gimme->current_list->at_beginning }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                      {{ else }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                      {{ /if }}
+                      {{ if $gimme->current_list->count > 2}}
+                        {{ if $gimme->current_list->at_beginning }}
+                          <div class="contenedor_imagen">
+                            <div class="imagen">
+                              <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                              <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                            </div>
+                            <div class="icono">
+                              <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                            </div>                         
+                          </div>
+                        {{ else }}
+                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                        {{ /if }}
+                      {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                        <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                      {{ /if }}                  
                     {{ /list_article_images }}
-                  {{ else }}
-                    <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
-                  {{ /if }}<!-- fin ligthbox -->
-                  <p class="normal_font_2" >
-                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p> 
+                    <p class="normal_font_2" >
+                      {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
+                  {{ /if }}<!-- fin ligthbox --> 
                     {{ $indice=0 }}     
                     {{ list_article_topics }}  
                       {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
@@ -259,20 +298,30 @@
                 </div><hr>
               {{ elseif $gimme->article->seccion_gris && !$gimme->article->seccion_borde }}
                 <div class="seccion_sin_recorrido_foto_col2 fondo_gris">
-                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                  {{ if $gimme->article->has_image(1) }}
+                  {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
                     {{ list_article_images }}
-                      {{ if $gimme->current_list->at_beginning }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                      {{ else }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                      {{ /if }}
+                      {{ if $gimme->current_list->count > 2}}
+                        {{ if $gimme->current_list->at_beginning }}
+                          <div class="contenedor_imagen">
+                            <div class="imagen">
+                              <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                              <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                            </div>
+                            <div class="icono">
+                              <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                            </div>                         
+                          </div>
+                        {{ else }}
+                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                        {{ /if }}
+                      {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                        <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                      {{ /if }}                  
                     {{ /list_article_images }}
-                  {{ /if }}<!-- fin ligthbox -->
-                  <p class="normal_font_2" >
-                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p> 
+                    <p class="normal_font_2" >
+                      {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
+                  {{ /if }}<!-- fin ligthbox -->  
                     {{ $indice=0 }}     
                     {{ list_article_topics }}  
                       {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
@@ -291,22 +340,30 @@
                 </div><hr>
               {{ else }}
                 <div class="seccion_sin_recorrido_foto_col2 sin_borde">
-                  <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->
-                  {{ if $gimme->article->has_image(1) }}
+                  {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
                     {{ list_article_images }}
-                      {{ if $gimme->current_list->at_beginning }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}"  /></a>
-                      {{ else }}
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                      {{ /if }}
+                      {{ if $gimme->current_list->count > 2}}
+                        {{ if $gimme->current_list->at_beginning }}
+                          <div class="contenedor_imagen">
+                            <div class="imagen">
+                              <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                              <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                            </div>
+                            <div class="icono">
+                              <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                            </div>                         
+                          </div>
+                        {{ else }}
+                          <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                        {{ /if }}
+                      {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                        <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                      {{ /if }}                  
                     {{ /list_article_images }}
-                  {{ else }}
-                    <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" /> </a>
-                  {{ /if }}<!-- fin ligthbox -->
-                  <p class="normal_font_2" >
-                  {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p> 
+                    <p class="normal_font_2" >
+                      {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
+                  {{ /if }}<!-- fin ligthbox --> 
                     {{ $indice=0 }}     
                     {{ list_article_topics }}  
                       {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}

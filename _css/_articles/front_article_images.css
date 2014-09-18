@@ -1,3 +1,96 @@
-/* Añadir los CSS correspondientes a las imagenes TODAS DE TODOS LOS ARTICULOS Y SUS TIPOS */
+/* posicion del stack de la imagenes que tienen lightbox */
+.col1 .portada_con_recorrido_col1 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 139px;
+  margin-bottom: -24px;
+  z-index: 2;
+}
 
-/* Podemos, por como va el asunto, dividir los CSS para portada, seccion y subseccion de articulos en cada uno de estos tipos, de esta forma, en caso de modificarlos son faciles de encontrar */
+/* el icono en la parte inferior derecha en la imagenes de sin  recorrido con foto*/
+.col1 .portada_sin_recorrido_foto_col1 .img_sin_foto .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;
+  bottom:28px;
+  left: 420px;
+  margin-bottom: -24px;
+  z-index: 2;
+}
+
+/*  esta es para las imagenes de la columna 2*/
+.col2 .portada_sin_recorrido_foto_col2 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 259px;
+  margin-bottom: -24px;
+  z-index: 2;
+}
+
+/*Iconos para las secciones*/
+
+.col1 .seccion_con_recorrido_col1 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 108px;
+  margin-bottom: -24px;
+  z-index: 2; 
+}
+
+.col1 .seccion_sin_recorrido_foto_col1 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 342px;
+  margin-bottom: -24px;
+  z-index: 2; 
+}
+
+.col2 .seccion_con_recorrido_col2 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 108px;
+  margin-bottom: -24px;
+  z-index: 2;    
+}
+
+.col2 .seccion_sin_recorrido_foto_col2 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 342px;
+  margin-bottom: -24px;
+  z-index: 2; 
+}
+
+/* Icono para las subsecciones */
+
+.col1 .subseccion_con_recorrido_col1 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 219px;
+  margin-bottom: -24px;
+  z-index: 2; 
+}
+
+.col1 .articulo_recorrido_col1 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 169px;
+  margin-bottom: -24px;
+  z-index: 2;   
+}
+
+.col1 .articulo_estandar_col1 .contenedor_imagen .icono{
+  position: relative;
+  width: 30px;  
+  bottom:28px;
+  left: 778px;
+  margin-bottom: -24px;
+  z-index: 2; 
+}

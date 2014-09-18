@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- JQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 
@@ -13,7 +16,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script  src="{{ url static_file='_js/bootstrap.js' }}" type="text/javascript"></script>
-    <script  src="{{ url static_file='_js/jquery-1.11.0.min.js' }}" type="text/javascript"></script>
+    <!-- <script  src="{{ url static_file='_js/jquery-1.11.0.min.js' }}" type="text/javascript"></script> -->
     <script  src="{{ url static_file='_js/lightbox.min.js' }}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/lightbox.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/screen.css' }}"/>
@@ -40,7 +43,7 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-9">
-                <h1><font color="red">C</font>abecera</h1>
+                <h1><a href="http://www.example.com"><font color="red">C</font>abecera</a></h1>
             </div>
             <div class="col-md-3">
                 {{ include file='_tpl/social.tpl' }}
