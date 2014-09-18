@@ -22,9 +22,15 @@
             {{ list_article_images }}
               {{ if $gimme->current_list->count > 2}}
                 {{ if $gimme->current_list->at_beginning }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="float:left; width:200px; margin-right:1%;" />
-                  <span class="stack">&raquo; FOTOS</span></a>
+                  <div class="contenedor_imagen">
+                    <div class="imagen">
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" style="float:left; width:200px; margin-right:1%;" />
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                    </div>
+                    <div class="icono">
+                      <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                    </div>                         
+                  </div>
                 {{ else }}
                   <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
@@ -62,9 +68,15 @@
             {{ list_article_images }}
               {{ if $gimme->current_list->count > 2}}
                 {{ if $gimme->current_list->at_beginning }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" />
-                  <span class="stack">&raquo; FOTOS</span></a>
+                  <div class="contenedor_imagen">
+                    <div class="imagen">
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                    </div>
+                    <div class="icono">
+                      <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
+                    </div>                         
+                  </div>
                 {{ else }}
                   <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
