@@ -27,7 +27,9 @@
   <div class="banner">
   {{ list_playlist_articles name="PortadaCol3" }}
     <p><a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
-    <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+    {{ image rendition="portada_horizontal" }}
+      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+    {{ /image }}
     </a>
     </p>
   {{ /list_playlist_articles }}
