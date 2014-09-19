@@ -32,7 +32,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                            {{ image rendition="portada_vertical" }}
+                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                            {{ /image }}
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -40,10 +42,13 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         </div>                        
                       {{ else }}
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" />                
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>             
                       {{ /if }}
                     {{ else }}
-                      <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                      <a href="{{ uri options="article"}}">
+                      {{ image rendition="portada_vertical" }}
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      {{ /image }}
                     {{ /if }}
                   {{ /list_article_images }}
               </div>
@@ -84,7 +89,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                            {{ image rendition="portada_vertical" }}
+                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                            {{ /image }}
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -95,7 +102,10 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                       {{ /if }}
                     {{ else }}
-                      <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                      <a href="{{ uri options="article"}}">
+                      {{ image rendition="portada_vertical" }}
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      {{ /image }}
                     {{ /if }}
                   {{ /list_article_images }}              
               </div>
@@ -136,7 +146,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                            {{ image rendition="portada_vertical" }}
+                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                            {{ /image }}
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -147,7 +159,10 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                       {{ /if }}
                     {{ else }}
-                      <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                      <a href="{{ uri options="article"}}">
+                      {{ image rendition="portada_vertical" }}
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      {{ /image }}
                     {{ /if }}
                   {{ /list_article_images }}              
               </div>
@@ -232,7 +247,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                        {{ image rendition="portada_horizontal" }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /image }}
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -243,7 +260,10 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                  <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                  <a href="{{ uri options="article"}}">
+                  {{ image rendition="portada_horizontal" }}
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                  {{ /image }}
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -276,7 +296,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                        {{ image rendition="portada_horizontal" }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /image }}
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -287,7 +309,10 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                  <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                  <a href="{{ uri options="article"}}">
+                  {{ image rendition="portada_horizontal" }}
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                  {{ /image }}
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -321,7 +346,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                        {{ image rendition="portada_horizontal" }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /image }}
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -332,7 +359,10 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display: none;" /></a>
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                  <a href="{{ uri options="article"}}"><img src="{{url options="image 1"}}" /></a>
+                  <a href="{{ uri options="article"}}">
+                  {{ image rendition="portada_horizontal" }}
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                  {{ /image }}
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
