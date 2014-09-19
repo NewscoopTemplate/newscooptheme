@@ -30,6 +30,6 @@
                 <rendition name="portada_cuadrada" width="265" height="265" specs="crop"/>
                 <rendition name="articulo_horizontal" width="700" height="350" specs="crop"/>
                 <rendition name="articulo_vertical" width="290" height="350" specs="crop"/>
-                <rendition name="ariculo_cuadrada" width="350" height="350" specs="crop"/>
+                <rendition name="aritculo_cuadrada" width="350" height="350" specs="crop"/>
         </renditions>
 </theme>
