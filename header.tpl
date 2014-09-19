@@ -19,7 +19,7 @@
     <!-- <script  src="{{ url static_file='_js/jquery-1.11.0.min.js' }}" type="text/javascript"></script> -->
     <script  src="{{ url static_file='_js/lightbox.min.js' }}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/lightbox.css' }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/screen.css' }}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/screen.css' }}"/> -->
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/bootstrap.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/front.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/header.css' }}"/>
