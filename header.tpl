@@ -43,7 +43,7 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-9">
-                <h1><a href="http://www.example.com"><font color="red">C</font>abecera</a></h1>
+                <h1><a href="http://185.18.199.221/ "><font color="red">C</font>abecera</a></h1>
             </div>
             <div class="col-md-3">
                 {{ include file='_tpl/social.tpl' }}
