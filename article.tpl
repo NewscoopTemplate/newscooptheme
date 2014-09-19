@@ -24,8 +24,10 @@
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
-                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" style="float:left; width:200px; margin-right:1%;" />
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                      <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" style="float:left; margin-right:1%;" />
+                      {{ image rendition="articulo_vertical" }}
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      {{ /image }}
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -36,7 +38,9 @@
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="float:left; width:200px; margin-right:1%;" />
+                {{ image rendition="articulo_vertical" }}
+                  <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                {{ /image }}
               {{ /if }}                  
             {{ /list_article_images }}         
           {{ /if }}<!-- fin ligthbox -->
@@ -71,7 +75,9 @@
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" ></a>
+                      {{ image rendition="articulo_horizontal" }}
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      {{ /image }}
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -82,7 +88,9 @@
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+                {{ image rendition="articulo_horizontal" }}
+                  <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                {{ /image }}
               {{ /if }}                  
             {{ /list_article_images }}
             <p class="normal_font_2" >
@@ -167,7 +175,9 @@
           {{ list_playlist_articles name="ArticuloCol2" }}
             <p>
             <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
-            <img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" />
+            {{ image rendition="articulo_cuadrada" }}
+              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+            {{ /image }}
             </a>
             </p>
           {{ /list_playlist_articles }}
