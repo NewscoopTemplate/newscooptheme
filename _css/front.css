@@ -13,8 +13,9 @@ a{
 
 .content .col1 .portada_con_recorrido_col1 img, .content .col2 .portada_con_recorrido_col2 img, .content .col1 .portada_sin_recorrido_foto_col1 img,
 .content .col2 .portada_sin_recorrido_foto_col2 img, .content .col1 .seccion_con_recorrido_col1 img, .content .col2 .seccion_con_recorrido_col2 img,
-.content .col1 .seccion_sin_recorrido_foto_col1 img, .content .col2 .seccion_sin_recorrido_foto_col2 img, .content .col1 .subseccion_con_recorrido_col1 img,
-.content .col1 .articulo_estandar_col1 img, .content .col3 img{
+.content .col1 .seccion_sin_recorrido_foto_col1 img, .content .col2 .seccion_sin_recorrido_foto_col2 img, .content .col2 .banner img, 
+.content .col1 .subseccion_con_recorrido_col1 img, .content .col1 .articulo_estandar_col1 img, .content .col3 img, .content .col2 .banner img {
 	width: 100%;
 	max-width: 100;
 }
+
