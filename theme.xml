@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
-<theme name="Nuestro Tema" designer="Nosotros" version="0.0" require="4.0">
-    <description>Tema para el periodico que no recuerdo como se llama, pero esto como se puede modificar, ya lo iremos completando</description>
+<theme name="Palabras Menores" designer="Palabras Menores" version="0.1" require="4.0">
+    <description>
+        Tema especifico para el producto "Palabras Menores" cuya particularidad es disponer de tres niveles (Portada, Seccion, Subsección).
+        Version en desarrollo
+        
+    </description>
    
     <presentation-img src="front.jpg" name="Front page"/>
     <presentation-img src="section.jpg" name="Section page"/>
