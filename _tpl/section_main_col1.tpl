@@ -5,7 +5,7 @@
   <div class="col-xs-8 col1"> 
     <p class="semibold_font_3 nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }} / {{ $subseccion_filtrada|upper }}</p>   
     {{ list_playlist_articles name="SubSeccionCol1" }}
-             {{ $baliza=0 }} 
+      {{ $baliza=0 }} 
      {{ list_article_topics }} 
        {{ if substr($gimme -> topic -> name,2) == {{ $subseccion_filtrada}} }} 
         {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
@@ -45,7 +45,9 @@
                     {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_vertical" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}                  
                   {{ /list_article_images }}
@@ -118,7 +120,9 @@
                           {{ else }}
                             <a href="{{ uri options="article"}}">
                             {{ image rendition="portada_vertical" }}
-                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              {{ if $gimme->current_list->at_beginning }}
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              {{ /if }}
                             {{ /image }}
                           {{ /if }}
                         {{ /list_article_images }}              
@@ -181,7 +185,9 @@
                           {{ else }}
                             <a href="{{ uri options="article"}}">
                             {{ image rendition="portada_vertical" }}
-                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              {{ if $gimme->current_list->at_beginning }}
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              {{ /if }}
                             {{ /image }}
                           {{ /if }}
                         {{ /list_article_images }}              
@@ -244,7 +250,9 @@
                           {{ else }}
                             <a href="{{ uri options="article"}}">
                             {{ image rendition="portada_vertical" }}
-                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              {{ if $gimme->current_list->at_beginning }}
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              {{ /if }}
                             {{ /image }}
                           {{ /if }}
                         {{ /list_article_images }}              
@@ -356,7 +364,9 @@
                     {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}                  
                   {{ /list_article_images }}
@@ -404,7 +414,9 @@
                     {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}                  
                   {{ /list_article_images }}
@@ -452,7 +464,9 @@
                     {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}                  
                   {{ /list_article_images }}
