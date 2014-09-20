@@ -3,12 +3,6 @@ tienen herencia y similares, lo que nos ayuda a poder definir los basicos e ir h
 ampliando segun lo que necesitemos, de esta forma podemos modificar un objeto sin cambiar nada de los padres y sin romper las cosas.
 Te hago los ejemplos y continuas con los que quedan */
 
-/* Comunes */
-/* Fondos grises al redefinir los fondos del .row */
-.fondo_gris .row {
-	background-color: #D4D5D7;	
-}
-
 /* Definicion de las imagenes en seccion columna 1 */
 .col1  .sin_borde {
 	margin-bottom: 2%;
