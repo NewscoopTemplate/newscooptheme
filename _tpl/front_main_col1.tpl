@@ -47,7 +47,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     {{ else }}
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_vertical" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}
                   {{ /list_article_images }}
@@ -104,7 +106,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     {{ else }}
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_vertical" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}
                   {{ /list_article_images }}              
@@ -161,7 +165,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     {{ else }}
                       <a href="{{ uri options="article"}}">
                       {{ image rendition="portada_vertical" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ if $gimme->current_list->at_beginning }}
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        {{ /if }}
                       {{ /image }}
                     {{ /if }}
                   {{ /list_article_images }}              
@@ -262,7 +268,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
                   {{ image rendition="portada_horizontal" }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    {{ if $gimme->current_list->at_beginning }}
+                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    {{ /if }}
                   {{ /image }}
                 {{ /if }}                  
               {{ /list_article_images }}
@@ -311,7 +319,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
                   {{ image rendition="portada_horizontal" }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    {{ if $gimme->current_list->at_beginning }}
+                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    {{ /if }}
                   {{ /image }}
                 {{ /if }}                  
               {{ /list_article_images }}
@@ -361,7 +371,9 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
                   {{ image rendition="portada_horizontal" }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    {{ if $gimme->current_list->at_beginning }}
+                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    {{ /if }}
                   {{ /image }}
                 {{ /if }}                  
               {{ /list_article_images }}
