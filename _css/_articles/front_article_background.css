@@ -2,6 +2,13 @@
 tienen herencia y similares, lo que nos ayuda a poder definir los basicos e ir heredando y 
 ampliando segun lo que necesitemos, de esta forma podemos modificar un objeto sin cambiar nada de los padres y sin romper las cosas.
 Te hago los ejemplos y continuas con los que quedan */
+
+/* Comunes */
+/* Fondos grises al redefinir los fondos del .row */
+.fondo_gris .row {
+	background-color: #D4D5D7;	
+}
+
 /* Definicion de las imagenes en seccion columna 1 */
 .col1  .sin_borde {
 	margin-bottom: 2%;
@@ -11,7 +18,7 @@ Te hago los ejemplos y continuas con los que quedan */
 	margin-bottom: 2%;
 	padding:2%;
 }
-.col1  .fondo_gris, .portada_sin_recorrido .fondo_gris .row, .portada_con_recorrido .fondo_gris .row {
+.col1  .fondo_gris {
 	background-color: #D4D5D7;    
 	margin-bottom: 2%;
 	padding: 2%;
@@ -26,7 +33,7 @@ Te hago los ejemplos y continuas con los que quedan */
 	margin-bottom: 2%;
 	padding:2%;
 }
-.col2 .fondo_gris .portada_sin_recorrido .fondo_gris .row, .portada_con_recorrido .fondo_gris .row {
+.col2 .fondo_gris {
 	background-color: #D4D5D7;    
 	margin-bottom: 2%;
 	padding: 2%;
