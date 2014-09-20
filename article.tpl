@@ -39,7 +39,9 @@
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                 {{ image rendition="articulo_vertical" }}
-                  <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                  {{ if $gimme->current_list->at_beginning }}
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                  {{ /if }}
                 {{ /image }}
               {{ /if }}                  
             {{ /list_article_images }}         
@@ -89,7 +91,9 @@
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                 {{ image rendition="articulo_horizontal" }}
-                  <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                  {{ if $gimme->current_list->at_beginning }}
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                  {{ /if }}
                 {{ /image }}
               {{ /if }}                  
             {{ /list_article_images }}
