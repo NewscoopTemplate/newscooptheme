@@ -25,10 +25,6 @@ body{
   */
 }
 
-.row {
-  background-color: white; /* Fondo blanco para todo */
-}
-
 /* Los links no salen subrayados */
 .content p a, .content a {
   text-decoration: none;
