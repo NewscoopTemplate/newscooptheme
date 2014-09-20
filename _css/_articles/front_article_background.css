@@ -11,7 +11,7 @@ Te hago los ejemplos y continuas con los que quedan */
 	margin-bottom: 2%;
 	padding:2%;
 }
-.col1  .fondo_gris {
+.col1  .fondo_gris, .portada_sin_recorrido .fondo_gris .row, .portada_con_recorrido .fondo_gris .row {
 	background-color: #D4D5D7;    
 	margin-bottom: 2%;
 	padding: 2%;
@@ -26,7 +26,7 @@ Te hago los ejemplos y continuas con los que quedan */
 	margin-bottom: 2%;
 	padding:2%;
 }
-.col2 .fondo_gris {
+.col2 .fondo_gris .portada_sin_recorrido .fondo_gris .row, .portada_con_recorrido .fondo_gris .row {
 	background-color: #D4D5D7;    
 	margin-bottom: 2%;
 	padding: 2%;
