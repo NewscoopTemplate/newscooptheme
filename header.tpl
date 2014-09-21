@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/header.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/nav.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/page.css' }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/footer.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/social.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/search.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/blogs_menu.css' }}"/>
