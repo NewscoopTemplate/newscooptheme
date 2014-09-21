@@ -1,18 +1,19 @@
 /* Estilos del footer */
 /* v0.1 */
 
-/* Estilos del footer */
-/* v0.1 */
-
 .footer {
         background-color: #797979;
         border-bottom: 3px solid #535353;
         color: white;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin-top: 1em;
 }
 
 .footer h3 {
         color: #e5e5e5;
         font: 14px Arial;
+        text-shadow: 1px 1px #000;
 }
 
 .footer a {
