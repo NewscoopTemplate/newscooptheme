@@ -1,0 +1,29 @@
+/* Estilos del footer */
+/* v0.1 */
+
+.footer {
+	background-color: #797979;
+	border-bottom: 3px solid #535353;
+	color: white;
+}
+
+.footer h3 {
+	color: #e5e5e5;
+	font: 14px Arial;
+}
+
+.footer a {
+	color: #26577a;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.footer ul li {
+	list-style-type: none;
+}
+
+.footer .letra_enana {
+	font-size: 9px;
+}
