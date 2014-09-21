@@ -35,4 +35,9 @@
 
 .footer .letra_enana {
         font-size: 9px;
+        font-size: 9px;
+        text-align: right;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-right: 1em;
 }
