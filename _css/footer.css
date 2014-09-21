@@ -1,29 +1,37 @@
 /* Estilos del footer */
 /* v0.1 */
 
+/* Estilos del footer */
+/* v0.1 */
+
 .footer {
-	background-color: #797979;
-	border-bottom: 3px solid #535353;
-	color: white;
+        background-color: #797979;
+        border-bottom: 3px solid #535353;
+        color: white;
 }
 
 .footer h3 {
-	color: #e5e5e5;
-	font: 14px Arial;
+        color: #e5e5e5;
+        font: 14px Arial;
 }
 
 .footer a {
-	color: #26577a;
+        color: #26577a;
 }
 
 .footer a:hover {
-	text-decoration: underline;
+        text-decoration: underline;
+}
+
+.footer ul {
+        padding-left: 0.5555em;
 }
 
 .footer ul li {
-	list-style-type: none;
+        list-style-type: none;
+        display: block;;
 }
 
 .footer .letra_enana {
-	font-size: 9px;
+        font-size: 9px;
 }
