@@ -17,14 +17,14 @@
         </ul>
       </div>
       <div class="col-md-8">
-        
+          <h3>Columna gorda</h3>
+          <p>Habra que pensar que se pone aqui y tal y pascual y esto y lo otro</p>
       </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="letra_enana">
-        Copyright 2014<br />
-        <a href="contacto.php">contacto</a>|<a href="aviso_legal.html">aviso legal</a>
+        Copyright 2014 - <a href="contacto.php">contacto</a> <a href="aviso_legal.html">aviso legal</a>
       </div>
     </div>
   </div>
