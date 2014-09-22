@@ -35,7 +35,7 @@
               {{ list_article_authors }}
               {{ $gimme->author->name|upper }} ::
               {{ /list_article_authors }}
-              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+              {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
               <p>{{ $gimme->article->deck }}</p>
             </div>
             <div class="entradilla_resultados">
@@ -64,7 +64,7 @@
               {{ list_article_authors }}
               {{ $gimme->author->name|upper }} ::
               {{ /list_article_authors }}
-              {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+              {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
               <p>{{ $gimme->article->deck }}</p>
             </div>
             <div class="entradilla_resultados">
@@ -87,4 +87,6 @@
 
   </div>
 </div>
+
+
 
