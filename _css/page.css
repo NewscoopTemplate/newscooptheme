@@ -54,6 +54,8 @@ hr {
 .col1 .datos_articulos, .col2 .datos_articulos, .principal_busqueda .cabecera_resultados .datos_articulos{
   color: #930909;
   font-size: 11px;
-	margin-top: -5px;
-	margin-bottom: 12px;
+  margin-top: -5px;
+  margin-bottom: 12px;
+  font-family: Arial;
+  font-weight: 400;
 }
