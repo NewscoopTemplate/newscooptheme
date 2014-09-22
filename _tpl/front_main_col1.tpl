@@ -59,7 +59,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
@@ -68,7 +68,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
@@ -118,7 +118,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
@@ -127,7 +127,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
@@ -177,7 +177,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
@@ -186,7 +186,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
@@ -205,7 +205,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
@@ -221,7 +221,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>      
@@ -236,7 +236,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
@@ -288,7 +288,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
-            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
@@ -340,7 +340,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
-            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
@@ -392,7 +392,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
-            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
@@ -402,3 +402,4 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
     {{ /if }}<!-- fin con_recorrido, sin _recorrido, sin _recorrido_foto -->
   {{ /list_playlist_articles }}
 </div>
+
