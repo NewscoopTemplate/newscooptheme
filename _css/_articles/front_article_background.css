@@ -35,11 +35,13 @@ Te hago los ejemplos y continuas con los que quedan */
 /*  Secciones */
 
 /* Definicion de la fuente para el nombre de los autores y la fecha de publicacion columna 1 */
-.col1 .portada_con_recorrido_col1 .normal_font_1, .col1 .portada_sin_recorrido_col1 .normal_font_1, .col1 .portada_sin_recorrido_foto_col1 .normal_font_1  {
+.col1 .portada_con_recorrido_col1 .normal_font_1, .col1 .portada_sin_recorrido_col1 .normal_font_1, .col1 .portada_sin_recorrido_foto_col1 .normal_font_1 {
 	font-family: Arial;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 12px;
+	font-size: 11px;
+	margin-top: -5px;
+	margin-bottom: 12px;
 }
 
 /* Definicion de la fuente para el pie de las fotos columna 1 */
