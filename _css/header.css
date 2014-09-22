@@ -2,7 +2,7 @@ body{
   font-family: "Source Sans Pro";
   width: 1092px;
   margin: 0 auto;
-  background-color: #e1e1e1;
+  background-color: rgba(250,250,250,1);
 } 
 
 .content {
