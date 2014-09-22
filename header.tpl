@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_articles/front_article_images.css' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url static_file='_css/_articles/front_article_simple.css' }}"/>
     <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:200italic,200,300italic,300,400italic,400,600italic,600,700italic,700,900italic,900" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
     </head>
 <body>
     <div class="content container">
