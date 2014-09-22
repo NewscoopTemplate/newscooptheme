@@ -7,13 +7,15 @@
            {{ list_article_topics }}  
             {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
               {{ $indice = substr($gimme->topic->name,0,1) }}
-              <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
+              <div class="subsecciones">
+                <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
+              </div>                      
             {{/if }}
           {{ /list_article_topics }}
         <p class="semibold_font_2">{{ $gimme->article->titular }}</p>
         <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
         <p class="datos_articulos normal_font_1">{{ list_article_authors }}
-        {{ $gimme->author->name }}:: {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+        {{ $gimme->author->name }}:: {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
         {{ if !$gimme->current_list->at_end }}, </p>{{ /if }}
         {{ /list_article_authors }}
         <div>
@@ -104,14 +106,16 @@
            {{ list_article_topics }}  
             {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
               {{ $indice = substr($gimme->topic->name,0,1) }}
-              <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>        
+              <div class="subsecciones">
+                <a href="../../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
+              </div>                      
             {{/if }}
           {{ /list_article_topics }}
           <p class="nav_{{ $gimme->section->number }} semibold_font_3">{{ $gimme->article->subseccion|upper }}</p>
           <p class="semibold_font_2">{{ $gimme->article->titular }}</p>
           <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>            
           <p class="datos_articulos normal_font_1">{{ list_article_authors }}
-          {{ $gimme->author->name }}:: {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
+          {{ $gimme->author->name }}:: {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
           {{ if !$gimme->current_list->at_end }}, {{ /if }}
           {{ /list_article_authors }}</p>
           <div class="texto_articulo">{{ $gimme->article->texto }}</div>
