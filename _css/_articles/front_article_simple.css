@@ -31,8 +31,9 @@
 	font-family: Arial;
 	font-weight: 600;
 	font-style: normal;
-	font-size: 15px;
-	line-height: 18px;
+	font-size: 16px;
+	line-height: 20px;
+	color: rgba(95,95,95,1);
 }
 
 /* Fuente del titular del articulo */
