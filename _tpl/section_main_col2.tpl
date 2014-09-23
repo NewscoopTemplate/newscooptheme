@@ -20,15 +20,15 @@
             {{ if $gimme -> article -> seccion_sin_foto || $gimme -> article -> seccion_sin_foto && $gimme -> article -> seccion_recorrido }}
               {{ if $gimme->article->seccion_borde || $gimme->article->seccion_borde && $gimme->article->seccion_gris }}
                 <div class="seccion_sin_recorrido_col2 con_borde">          
-                  {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      
-                      <div class="subsecciones">
-                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                      </div>                               
-                    {{/if }}
-                  {{ /list_article_topics }}   
+                  {{ $indice=0 }}
+                  <div class="subsecciones">     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                      {{/if }}
+                    {{ /list_article_topics }}
+                  </div>   
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                   <p class="datos_articulos normal_font_1">
                   {{ list_article_authors }}
@@ -41,14 +41,14 @@
               {{ elseif $gimme->article->seccion_gris && !$gimme->article->seccion_borde  }}
                 <div class="seccion_sin_recorrido_col2 fondo_gris">          
                   {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      
-                      <div class="subsecciones">
-                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                      </div>                               
-                    {{/if }}
-                  {{ /list_article_topics }}   
+                  <div class="subsecciones">     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                      {{/if }}
+                    {{ /list_article_topics }}
+                  </div>   
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                   <p class="datos_articulos normal_font_1">
                   {{ list_article_authors }}
@@ -61,15 +61,14 @@
               {{ else }}
                 <div class="seccion_sin_recorrido_col2 sin_borde">          
                   {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      
-                      <div class="subsecciones">
-                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                      </div>
-                               
-                    {{/if }}
-                  {{ /list_article_topics }}   
+                  <div class="subsecciones">     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                      {{/if }}
+                    {{ /list_article_topics }}
+                  </div>   
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                   <p class="datos_articulos normal_font_1">
                   {{ list_article_authors }}
@@ -85,14 +84,14 @@
               {{ if $gimme->article->seccion_borde || $gimme->article->seccion_borde && $gimme->article->seccion_gris }}
                 <div class="seccion_sin_recorrido_foto_col2 con_borde">
                   {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      
-                      <div class="subsecciones">
-                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                      </div>                               
-                    {{/if }}
-                  {{ /list_article_topics }}                  
+                  <div class="subsecciones">     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                      {{/if }}
+                    {{ /list_article_topics }}
+                  </div>                  
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
                   </a></p>
                   <div class="row">
@@ -152,14 +151,14 @@
               {{ elseif $gimme->article->seccion_gris && !$gimme->article->seccion_borde }}
                 <div class="seccion_con_recorrido_col2 fondo_gris">
                   {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      
-                      <div class="subsecciones">
-                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                      </div>                               
-                    {{/if }}
-                  {{ /list_article_topics }}                  
+                  <div class="subsecciones">     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                      {{/if }}
+                    {{ /list_article_topics }}
+                  </div>                  
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
                   </a></p>
                   <div class="row">
@@ -219,14 +218,14 @@
               {{ else }}
                 <div class="seccion_con_recorrido_col2 sin_borde">
                   {{ $indice=0 }}     
-                  {{ list_article_topics }}  
-                    {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                      
-                      <div class="subsecciones">
-                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a> 
-                      </div>                              
-                    {{/if }}
-                  {{ /list_article_topics }}                  
+                  <div class="subsecciones">     
+                    {{ list_article_topics }}  
+                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                        {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                        <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                      {{/if }}
+                    {{ /list_article_topics }}
+                  </div>                  
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}
                   </a></p>
                   <div class="row">
@@ -327,14 +326,14 @@
                       {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
                   {{ /if }}<!-- fin ligthbox --> 
                     {{ $indice=0 }}     
-                    {{ list_article_topics }}  
-                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                        
-                        <div class="subsecciones">
-                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                        </div>                                 
-                      {{/if }}
-                    {{ /list_article_topics }}   
+                    <div class="subsecciones">     
+                      {{ list_article_topics }}  
+                        {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                          {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                        {{/if }}
+                      {{ /list_article_topics }}
+                    </div>   
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                   <p class="datos_articulos normal_font_1">
                   {{ list_article_authors }}
@@ -378,14 +377,14 @@
                       {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
                   {{ /if }}<!-- fin ligthbox -->  
                     {{ $indice=0 }}     
-                    {{ list_article_topics }}  
-                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                        
-                        <div class="subsecciones">
-                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                        </div>                                 
-                      {{/if }}
-                    {{ /list_article_topics }}   
+                    <div class="subsecciones">     
+                      {{ list_article_topics }}  
+                        {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                          {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                        {{/if }}
+                      {{ /list_article_topics }}
+                    </div>   
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                   <p class="datos_articulos normal_font_1">
                   {{ list_article_authors }}
@@ -429,14 +428,14 @@
                       {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
                   {{ /if }}<!-- fin ligthbox --> 
                     {{ $indice=0 }}     
-                    {{ list_article_topics }}  
-                      {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
-                        
-                        <div class="subsecciones">
-                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>
-                        </div>                                 
-                      {{/if }}
-                    {{ /list_article_topics }}   
+                    <div class="subsecciones">     
+                      {{ list_article_topics }}  
+                        {{ if !strstr({{$gimme->topic->name}}, "seccion_")}}
+                          {{ $indice = substr($gimme->topic->name,0,1) }}                     
+                          <a href="../../../{{$gimme->language->code}}/{{ $gimme->issue->name}}/{{ substr($gimme->topic->name,0,1)}}/?subseccion={{ substr($gimme->topic->name,2) }}" class="nav_{{ $indice }} semibold_font_3">{{substr($gimme->topic->name|upper,2)}}</a>      
+                        {{/if }}
+                      {{ /list_article_topics }}
+                    </div>   
                   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                   <p class="datos_articulos normal_font_1">
                   {{ list_article_authors }}
