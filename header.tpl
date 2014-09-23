@@ -43,9 +43,9 @@
     </head>
 <body>
     <div class="content container">
-        <div class="row">
-            <div class="col-md-9">
-                <h1><a href="http://185.18.199.221/ "><font color="red">C</font>abecera</a></h1>
+        <div class="row" style="margin-bottom: 8px;">
+            <div class="col-md-9" style="background: white url('{{ url static_file='img/palabrasm2.jpg'}}') no-repeat 190px 0px;background-size: contain;">
+                <a href="/" title="Palabras Menores"><img src="{{ url static_file='img/header.jpg' }}" alt="Palabras Menores..." style="border:none;"/></a>
             </div>
             <div class="col-md-3">
                 {{ include file='_tpl/social.tpl' }}
