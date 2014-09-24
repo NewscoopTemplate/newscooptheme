@@ -32,7 +32,7 @@
                         <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                       *}}
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 400px; float: left; margin-right: 15px; margin-bottom: 5px" />
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 390px; float: left; margin-right: 15px; margin-bottom: 5px" />
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -97,7 +97,7 @@
                         <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                       *}}
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px; margin-bottom: 10px" />
+                      <center><img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px; margin-bottom: 10px" /></center>
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -118,7 +118,7 @@
                   {{ /if }}
                 {{ /image }}
                 *}}
-                <img src="{{ $gimme -> article -> image -> imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px;"/>
+                <center><img src="{{ $gimme -> article -> image -> imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px; margin-bottom: 10px;"/></center>
               {{ /if }}                  
             {{ /list_article_images }}
             <p class="normal_font_2" >
