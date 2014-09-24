@@ -27,9 +27,13 @@
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" style="float:left; margin-right:1%;" />
+                      
+                      {{* Lo comentamos porque alguien no subio las imagenes a tamaño del rendition... 
                       {{ image rendition="articulo_vertical" }}
                         <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
+                      *}}
+                      <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -40,11 +44,14 @@
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                {{* Lo comentamos porque alguien no subio las imagenes a tamaño del rendition... 
                 {{ image rendition="articulo_vertical" }}
                   {{ if $gimme->current_list->at_beginning }}
                     <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
                   {{ /if }}
                 {{ /image }}
+                *}}
+                <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
               {{ /if }}                  
             {{ /list_article_images }}         
           {{ /if }}<!-- fin ligthbox -->
@@ -79,9 +86,11 @@
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                      {{* Lo cometamos porque a alguien se le ha olvidado hacer algo con el rendition
                       {{ image rendition="articulo_horizontal" }}
                         <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
+                      *}}
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -92,11 +101,14 @@
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                {{* Lo comentamos porque a alguien se le ha olvidado hacer algo con el rendition...
                 {{ image rendition="articulo_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
                     <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
                   {{ /if }}
                 {{ /image }}
+                *}}
+                <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
               {{ /if }}                  
             {{ /list_article_images }}
             <p class="normal_font_2" >
@@ -181,11 +193,14 @@
       </div><br>
       <div class="banner">    
           {{ list_playlist_articles name="ArticuloCol2" }}
-            <p>
+            <small>Publicidad</small><br />
             <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
+            {*
             {{ image rendition="articulo_cuadrada" }}
               <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
             {{ /image }}
+            *}
+            <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
             </a>
             </p>
           {{ /list_playlist_articles }}
@@ -223,4 +238,3 @@
 </div>
 </body>
 </html>
-
