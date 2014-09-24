@@ -1,6 +1,6 @@
 {{ include file='header.tpl' }}
   <div class="row">
-    {{ if $gimme ->article ->articulo_recorrido }}
+    {{ if $gimme ->article -> articulo_recorrido }}
     <div class="col-md-10 col1">
       <div class="articulo_recorrido_col1">
         {{ $indice=0 }}     
@@ -27,13 +27,12 @@
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" style="float:left; margin-right:1%;" />
-                      
-                      {{* Lo comentamos porque alguien no subio las imagenes a tamaño del rendition... 
+                      {{*
                       {{ image rendition="articulo_vertical" }}
                         <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                       *}}
-                      <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 400px; float: left; margin-right: 15px; margin-bottom: 5px" />
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -44,14 +43,17 @@
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                {{* Lo comentamos porque alguien no subio las imagenes a tamaño del rendition... 
-                {{ image rendition="articulo_vertical" }}
+               
+               {{ image rendition="articulo_vertical" }}
+                  
                   {{ if $gimme->current_list->at_beginning }}
+               {{* 
                     <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
-                  {{ /if }}
+               *}}
+                   {{ /if }}
+                  <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 390px; float:left; margin-right:10px; margin-bottom: 10px;" />
+                   
                 {{ /image }}
-                *}}
-                <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
               {{ /if }}                  
             {{ /list_article_images }}         
           {{ /if }}<!-- fin ligthbox -->
@@ -77,38 +79,46 @@
         </div>   
     {{ else }}
       <div class="col-xs-10 col1">
+      
         <div class="articulo_estandar_col1">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
-          {{ if $gimme->article->has_image(1) }}
+          {{ if $gimme -> article -> has_image(1) }}
+          {{* Open Graph protocol metatags for Facebook sharing *}}
             {{ list_article_images }}
+          
               {{ if $gimme->current_list->count > 2}}
+              
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                      {{* Lo cometamos porque a alguien se le ha olvidado hacer algo con el rendition
+                      {{*
                       {{ image rendition="articulo_horizontal" }}
                         <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                       *}}
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px; margin-bottom: 10px" />
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
                     </div>                         
                   </div>
                 {{ else }}
+                
                   <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                     <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
-                {{* Lo comentamos porque a alguien se le ha olvidado hacer algo con el rendition...
+                
+                {{*
                 {{ image rendition="articulo_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
                     <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
                   {{ /if }}
                 {{ /image }}
                 *}}
-                <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
+                <img src="{{ $gimme -> article -> image -> imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px;"/>
               {{ /if }}                  
             {{ /list_article_images }}
             <p class="normal_font_2" >
@@ -193,14 +203,9 @@
       </div><br>
       <div class="banner">    
           {{ list_playlist_articles name="ArticuloCol2" }}
-            <small>Publicidad</small><br />
+            <small>Publicidad</small><br/>
             <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
-            {*
-            {{ image rendition="articulo_cuadrada" }}
-              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
-            {{ /image }}
-            *}
-            <img src="{{ $gimme -> article -> image -> url }}" alt="{{ $gimme -> article -> image -> description}}" />
+              <img src="{{ $gimme -> article -> image -> imageurl }}" />
             </a>
             </p>
           {{ /list_playlist_articles }}
