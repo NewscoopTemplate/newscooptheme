@@ -77,7 +77,7 @@
   </div><!-- fin col1 subseccion -->
 <!-- si es nulo pinta como seccion -->
   {{ else }}
-  <div class="col-xs-5 col1">  
+  <div class="col-xs-6 col1">  
     {{ list_playlist_articles name="{{$gimme->section->name}}{{$gimme->section->number}}Col1"}}
     {{ $contadora=0 }}
       {{ list_article_topics }}
