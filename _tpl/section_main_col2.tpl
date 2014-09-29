@@ -459,47 +459,53 @@
   {{ /list_playlist_articles}}
   {{ if $num_imagenes > 0}}  
      <!--slider: analiza cuatnos articulos hay en la lista "slider" y crea tantos sliders como haya -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">   
-         {{ $contador_slider=0 }}
-         {{ list_playlist_articles name="slider_seccion" }}
-             {{ if $contador_slider == 0 }}
-                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-             {{ else }}
-                 <li data-target="#carousel-example-generic" data-slide-to="{{ $contador }}"></li>
-             {{ /if }}
+      <ol class="carousel-indicators">
+        {{ $contador_slider=0 }}
+        {{ list_playlist_articles name="slider" }}
+           {{ if $contador_slider == 0 }}
+               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+           {{ else }}
+               <li data-target="#carousel-example-generic" data-slide-to="{{ $contador }}"></li>
+           {{ /if }}
            {{ $contador_slider=$contador_slider+1 }}
-         {{ /list_playlist_articles }}      
+         {{ /list_playlist_articles }}
       </ol>
       <!-- Wrapper for slides -->
-      <div class="carousel-inner">  
+      <div class="carousel-inner">
          {{ $contador_slider=0 }}
-         {{ list_playlist_articles name="slider_seccion" }}
-           {{ if $contador_slider == 0 }} 
+         {{ list_playlist_articles name="slider" }}
+         {{ if $contador_slider == 0 }}
                <div class="item active">
-                  <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
-                  <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:250px;" /></a>              
+                        {{ list_images length="1" }}
+                        {{ image rendition="portada_cuadrada" }}
+                                <img src="{{ $image->src }}" alt="{{ $image->caption }}" style="width:100%;"/>
+                        {{ /image }}
+                        {{ /list_images }}
+                  <div class="carousel-caption" style="background-color:rgba(0,0,0,0.5);">{{ $gimme -> article -> titular }}</div>
               </div>
-          {{ else }}
-               <div class="item">
-                     <p class="semibold_font_3">{{ $gimme -> article -> titular }}</p>
-                  <a href="{{ uri options="article" }}"><img src="{{url options="image 1"}}" alt="{{$gimme->article->image1->description}}" style="width:100%; height:250px;" /></a>              
-               </div>
-         {{ /if }}
-         {{ $contador_slider=$contador_slider+1 }}
-         {{ /list_playlist_articles }}
-        
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-    </div><hr><!-- fin carrusel -->
+              {{ $contador_slider=1 }}
+        {{ else }}
+             <div class="item">
+                        {{ list_images length="1" }}
+                        {{ image rendition="portada_cuadrada" }}
+                                <img src="{{ $image->src }}" alt="{{ $image->caption }}" style="width:100%;"/>
+                        {{ /image }}
+                        {{ /list_images }}
+                  <div class="carousel-caption" style="background-color:rgba(0,0,0,0.5);">{{ $gimme -> article -> titular }}</div>
+              </div>
+        {{ /if }}
+        {{ /list_playlist_articles }}
+        </div> <!-- fin slides -->
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div><!-- fin carrusel -->
   {{ /if }}  
 {{ /if }}  
 </div>
