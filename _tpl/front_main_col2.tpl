@@ -1,4 +1,4 @@
-<div class="col-xs-5 col2">
+<div class="col-xs-4 col2">
   {{ list_playlist_articles name="PortadaCol2" }}
     {{if $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto 
     && $gimme->article->portada_recorrido }}                                            
@@ -54,7 +54,7 @@
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
             {{ list_article_images }}
-              {{ if $gimme->current_list->count > 2}}
+              {{ if $gimme->current_list->count > 1 }}
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
@@ -100,7 +100,7 @@
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
             {{ list_article_images }}
-              {{ if $gimme->current_list->count > 2}}
+              {{ if $gimme->current_list->count > 1 }}
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
@@ -135,7 +135,6 @@
           <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
           <p class="datos_articulos normal_font_1">
           {{ list_article_authors }}
-          {{ list_article_authors }}
           {{ $gimme->author->name|upper }}, 
           {{ /list_article_authors }}
           {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
@@ -147,7 +146,7 @@
             <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
             {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
               {{ list_article_images }}
-                {{ if $gimme->current_list->count > 2}}
+                {{ if $gimme->current_list->count > 1 }}
                   {{ if $gimme->current_list->at_beginning }}
                     <div class="contenedor_imagen">
                       <div class="imagen">
@@ -192,7 +191,7 @@
     {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
         <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
         {{ image rendition="portada_cuadrada" }}
-          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
         {{ /image }}
         </a><hr>
     {{ else }}
@@ -201,7 +200,7 @@
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
             {{ list_article_images }}
-              {{ if $gimme->current_list->count > 2}}
+              {{ if $gimme->current_list->count > 1 }}
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
@@ -247,7 +246,7 @@
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
             {{ list_article_images }}
-              {{ if $gimme->current_list->count > 2}}
+              {{ if $gimme->current_list->count > 1 }}
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
@@ -293,7 +292,7 @@
             <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
             {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
               {{ list_article_images }}
-                {{ if $gimme->current_list->count > 2}}
+                {{ if $gimme->current_list->count > 1}}
                   {{ if $gimme->current_list->at_beginning }}
                     <div class="contenedor_imagen">
                       <div class="imagen">
