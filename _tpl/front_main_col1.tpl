@@ -1,4 +1,4 @@
-<div class="col-xs-6 col1">
+<div class="col-xs-5 col1">
 
   {{ list_playlist_articles name="PortadaCol1" order="bypublishdate desc" }}
     {{ if $gimme -> article -> portada_recorrido && !$gimme->article->portada_sin_foto }}
