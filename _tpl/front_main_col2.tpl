@@ -1,16 +1,3 @@
-<!--
-
-Todo esto hay que hacerlo leyendo unicamente la lista en cuestion
-Es decir, tiene que haber una lista para esta columna
-Y al recorrer ella, a traves de
-{if} {elseif} {else}
-y comprobando la propiedad "con_recorrido", "con_recorrido_foto"... esta on/true
-lo mostramos en el div determinado
-Asi lo que estamos haciendo es mostrar todos, pero ellos no pueden elegir
-en que columna sale.
-Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
-
--->
 <div class="col-xs-4 col2">
   {{ list_playlist_articles name="PortadaCol2" }}
     {{if $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto 
@@ -73,7 +60,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                     </div>
                     <div class="icono">
@@ -88,7 +75,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 <a href="{{ uri options="article"}}">
                 {{ image rendition="portada_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                   {{ /if }}
                 {{ /image }}
               {{ /if }}                  
@@ -119,7 +106,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                     </div>
                     <div class="icono">
@@ -134,7 +121,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 <a href="{{ uri options="article"}}">
                 {{ image rendition="portada_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                   {{ /if }}
                 {{ /image }}
               {{ /if }}                  
@@ -165,7 +152,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                         {{ image rendition="portada_horizontal" }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
                       </div>
                       <div class="icono">
@@ -180,7 +167,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   <a href="{{ uri options="article"}}">
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
-                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
                 {{ /if }}                  
@@ -204,7 +191,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
     {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
         <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
         {{ image rendition="portada_cuadrada" }}
-          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
         {{ /image }}
         </a><hr>
     {{ else }}
@@ -219,7 +206,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                     </div>
                     <div class="icono">
@@ -234,7 +221,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 <a href="{{ uri options="article"}}">
                 {{ image rendition="portada_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                   {{ /if }}
                 {{ /image }}
               {{ /if }}                  
@@ -265,7 +252,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       {{ image rendition="portada_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
                     </div>
                     <div class="icono">
@@ -280,7 +267,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 <a href="{{ uri options="article"}}">
                 {{ image rendition="portada_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                   {{ /if }}
                 {{ /image }}
               {{ /if }}                  
@@ -311,7 +298,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                         {{ image rendition="portada_horizontal" }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
                       </div>
                       <div class="icono">
@@ -326,7 +313,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   <a href="{{ uri options="article"}}">
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
-                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
                 {{ /if }}                  
