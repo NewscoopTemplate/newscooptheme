@@ -463,7 +463,7 @@
       <!-- Indicators -->
       <ol class="carousel-indicators">
         {{ $contador_slider=0 }}
-        {{ list_playlist_articles name="slider" }}
+        {{ list_playlist_articles name="slider_seccion" }}
            {{ if $contador_slider == 0 }}
                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
            {{ else }}
@@ -475,7 +475,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
          {{ $contador_slider=0 }}
-         {{ list_playlist_articles name="slider" }}
+         {{ list_playlist_articles name="slider_seccion" }}
          {{ if $contador_slider == 0 }}
                <div class="item active">
                         {{ list_images length="1" }}
