@@ -19,12 +19,11 @@
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            {{* Asi hasta que alguien no arregle las imagenes subidas
+                            
                             {{ image rendition="portada_vertical" }}
-                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
-                            *}}
-                            <img src="{{ $gimme->article->image->imageurl }}" style="width:350px;" />
+                            
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -36,13 +35,13 @@
                       {{ /if }}
                     {{ else }}
                       <a href="{{ uri options="article"}}">
-                      {{*
+                    
                       {{ image rendition="portada_vertical" }}
                         {{ if $gimme->current_list->at_beginning }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
                       {{ /image }}
-                      *}}
+                    
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width:150px;" /></a>
                       {{ /if }}
                   {{ /list_article_images }}
@@ -84,12 +83,11 @@
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            {{* Asi hasta que alguien no arregle las imagenes
+                            
                             {{ image rendition="portada_vertical" }}
-                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
-                            *}}
-                            <img src="$gimme->article->image->imageurl" alt="" style="width:150px;" />
+                            
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -101,14 +99,13 @@
                       {{ /if }}
                     {{ else }}
                       <a href="{{ uri options="article"}}">
-                      {{* Asi hasta que alguien no arregle las imagenes
+                     
                       {{ image rendition="portada_vertical" }}
                         {{ if $gimme->current_list->at_beginning }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
                       {{ /image }}
-                      *}}
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:150px;" />
+              
                     {{ /if }}
                   {{ /list_article_images }}              
               </div>
@@ -149,12 +146,11 @@
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            {{* Asi hasta que alguien no arregle las imagenes
+                            
                             {{ image rendition="portada_vertical" }}
-                              <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                              <img src="{{ $image->src }}" width="{{ $image->width }}"  alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
-                            *}}
-                            <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:150px;" />
+                           
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -166,14 +162,13 @@
                       {{ /if }}
                     {{ else }}
                       <a href="{{ uri options="article"}}">
-                      {{* Asi hasta que alguien no arregle las imagenes
+                      
                       {{ image rendition="portada_vertical" }}
                         {{ if $gimme->current_list->at_beginning }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
                       {{ /image }}
-                      *}}
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:150px;" />
+                     
                     {{ /if }}
                   {{ /list_article_images }}              
               </div>
@@ -258,12 +253,11 @@
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        {{* Asi hasta que alguien no arregle las imagenes
+                       
                         {{ image rendition="portada_horizontal" }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}"  alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
-                        *}}
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
+                        
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -275,14 +269,13 @@
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
-                  {{*
+                  
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
-                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      <img src="{{ $image->src }}" width="{{ $image->width }}"  alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
-                  *}}
-                  <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
+                  
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -315,12 +308,11 @@
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        {{* Asi hasta que alguien no arregle las imagenes
+                        
                         {{ image rendition="portada_horizontal" }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}"  alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
-                        *}}
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
+                        
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -332,14 +324,13 @@
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
-                  {{* Asi hasta que alguien no arregle las imagenes
+                  
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
-                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      <img src="{{ $image->src }}" width="{{ $image->width }}"  alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
-                  *}}
-                  <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
+                  
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -373,12 +364,11 @@
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                        {{* Asi hasta que alguien no arregle las imagenes
+                        
                         {{ image rendition="portada_horizontal" }}
-                          <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                          <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
-                        *}}
-                        <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
+                        
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -390,14 +380,13 @@
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
-                  {{* Asi hasta que alguien no arregle las imagenes
+                  
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
-                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                      <img src="{{ $image->src }}" width="{{ $image->width }}"  alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
-                  *}}
-                  <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
+                  
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
