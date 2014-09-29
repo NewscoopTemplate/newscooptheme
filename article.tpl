@@ -22,36 +22,35 @@
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) }}
             {{ list_article_images }}
-              {{ if $gimme->current_list->count > 2}}
+              {{ if $gimme->current_list->count > 1}}
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" style="float:left; margin-right:1%;" />
-                      {{*
                       {{ image rendition="articulo_vertical" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
-                      *}}
-                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 390px; float: left; margin-right: 15px; margin-bottom: 5px" />
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
                     </div>                         
                   </div>
                 {{ else }}
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
+                  <div class="imagen" style="display:none;">
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" />
+                    </a>
+                  </div>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                
                {{ image rendition="articulo_vertical" }}
                   
                   {{ if $gimme->current_list->at_beginning }}
-               {{* 
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
-               *}}
+            
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+               
                    {{ /if }}
-                  <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 390px; float:left; margin-right:10px; margin-bottom: 10px;" />
                    
                 {{ /image }}
               {{ /if }}                  
@@ -83,42 +82,40 @@
         <div class="articulo_estandar_col1">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme -> article -> has_image(1) }}
-          {{* Open Graph protocol metatags for Facebook sharing *}}
             {{ list_article_images }}
           
-              {{ if $gimme->current_list->count > 2}}
+              {{ if $gimme->current_list->count > 1}}
               
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
                     <div class="imagen">
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                      {{*
+                      
                       {{ image rendition="articulo_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                       {{ /image }}
-                      *}}
-                      <center><img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px; margin-bottom: 10px" /></center>
+                      
+                      
                     </div>
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
                     </div>                         
                   </div>
                 {{ else }}
-                
-                  <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
-                    <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" /></a>
-                
+                  <div class="imagen" style="display:none;">
+                    <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" />
+                    </a>
+                  </div>
                 {{ /if }}
               {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                 
-                {{*
                 {{ image rendition="articulo_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
-                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
                   {{ /if }}
                 {{ /image }}
-                *}}
-                <center><img src="{{ $gimme -> article -> image -> imageurl }}" alt="{{ $gimme->image->description }}" style="width: 700px; margin-bottom: 10px;"/></center>
+              
               {{ /if }}                  
             {{ /list_article_images }}
             <p class="normal_font_2" >
