@@ -1,4 +1,4 @@
-<div class="col-xs-4 col2">
+<div class="col-xs-5 col2">
   {{ list_playlist_articles name="PortadaCol2" }}
     {{if $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto 
     && $gimme->article->portada_recorrido }}                                            
