@@ -11,7 +11,7 @@
       {{ /list_playlist_articles}}
 
   {{ else }}<!-- si no existe la subseccion_filtrada -->
-  <div class="col-xs-5 col2">
+  <div class="col-xs-4 col2">
     {{ list_playlist_articles name="{{$gimme->section->name}}{{$gimme->section->number}}Col2" }}
         {{ $contadora=0 }}
         {{ list_article_topics }}
