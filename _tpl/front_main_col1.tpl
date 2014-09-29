@@ -1,16 +1,3 @@
-<!--
-
-Todo esto hay que hacerlo leyendo unicamente la lista en cuestion
-Es decir, tiene que haber una lista para esta columna
-Y al recorrer ella, a traves de
-{if} {elseif} {else}
-y comprobando la propiedad "con_recorrido", "con_recorrido_foto"... esta on/true
-lo mostramos en el div determinado
-Asi lo que estamos haciendo es mostrar todos, pero ellos no pueden elegir
-en que columna sale.
-Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
-
--->
 <div class="col-xs-6 col1">
 
   {{ list_playlist_articles name="PortadaCol1" order="bypublishdate desc" }}
@@ -32,9 +19,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                            {{* Asi hasta que alguien no arregle las imagenes subidas
                             {{ image rendition="portada_vertical" }}
                               <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
+                            *}}
+                            <img src="{{ $gimme->article->image->imageurl }}" style="width:350px;" />
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -46,12 +36,15 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       {{ /if }}
                     {{ else }}
                       <a href="{{ uri options="article"}}">
+                      {{*
                       {{ image rendition="portada_vertical" }}
                         {{ if $gimme->current_list->at_beginning }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
                       {{ /image }}
-                    {{ /if }}
+                      *}}
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="width:150px;" /></a>
+                      {{ /if }}
                   {{ /list_article_images }}
               </div>
               <div class="col-xs-7">
@@ -59,7 +52,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
@@ -68,7 +61,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
@@ -91,9 +84,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                            {{* Asi hasta que alguien no arregle las imagenes
                             {{ image rendition="portada_vertical" }}
                               <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
+                            *}}
+                            <img src="$gimme->article->image->imageurl" alt="" style="width:150px;" />
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -105,11 +101,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       {{ /if }}
                     {{ else }}
                       <a href="{{ uri options="article"}}">
+                      {{* Asi hasta que alguien no arregle las imagenes
                       {{ image rendition="portada_vertical" }}
                         {{ if $gimme->current_list->at_beginning }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
                       {{ /image }}
+                      *}}
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:150px;" />
                     {{ /if }}
                   {{ /list_article_images }}              
               </div>
@@ -118,7 +117,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
@@ -127,7 +126,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
@@ -150,9 +149,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                            {{* Asi hasta que alguien no arregle las imagenes
                             {{ image rendition="portada_vertical" }}
                               <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
+                            *}}
+                            <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:150px;" />
                           </div>
                           <div class="icono">
                             <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -164,11 +166,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                       {{ /if }}
                     {{ else }}
                       <a href="{{ uri options="article"}}">
+                      {{* Asi hasta que alguien no arregle las imagenes
                       {{ image rendition="portada_vertical" }}
                         {{ if $gimme->current_list->at_beginning }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
                       {{ /image }}
+                      *}}
+                      <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:150px;" />
                     {{ /if }}
                   {{ /list_article_images }}              
               </div>
@@ -177,7 +182,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ else }}<!-- si no hay imagen y la entradilla esta vacia -->
@@ -186,7 +191,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                 {{ list_article_authors }}
                 {{ $gimme->author->name|upper }} ::
                 {{ /list_article_authors }}
-                {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}</p>
+                {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}</p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
@@ -205,7 +210,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
@@ -221,7 +226,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>      
@@ -236,7 +241,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
           {{ list_article_authors }}
           {{ $gimme->author->name|upper }} ::
           {{ /list_article_authors }}
-          {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+          {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
@@ -253,9 +258,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                        {{* Asi hasta que alguien no arregle las imagenes
                         {{ image rendition="portada_horizontal" }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
+                        *}}
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -267,11 +275,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
+                  {{*
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
                       <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
+                  *}}
+                  <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -288,7 +299,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
-            {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
@@ -304,9 +315,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                        {{* Asi hasta que alguien no arregle las imagenes
                         {{ image rendition="portada_horizontal" }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
+                        *}}
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -318,11 +332,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
+                  {{* Asi hasta que alguien no arregle las imagenes
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
                       <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
+                  *}}
+                  <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -340,7 +357,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
-            {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
@@ -356,9 +373,12 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                     <div class="contenedor_imagen">
                       <div class="imagen">
                         <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
+                        {{* Asi hasta que alguien no arregle las imagenes
                         {{ image rendition="portada_horizontal" }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /image }}
+                        *}}
+                        <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
                       </div>
                       <div class="icono">
                         <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
@@ -370,11 +390,14 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
                   {{ /if }}
                 {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                   <a href="{{ uri options="article"}}">
+                  {{* Asi hasta que alguien no arregle las imagenes
                   {{ image rendition="portada_horizontal" }}
                     {{ if $gimme->current_list->at_beginning }}
                       <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                     {{ /if }}
                   {{ /image }}
+                  *}}
+                  <img src="{{ $gimme->article->image->imageurl }}" alt="" style="width:350px;" />
                 {{ /if }}                  
               {{ /list_article_images }}
               <p class="normal_font_2" >
@@ -392,7 +415,7 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
             {{ list_article_authors }}
             {{ $gimme->author->name|upper }} ::
             {{ /list_article_authors }}
-            {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e %M %Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
@@ -402,4 +425,3 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
     {{ /if }}<!-- fin con_recorrido, sin _recorrido, sin _recorrido_foto -->
   {{ /list_playlist_articles }}
 </div>
-
