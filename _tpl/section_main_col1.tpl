@@ -15,9 +15,9 @@
                 <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
-                {{ $gimme->author->name }} ::
+                {{ $gimme->author->name|upper }}, 
                 {{ /list_article_authors }}
-                 {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div>
@@ -63,9 +63,9 @@
             <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
             <p class="datos_articulos normal_font_1">
             {{ list_article_authors }}
-            {{ $gimme->author->name|upper }} ::
+            {{ $gimme->author->name|upper }}, 
             {{ /list_article_authors }}
-             {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+            {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
             </p>
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div> <!-- fin subseccion_sin_recorrido_col1 -->
@@ -132,9 +132,9 @@
                     <div class="col-xs-7">                    
                       <p class="datos_articulos normal_font_1">
                       {{ list_article_authors }}
-                      {{ $gimme->author->name|upper }} ::
+                      {{ $gimme->author->name|upper }}, 
                       {{ /list_article_authors }}
-                       {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                       {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                       </p>
                       <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                     </div>                                              
@@ -142,9 +142,9 @@
                     <div class="col-xs-12">                    
                       <p class="datos_articulos normal_font_1">
                       {{ list_article_authors }}
-                      {{ $gimme->author->name|upper }} ::
+                      {{ $gimme->author->name|upper }}, 
                       {{ /list_article_authors }}
-                       {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                       {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                       </p>
                       <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                     </div>
@@ -199,9 +199,9 @@
                     <div class="col-xs-7">                    
                       <p class="datos_articulos normal_font_1">
                       {{ list_article_authors }}
-                      {{ $gimme->author->name|upper }} ::
+                      {{ $gimme->author->name|upper }}, 
                       {{ /list_article_authors }}
-                       {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                       {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                       </p>
                       <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                     </div>                                              
@@ -266,9 +266,9 @@
                     <div class="col-xs-7">                    
                       <p class="datos_articulos normal_font_1">
                       {{ list_article_authors }}
-                      {{ $gimme->author->name|upper }} ::
+                      {{ $gimme->author->name|upper }}, 
                       {{ /list_article_authors }}
-                       {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                       {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                       </p>
                       <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                     </div>                                              
@@ -322,9 +322,9 @@
                 <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
-                  {{ $gimme->author->name|upper }} ::
+                  {{ $gimme->author->name|upper }}, 
                 {{ /list_article_authors }}
-                 {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div><hr><!-- fin seccion_sin_recorrido_col1-->
@@ -342,9 +342,9 @@
                 <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
-                  {{ $gimme->author->name|upper }} ::
+                  {{ $gimme->author->name|upper }}, 
                 {{ /list_article_authors }}
-                 {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div><hr><!-- fin seccion_sin_recorrido_col1-->
@@ -397,9 +397,9 @@
                 <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
-                  {{ $gimme->author->name|upper }} ::
+                  {{ $gimme->author->name|upper }}, 
                 {{ /list_article_authors }}
-                 {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div><hr><!-- fin seccion_sin_recorrido_foto_col1 -->
@@ -449,9 +449,9 @@
                 <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
-                  {{ $gimme->author->name|upper }} ::
+                  {{ $gimme->author->name|upper }}, 
                 {{ /list_article_authors }}
-                 {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div><hr><!-- fin seccion_sin_recorrido_foto_col1 -->
@@ -501,9 +501,9 @@
                 <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a></p>
                 <p class="datos_articulos normal_font_1">
                 {{ list_article_authors }}
-                  {{ $gimme->author->name|upper }} ::
+                  {{ $gimme->author->name|upper }}, 
                 {{ /list_article_authors }}
-                 {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+                 {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
                 <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
               </div><hr><!-- fin seccion_sin_recorrido_foto_col1 -->
