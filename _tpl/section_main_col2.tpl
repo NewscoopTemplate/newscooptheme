@@ -105,7 +105,7 @@
                                 <div class="imagen">
                                   <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                                   {{ image rendition="portada_vertical" }}
-                                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                                   {{ /image }}
                                 </div>
                                 <div class="icono">
@@ -120,7 +120,7 @@
                             <a href="{{ uri options="article"}}">
                             {{ image rendition="portada_vertical" }}
                               {{ if $gimme->current_list->at_beginning }}
-                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                               {{ /if }}
                             {{ /image }}
                           {{ /if }}
@@ -172,7 +172,7 @@
                                 <div class="imagen">
                                   <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                                   {{ image rendition="portada_vertical" }}
-                                    <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                                   {{ /image }}
                                 </div>
                                 <div class="icono">
@@ -187,7 +187,7 @@
                             <a href="{{ uri options="article"}}">
                             {{ image rendition="portada_vertical" }}
                               {{ if $gimme->current_list->at_beginning }}
-                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                               {{ /if }}
                             {{ /image }}
                           {{ /if }}
@@ -239,7 +239,7 @@
                                   <div class="imagen">
                                     <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                                     {{ image rendition="portada_vertical" }}
-                                      <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                      <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                                     {{ /image }}
                                   </div>
                                   <div class="icono">
@@ -254,7 +254,7 @@
                               <a href="{{ uri options="article"}}">
                               {{ image rendition="portada_vertical" }}
                                 {{ if $gimme->current_list->at_beginning }}
-                                  <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                  <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                                 {{ /if }}
                               {{ /image }}
                             {{ /if }}
@@ -287,7 +287,7 @@
             <div class="banner">
               <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
               {{ image rendition="portada_cuadrada" }}
-                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
               {{ /image }}<hr>
             </div>              
             {{ else }}<!-- opcion por defecto si no se elije con recorrido o sin foto -->
@@ -302,7 +302,7 @@
                             <div class="imagen">
                               <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                               {{ image rendition="portada_horizontal" }}
-                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                               {{ /image }}
                             </div>
                             <div class="icono">
@@ -317,7 +317,7 @@
                         <a href="{{ uri options="article"}}">
                         {{ image rendition="portada_horizontal" }}
                           {{ if $gimme->current_list->at_beginning }}
-                            <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                            <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                           {{ /if }}
                         {{ /image }}
                       {{ /if }}                  
@@ -353,7 +353,7 @@
                             <div class="imagen">
                               <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                               {{ image rendition="portada_horizontal" }}
-                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                               {{ /image }}
                             </div>
                             <div class="icono">
@@ -368,7 +368,7 @@
                         <a href="{{ uri options="article"}}">
                         {{ image rendition="portada_horizontal" }}
                           {{ if $gimme->current_list->at_beginning }}
-                            <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                            <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                           {{ /if }}
                         {{ /image }}
                       {{ /if }}                  
@@ -404,7 +404,7 @@
                             <div class="imagen">
                               <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                               {{ image rendition="portada_horizontal" }}
-                                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                                <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                               {{ /image }}
                             </div>
                             <div class="icono">
@@ -419,7 +419,7 @@
                         <a href="{{ uri options="article"}}">
                         {{ image rendition="portada_horizontal" }}
                           {{ if $gimme->current_list->at_beginning }}
-                            <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                            <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                           {{ /if }}
                         {{ /image }}
                       {{ /if }}                  
