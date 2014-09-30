@@ -284,11 +284,11 @@
                 </div><hr>
               {{ /if }}
             {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
-            <div class="banner">
+            <div class="banner"><small>Publicidad</small>
               <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
               {{ image rendition="portada_cuadrada" }}
                 <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
-              {{ /image }}<hr>
+              {{ /image }}
             </div>              
             {{ else }}<!-- opcion por defecto si no se elije con recorrido o sin foto -->
                 {{ if $gimme->article->seccion_borde || $gimme->article->seccion_borde && $gimme->article->seccion_gris }}
