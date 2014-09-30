@@ -2,8 +2,8 @@
   {{ if isset($subseccion_filtrada) }}
   <div class="col-xs-2 col2">    
     {{ list_playlist_articles name="SubSeccionCol2" }}
-      <div class="banner">
-        <p><a href="http://{{ $gimme->article->enlace }}" target="_blank">
+      <div class="banner"><small>Publicidad</small>
+        <a href="http://{{ $gimme->article->enlace }}" target="_blank">
         {{ image rendition="portada_cuadrada" }}
           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
         {{ /image }}</p>
