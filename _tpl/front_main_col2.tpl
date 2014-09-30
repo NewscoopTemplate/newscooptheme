@@ -189,11 +189,13 @@
         </div><hr>
       {{ /if }}<!-- fin if bordes y fondo gris -->
     {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
+      <div class="banner"><small>Publicidad</small>
         <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
         {{ image rendition="portada_cuadrada" }}
           <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
         {{ /image }}
-        </a><hr>
+        </a>
+      </div>
     {{ else }}
       {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
         <div class="portada_sin_recorrido_foto_col2 con_borde">
