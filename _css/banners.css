@@ -1,0 +1,18 @@
+/* CSS de los Banners */
+
+.banner {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #a1a1a1;
+}
+
+.banner small {
+  font-variant: small-caps;
+  color: #f4f4f4;
+  background-color: #4b4b4b;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
