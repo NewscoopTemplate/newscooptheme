@@ -31,5 +31,7 @@
                 <rendition name="articulo_horizontal" width="700" height="350" specs="crop"/>
                 <rendition name="articulo_vertical" width="290" height="350" specs="crop"/>
                 <rendition name="aritculo_cuadrada" width="350" height="350" specs="crop"/>
+                <!-- ==== Renditions para los banners (aun por definir del todo) ==== -->
+                <rendition name="banner_cabecera" width="1009" height="125" specs="crop"/>
         </renditions>
 </theme>
