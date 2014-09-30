@@ -3,7 +3,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 139px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2;
 }
@@ -13,7 +15,9 @@
   position: relative;
   width: 30px;
   bottom:28px;
-  left: 420px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2;
 }
@@ -23,7 +27,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 259px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2;
 }
@@ -34,7 +40,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 108px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;;
   margin-bottom: -24px;
   z-index: 2; 
 }
@@ -43,7 +51,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 342px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2; 
 }
@@ -52,7 +62,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 108px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2;    
 }
@@ -61,7 +73,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 342px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2; 
 }
@@ -72,7 +86,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 219px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2; 
 }
@@ -81,7 +97,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 169px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2;   
 }
@@ -90,7 +108,9 @@
   position: relative;
   width: 30px;  
   bottom:28px;
-  left: 778px;
+  left: 10px;
+  padding: 2px;
+  background-color: white;
   margin-bottom: -24px;
   z-index: 2; 
 }
