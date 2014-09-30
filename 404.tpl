@@ -46,3 +46,17 @@
 <!-- ************************Fin del header*******************************-->
 
     {{ include file='nav.tpl' }}
+    <div class="row">
+     <div class="col-md-12">
+        
+            <h1>Error 404</h1>
+            <h2>La p&aacute;gina que estas buscando no esta disponible</h2>
+            <p>La &aacute;gina que esta usted buscando no se encuentra disponible.</p>
+            <p>Puede que haya puesto mal la URL de nuestro sitio o que el articulo que esta buscando ya no este disponible.</p>
+        
+     </div>
+    </div>
+    {{ include file='footer.tpl' }}
+</div>
+</body>
+</html>
