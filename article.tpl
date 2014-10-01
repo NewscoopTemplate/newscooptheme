@@ -1,7 +1,7 @@
 {{ include file='header.tpl' }}
   <div class="row">
     {{ if $gimme ->article -> articulo_recorrido }}
-    <div class="col-md-10 col1">
+    <div class="col-xs-8 col1">
       <div class="articulo_recorrido_col1">
         {{ $indice=0 }}     
         <div class="subsecciones">     
@@ -15,7 +15,7 @@
         <p class="semibold_font_2">{{ $gimme->article->titular }}</p>
         <p class="semibold_font_1">{{ $gimme->article->entradilla }}</p>
         <p class="datos_articulos normal_font_1">{{ list_article_authors }}
-        {{ $gimme->author->name }}:: {{ $gimme->article->publish_date|camp_date_format:"%e %m %Y" }}
+        {{ $gimme->author->name }}, {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
         {{ if !$gimme->current_list->at_end }}, </p>{{ /if }}
         {{ /list_article_authors }}
         <div>
@@ -77,7 +77,7 @@
           <!--redes_sociales -->
         </div>   
     {{ else }}
-      <div class="col-xs-10 col1">
+      <div class="col-xs-8 col1">
       
         <div class="articulo_estandar_col1">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
@@ -160,6 +160,18 @@
           {{ /if }}
         </div>        
       </div>    
+    <div class="col-xs-2 col2">
+    <!-- columna 2 -->
+      {{ list_playlist_articles name="SubSeccionCol2" }}
+      {{* Como no tengo ni idea de que quieren pner aqui, pongo las de la subseccion *}}
+        <div class="banner"><small>Publicidad</small>
+          <a href="http://{{ $gimme->article->enlace }}" target="_blank">
+          {{ image rendition="portada_cuadrada" }}
+            <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+          {{ /image }}</p>
+        </div>
+        {{ /list_playlist_articles}}
+    </div>
     {{ $subseccion_filtrada = $smarty.get.subseccion }}
     <div class="col-xs-2 col3">
       <!--el menu de las subsecciones siempre-->
