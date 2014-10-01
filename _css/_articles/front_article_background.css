@@ -252,7 +252,7 @@ Te hago los ejemplos y continuas con los que quedan */
 /* Definicion de la fuente para la entradilla columna 2 */
 .col1 .subseccion_con_recorrido_col1 .semibold_font_1, .col1 .subseccion_sin_recorrido_col1 .semibold_font_1, .col1 .subseccion_sin_recorrido_foto_col1 .semibold_font_1 {
 	font-family: Arial;
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	font-size: 15px;
 	line-height: 18px;
