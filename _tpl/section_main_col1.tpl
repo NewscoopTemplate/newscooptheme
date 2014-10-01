@@ -19,7 +19,7 @@
                 {{ /list_article_authors }}
                 {{ $gimme->article->publish_date|camp_date_format:"%e/%m/%Y" }}
                 </p>
-                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
+                <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a> </p>
               </div>
               <div class="col-xs-5">
                 <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
@@ -30,7 +30,7 @@
                         <div class="contenedor_imagen">
                           <div class="imagen">
                             <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
-                            {{ image rendition="portada_vertical" }}
+                            {{ image rendition="portada_cuadrada" }}
                               <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                             {{ /image }}
                           </div>
@@ -44,7 +44,7 @@
                       {{ /if }}
                     {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
                       <a href="{{ uri options="article"}}">
-                      {{ image rendition="portada_vertical" }}
+                      {{ image rendition="portada_cuadrada" }}
                         {{ if $gimme->current_list->at_beginning }}
                           <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
                         {{ /if }}
