@@ -19,6 +19,8 @@
         {{ if !$gimme->current_list->at_end }}, </p>{{ /if }}
         {{ /list_article_authors }}
         <div>
+        
+          
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme->article->has_image(1) }}
             {{ list_article_images }}
@@ -56,6 +58,9 @@
               {{ /if }}                  
             {{ /list_article_images }}         
           {{ /if }}<!-- fin ligthbox -->
+          
+         
+          
           <div class="texto_articulo">{{ $gimme->article->texto }}</div>
           <div id="redes_sociales">
           <!--facebook-->
@@ -76,15 +81,16 @@
           </div>
           <!--redes_sociales -->
         </div>   
-    {{ else }}
+    {{ else }} {{* Si no es articulo con recorrido *}}
       <div class="col-xs-8 col1">
       
         <div class="articulo_estandar_col1">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
           {{ if $gimme -> article -> has_image(1) }}
+          <div class="row">
             {{ list_article_images }}
-          
-              {{ if $gimme->current_list->count > 1}}
+
+              {{ if $gimme->current_list->count > 2 }} {{* Si hay 3 imagenes o mas... *}}
               
                 {{ if $gimme->current_list->at_beginning }}
                   <div class="contenedor_imagen">
@@ -92,7 +98,7 @@
                       <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}">
                       
                       {{ image rendition="articulo_horizontal" }}
-                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float:left;" /></a>
                       {{ /image }}
                       
                       
@@ -108,19 +114,61 @@
                     </a>
                   </div>
                 {{ /if }}
-              {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+               
+              {{ elseif $gimme->current_list->count == 2 }} {{* Si hay 2 *}}
+              
                 
+                {{ if $gimme -> current_list -> index == 1 }} {{* Si estamos en la primera *}}
+    
+                  <div class="col-md-7">
+                     {{ image rendition="articulo_horizontal" }}
+                       <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" />
+                     {{ /image }}
+                  </div>
+                {{ elseif $gimme -> current_list -> index == 2 }}{{* Si estamos en la segunda *}}
+                  
+                  <div class="col-md-5">
+
+                    {{ image rendition="portada_cuadrada" }}
+                      <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}"
+                    {{ /image }}
+                    
+                  </div>
+                {{ /if }}
+                
+               {{*  
+              {{ else }}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                <!-- <div class="col-md-12"> -->
+                 
                 {{ image rendition="articulo_horizontal" }}
                   {{ if $gimme->current_list->at_beginning }}
                     <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" style="float: left; margin-right: 1%;" /></a>
                   {{ /if }}
                 {{ /image }}
-              
-              {{ /if }}                  
-            {{ /list_article_images }}
+               <!-- </div> -->
+               </div>
+               *}}
+               
+               {{ elseif $gimme->current_list->count == 1}}<!-- si no la imagen se convierte en un enlace que redirecciona al articulo -->
+                <div class="col-md-12">
+                
+                {{ image rendition="articulo_horizontal" }}
+                  {{ if $gimme->current_list->at_beginning }}
+                    <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" /></a>
+                  {{ /if }}
+                {{ /image }}
+               
+               </div>
+              {{ /if }}  {{* Fin de la cantidad de imagenes *}}
+              {{ /list_article_images }}
+              </div>
+           
+            <!-- pie de foto -->
             <p class="normal_font_2" >
-              {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>          
-          {{ /if }}<!-- fin ligthbox --> 
+              {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>  
+            </div>        
+          {{ /if }} {{* Fin de si hay imagenes *}} 
+          
           {{ $indice=0 }}     
           <div class="subsecciones">     
             {{ list_article_topics }}  
@@ -159,7 +207,11 @@
           <!--redes_sociales -->
           {{ /if }}
         </div>        
-      </div>    
+      <!-- </div> -->    
+      
+     
+      
+      
     <div class="col-xs-2 col2">
     <!-- columna 2 -->
       {{ list_playlist_articles name="SubSeccionCol2" }}
@@ -172,6 +224,10 @@
         </div>
         {{ /list_playlist_articles}}
     </div>
+    
+   
+    
+    
     {{ $subseccion_filtrada = $smarty.get.subseccion }}
     <div class="col-xs-2 col3">
       <!--el menu de las subsecciones siempre-->
