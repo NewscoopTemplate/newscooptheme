@@ -56,7 +56,8 @@
                    
                 {{ /image }}
               {{ /if }}                  
-            {{ /list_article_images }}         
+            {{ /list_article_images }}    
+            </div>     
           {{ /if }}<!-- fin ligthbox -->
           
          
@@ -102,24 +103,24 @@
                       {{ /image }}
                       
                       
-                    </div>
+                    </div> {{* fin de las imagenes *}}
                     <div class="icono">
                       <img src="{{ url static_file='dummy/rrss/camera-icon-th.png' }}" />
-                    </div>                         
-                  </div>
+                    </div> {{* fin del icono *}}
+                  </div> {{* fin del contenedor de la imagen *}}
                 {{ else }}
                   <div class="imagen" style="display:none;">
                     <a href="{{ $gimme->article->image->imageurl }}" data-lightbox="articulo_{{ $gimme->article->number}}" >
                       <img src="{{ $gimme->article->image->imageurl }}" alt="{{ $gimme->image->description }}" style="display:none;" />
                     </a>
-                  </div>
+                  </div> {{* fin de los independientes para el lightbox *}}
                 {{ /if }}
                
               {{ elseif $gimme->current_list->count == 2 }} {{* Si hay 2 *}}
               
                 
                 {{ if $gimme -> current_list -> index == 1 }} {{* Si estamos en la primera *}}
-    
+                  {{ $caca = 1 }}
                   <div class="col-md-7">
                      {{ image rendition="articulo_horizontal" }}
                        <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}" />
@@ -133,7 +134,7 @@
                       <img src="{{ $image->src }}" width="{{ $image->width }}" alt="{{ $image->photographer }}: {{ $image->caption }}"
                     {{ /image }}
                     
-                  </div>
+                  </div> {{* fin del row *}}
                 {{ /if }}
                 
                {{*  
@@ -160,15 +161,22 @@
                
                </div>
               {{ /if }}  {{* Fin de la cantidad de imagenes *}}
+              
               {{ /list_article_images }}
-              </div>
+              
+              {{* ATENCION Esto es una ñapa porque los divs estan hechos un cristo, hay que recolocarlos *}}
+              {{ if $caca==1 }}
+                </div>
+              {{ /if }}
+              
+              </aaaaadiv>
            
             <!-- pie de foto -->
             <p class="normal_font_2" >
               {{ $gimme->article->image->description }} / {{ $gimme->article->image->photographer|upper }}</p>  
             </div>        
           {{ /if }} {{* Fin de si hay imagenes *}} 
-          
+          </div>
           {{ $indice=0 }}     
           <div class="subsecciones">     
             {{ list_article_topics }}  
