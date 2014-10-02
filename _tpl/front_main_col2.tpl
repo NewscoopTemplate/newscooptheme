@@ -1,5 +1,7 @@
 <div class="col-xs-4 col2">
   {{ list_playlist_articles name="PortadaCol2" }}
+    {{* SIN foto o SIN foto y CON recorrido *}}
+    {{* Esto es un oximoron *}}
     {{if $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto 
     && $gimme->article->portada_recorrido }}                                            
       {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris  }}
@@ -47,7 +49,8 @@
       {{ /if }}
       
       <!-- fin if  portada_sin_recorrido -->
-
+    {{* CON recorrido y SIN foto *}}
+    {{* Esto es un oximoron *}}
     {{elseif $gimme->article->portada_recorrido && !$gimme->article->portada_sin_foto }}
       {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
         <div class="portada_sin_recorrido_foto_col2 con_borde">
@@ -95,6 +98,7 @@
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
+      {{* GRIS y SIN borde *}}
       {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde}}
         <div class="portada_sin_recorrido_foto_col2 fondo_gris">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
@@ -188,6 +192,7 @@
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
       {{ /if }}<!-- fin if bordes y fondo gris -->
+    {{* ES UN BANNER *}}
     {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
       <div class="banner"><small>Publicidad</small>
         <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
@@ -243,6 +248,7 @@
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
+      {{* GRIS y SIN borde *}}
       {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_sin_recorrido_foto_col2 fondo_gris">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
@@ -338,6 +344,7 @@
       {{ /if }}<!-- fin if bordes y fondo gris -->
     {{ /if }}
   {{ /list_playlist_articles }}  
+  {{* CARRUSEL DE IMAGENES *}}
   <!-- si la lista de slider_secion contiene imagenes muestra el carrousel sino no muestra nada -->
   {{$num_imagenes=0}}
   {{ list_playlist_articles name="slider_seccion"}}
