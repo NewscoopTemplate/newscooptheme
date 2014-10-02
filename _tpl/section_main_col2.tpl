@@ -1,6 +1,8 @@
   <!--si no es nulo y coincide pintamos como subseccion-->
+  {{* SI entramos en SUB-SECCION *}}
   {{ if isset($subseccion_filtrada) }}
   <div class="col-xs-2 col2">    
+    {{* BANNER *}}
     {{ list_playlist_articles name="SubSeccionCol2" }}
       <div class="banner"><small>Publicidad</small>
         <a href="http://{{ $gimme->article->enlace }}" target="_blank">
@@ -9,7 +11,8 @@
         {{ /image }}</p>
       </div>
       {{ /list_playlist_articles}}
-
+  
+  {{* ENTRAMOS en SECCION *}}
   {{ else }}<!-- si no existe la subseccion_filtrada -->
   <div class="col-xs-4 col2">
     {{ list_playlist_articles name="{{$gimme->section->name}}{{$gimme->section->number}}Col2" }}
@@ -79,7 +82,8 @@
                   <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
               {{ /if }}<!-- fin seccion_sin_recorrido  bordes y fondo gris -->
-              
+            
+            {{* CON recorrido y SIN foto *}}
             {{elseif $gimme -> article -> seccion_recorrido && !$gimme -> article -> seccion_sin_foto }}
               {{ if $gimme->article->seccion_borde || $gimme->article->seccion_borde && $gimme->article->seccion_gris }}
                 <div class="seccion_sin_recorrido_foto_col2 con_borde">
@@ -283,6 +287,8 @@
                   </div>
                 </div><hr>
               {{ /if }}
+            
+            {{* BANNERS *}}
             {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
             <div class="banner"><small>Publicidad</small>
               <a href="http://{{ $gimme -> article -> enlace }}" target="_blank" >
@@ -291,6 +297,8 @@
               {{ /image }}
             </div>              
             {{ else }}<!-- opcion por defecto si no se elije con recorrido o sin foto -->
+                
+                {{* CON borde o (CON borde y GRIS) *}}
                 {{ if $gimme->article->seccion_borde || $gimme->article->seccion_borde && $gimme->article->seccion_gris }}
                 <div class="seccion_sin_recorrido_foto_col2 con_borde">
                   <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
@@ -343,6 +351,8 @@
                   </p>
                   <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
                 </div><hr>
+              
+              {{* GRIS y SIN border *}}
               {{ elseif $gimme->article->seccion_gris && !$gimme->article->seccion_borde }}
                 <div class="seccion_sin_recorrido_foto_col2 fondo_gris">
                   {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
@@ -453,6 +463,7 @@
           {{ /list_article_topics }}
     {{ /list_playlist_articles }}
 
+  {{* SLIDESHOW *}}
   {{$num_imagenes=0}}
   {{ list_playlist_articles name="slider_seccion"}}
     {{$num_imagenes=$gimme->current_list->count}}
