@@ -1,6 +1,8 @@
 <div class="col-xs-5 col1">
 
   {{ list_playlist_articles name="PortadaCol1" order="bypublishdate desc" }}
+    {{* Con recorrido y Sin foto *}}
+    {{* Esto es un oximoron, porque si no tiene foto, da igual que tenga recorrido o no *}}
     {{ if $gimme -> article -> portada_recorrido && !$gimme->article->portada_sin_foto }}
       {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
         <div class="portada_con_recorrido_col1 con_borde">
@@ -66,6 +68,7 @@
             {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
           </div>              
         </div><hr><!-- fin portada_recorrido_col1 con borde -->
+      {{* CON fondo gris y SIN borde *}}
       {{ elseif $gimme ->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_con_recorrido_col1 fondo_gris">
           <p class="semibold_font_3">
@@ -193,7 +196,8 @@
           </div>              
         </div><hr><!-- fin portada_con_recorrido_col1 sin borde -->
       {{ /if }}<!-- fin if bordes y fondo  gris con recorrido -->
-
+    {{* SIN foto o SIN foto y con recorrido *}}
+    {{* Esto es otro oximoron *}}
     {{elseif $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto && $gimme->article->portada_recorrido }}
       {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}      
         <div class="portada_sin_recorrido_col1 con_borde">
@@ -209,7 +213,7 @@
           </p>
           <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
         </div><hr>
-
+      {{* GRIS y CON borde de (SIN foto o SIN foto y con recorrido) *}}
       {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_sin_recorrido_col1 fondo_gris">
           <p class="semibold_font_3">
@@ -242,6 +246,8 @@
         </div><hr>
       {{ /if }}<!-- fin if bordes y fondo gris sin foto -->
     {{ else }}
+      {{* CON borde O CON borde y GRIS *}}
+      {{* ¿Esto no lo he vivido antes?, hay un fallo en Matrix *}}
       {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
         <div class="portada_sin_recorrido_foto_col1 con_borde">          
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
@@ -297,6 +303,7 @@
             <p class="semibold_font_1"><a href="{{ uri options="article" }}">{{ $gimme->article->entradilla }}</a></p>
           </div>      
         </div><hr><!-- fin con borde de la opcion por defecto -->
+      {{* GRIS y SIN borde *}}
       {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
         <div class="portada_sin_recorrido_foto_col1 fondo_gris">
           <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
