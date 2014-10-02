@@ -18,17 +18,17 @@
                 <articlePage src="article.tpl"/>
                 <errorPage src="404.tpl"/>
         </output>
-        <renditions>
+         <renditions>
                 <rendition name="topfront" width="500" height="333" specs="crop"/>
                 <rendition name="thumb" width="150" height="100" specs="crop"/>
                 <rendition name="sectionthumb" width="250" height="167" specs="crop"/>
                 <rendition name="articlebig" width="600" height="400" specs="crop"/>
                 <rendition name="square" width="150" height="150" specs="crop"/>
                 <!-- ==== Renditions particulares para nuestro periodico === -->
-                <rendition name="portada_horizontal" width="330" height="200" specs="crop"/>
+                <rendition name="portada_horizontal" width="400" height="229" specs="crop"/>
                 <rendition name="portada_vertical" width="190" height="265" specs="crop"/>
-                <rendition name="portada_cuadrada" width="265" height="265" specs="crop"/>
-                <rendition name="articulo_horizontal" width="700" height="350" specs="crop"/>
+                <rendition name="portada_cuadrada" width="200" height="200" specs="crop"/>
+                <rendition name="articulo_horizontal" width="730" height="417" specs="crop"/>
                 <rendition name="articulo_vertical" width="290" height="350" specs="crop"/>
                 <rendition name="aritculo_cuadrada" width="350" height="350" specs="crop"/>
                 <!-- ==== Renditions para los banners (aun por definir del todo) ==== -->
