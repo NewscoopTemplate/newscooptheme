@@ -50,7 +50,7 @@ banner > tipo de artículo para los banners (da igual en que parte estén)
 
 enlaces > tipo de artículo para las imágenes (para los blogs y enlaces de interés)
 
-
+estaticas > tipo de artículo para páginas estatitas (de esas que no cambian)
 
 
 
@@ -91,7 +91,9 @@ articulo_foto_superior > posibilidad 1 de forma de mostrar articulos.
 articulo_foto_lateral > posibilidad 2 de forma de mostrar articulos.
 
 
-
+Campos de Tipo de artículo: estaticas
+====================================
+texto > texto a mostrar
 
 
 Listas de artículos 
