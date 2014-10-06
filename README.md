@@ -154,6 +154,10 @@ Interes -> columna 3 de la portada/seccion/subseccion/articulo, lista de enlaces
 
 
 
+ESTATICAS:
+
+estaticas > lista para las paginas estaticas, estilo aviso legal, quienes somos, esas cosas... you know what I mean.
+
 
 Tópicos
 ====================================
