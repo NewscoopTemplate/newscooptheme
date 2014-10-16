@@ -16,6 +16,8 @@
   {{ $subseccion_filtrada = $smarty.get.subseccion }}
 
   <div class="row mod_seccion">
+    <!-- igual que en la portas pero para las secciones, este se manejara en los ficheros de la carpeta sections -->
+    {{ $numero_columna=1 }}
     {{ include file='_tpl/section_main_col1.tpl' }}
     {{ include file='_tpl/section_main_col2.tpl' }}
     {{ include file='_tpl/section_main_col3.tpl' }}
