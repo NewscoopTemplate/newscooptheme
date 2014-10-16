@@ -10,37 +10,26 @@ en que columna sale.
 Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
 -->
 <div class="col-xs-4 col2">
-  {{ $numero_columna=2}}
+  {{ $numero_columna=2 }}
   {{ list_playlist_articles name="PortadaCol2" }}
+
     {{if $gimme -> article -> portada_sin_foto || $gimme->article->portada_sin_foto 
     && $gimme->article->portada_recorrido }}                                            
-      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris  }}
-        <div class="portada_sin_recorrido_col2 con_borde">
-          {{ include file='_tpl/front_and_section/sin_foto_con_borde.tpl' }}
-        </div><hr>
-      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
-        <div class="portada_sin_recorrido_col2 fondo_gris">
-          {{ include file='_tpl/front_and_section/sin_foto_fondo_gris.tpl' }}
-        </div><hr>
-      {{ else }}
-        <div class="portada_sin_recorrido_col2 sin_borde">
-          {{ include file='_tpl/front_and_section/sin_foto_sin_borde.tpl' }}
-        </div><hr>
+      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris  }}       
+        {{ include file='_tpl/fronts/sin_foto_con_borde.tpl' }}      
+      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}       
+        {{ include file='_tpl/fronts/sin_foto_fondo_gris.tpl' }}      
+      {{ else }}       
+        {{ include file='_tpl/fronts/sin_foto_sin_borde.tpl' }}      
       {{ /if }}<!-- fin if  portada_sin_recorrido -->
 
     {{elseif $gimme->article->portada_recorrido && !$gimme->article->portada_sin_foto }}
-      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
-        <div class="portada_sin_recorrido_foto_col2 con_borde">
-          {{ include file='_tpl/front_and_section/con_foto_con_borde.tpl' }}
-        </div><hr>
-      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde}}
-        <div class="portada_sin_recorrido_foto_col2 fondo_gris">
-          {{ include file='_tpl/front_and_section/con_foto_fondo_gris.tpl' }}
-        </div><hr>
-      {{ else }}
-        <div class="portada_sin_recorrido_foto_col2 sin_borde">
-          {{ include file='_tpl/front_and_section/con_foto_sin_borde.tpl' }}
-        </div><hr>
+      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}        
+          {{ include file='_tpl/fronts/con_foto_con_borde.tpl' }}      
+      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde}}        
+          {{ include file='_tpl/fronts/con_foto_fondo_gris.tpl' }}      
+      {{ else }}        
+          {{ include file='_tpl/fronts/con_foto_sin_borde.tpl' }}      
       {{ /if }}<!-- fin if bordes y fondo gris -->
 
     {{ elseif $gimme->article->type_name=="banner"  }}<!-- trata los banners -->
@@ -51,22 +40,17 @@ Ademas, ellos, al colocar el articulo en la lista podran elegir como sale
         </a><hr>
     
     {{ else }}
-      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}
-        <div class="portada_sin_recorrido_foto_col2 con_borde">
-          {{ include file='_tpl/front_and_section/con_foto_con_borde.tpl' }}
-        </div><hr>
-      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}
-        <div class="portada_sin_recorrido_foto_col2 fondo_gris">
-          {{ include file='_tpl/front_and_section/con_foto_fondo_gris.tpl' }}
-        </div><hr>
-      {{ else }}
-        <div class="portada_sin_recorrido_foto_col2 sin_borde">
-        {{ include file='_tpl/front_and_section/con_foto_sin_borde.tpl' }}
-        </div><hr>
+      {{ if $gimme->article->portada_borde || $gimme->article->portada_borde && $gimme->article->portada_gris }}       
+          {{ include file='_tpl/fronts/con_foto_con_borde.tpl' }}      
+      {{ elseif $gimme->article->portada_gris && !$gimme->article->portada_borde }}        
+          {{ include file='_tpl/fronts/con_foto_fondo_gris.tpl' }}      
+      {{ else }}       
+        {{ include file='_tpl/fronts/con_foto_sin_borde.tpl' }}      
       {{ /if }}<!-- fin if bordes y fondo gris -->
     {{ /if }}
+
   {{ /list_playlist_articles }}
 
   <!-- Añadimos en codigo del slider -->
-  {{ include file='_tpl/front_and_section/slider.tpl' }}
+  {{ include file='_tpl/fronts/slider.tpl' }}
 </div>
