@@ -11,7 +11,7 @@
   <p class="semibold_font_2"><a href="{{ uri options="article" }}" title="{{ $gimme->article->titular }}">{{ $gimme->article->titular }}</a>
   </p>              
   <div class="row">
-    {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
+    {{ if $gimme->article->has_image(1) }}
       <div class="col-xs-5">
         <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de una imagen -->              
           {{ list_article_images }}

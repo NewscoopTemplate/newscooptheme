@@ -1,6 +1,6 @@
 <div class="seccion_sin_recorrido_foto_col{{ $numero_columna }} fondo_gris">
   <!-- Uso del lightbox en las imagenes de los articulos que tienen mas de 2 imagenes -->
-  {{ if $gimme->article->has_image(1) && $gimme->article->entradilla!="" }}
+  {{ if $gimme->article->has_image(1) }}
     {{ list_article_images }}
       {{ if $gimme->current_list->count > 2}}
         {{ if $gimme->current_list->at_beginning }}
