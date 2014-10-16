@@ -1,4 +1,5 @@
 <!-- Con recorrido con borde -->
+<div class="portada_con_recorrido_col{{ $numero_columna }} con_borde">
   <p class="semibold_font_3">
   <a href="{{ uri options='section' }}" class="nav_{{ $gimme->section->number }}">{{ $gimme->section->name|upper }}
   </a></p>             
@@ -55,3 +56,4 @@
       </div>
     {{ /if }}<!-- fin si hay imagen y la entradilla es vacio -->
   </div>
+</div><hr><!-- fin portada_recorrido_col1 con borde -->
